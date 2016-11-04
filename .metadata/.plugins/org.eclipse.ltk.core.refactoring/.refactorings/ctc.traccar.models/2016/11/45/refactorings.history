@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;ctc.traccar.models.entities&apos; to &apos;ctc.traccar.models.vo&apos;&#x0A;- Original project: &apos;ctc.traccar.models&apos;&#x0A;- Original element: &apos;ctc.traccar.models/src/ctc.traccar.models.entities&apos;&#x0A;- Renamed element: &apos;ctc.traccar.models/src/ctc.traccar.models.vo&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;ctc.traccar.models.entities&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;ctc.traccar.models.entities" name="ctc.traccar.models.vo" qualified="false" references="true" stamp="1478283195131" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,7 @@
+package ctc.traccar.web.controllers;
+import org.apache.log4j.Logger;
+
+public class HomeController {
+	private static Logger logger = Logger.getLogger(HomeController.class);
+	private static final Logger LOGGER2 = logger;
+}
