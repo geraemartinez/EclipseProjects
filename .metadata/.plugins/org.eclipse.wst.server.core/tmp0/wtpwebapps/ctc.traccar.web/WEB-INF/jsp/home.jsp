@@ -7,5 +7,6 @@
 	</head>	
 	<body>
 		<h1>Hello  CTC WebApp</h1>
+		<h2>${objeto}</h2>
 	</body>
 </html>

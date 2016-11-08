@@ -1,0 +1,17 @@
+package ctc.traccar.data.dao;
+
+import java.util.List;
+
+import ctc.traccar.data.entities.User;
+
+public class UserRepository implements UserRepositoryInt {
+
+	@Override
+	public List<User> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
+
+

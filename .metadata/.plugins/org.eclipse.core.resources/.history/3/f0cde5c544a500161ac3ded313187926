@@ -1,0 +1,9 @@
+package ctc.traccar.bussines.service;
+
+import java.util.List;
+
+import ctc.traccar.models.vo.UserVo;
+
+public interface UserServiceInt {
+	public List<UserVo> getAll();
+}

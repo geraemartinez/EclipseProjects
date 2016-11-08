@@ -1,8 +1,18 @@
 package ctc.traccar.web.controllers;
+import java.util.List;
+
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.google.gson.Gson;
+
+import ctc.traccar.business.service.UserServiceInt;
+import ctc.traccar.models.vo.UserVo;
 
 @Controller
 public class HomeController {
@@ -11,9 +21,29 @@ public class HomeController {
 	@SuppressWarnings("unused")
 	private static Logger logger = Logger.getLogger(HomeController.class);
 	
+	@Autowired
+	private UserServiceInt userService;
+	
+	@ModelAttribute("UserVo")
+    public UserVo getUserVo(){
+        return new UserVo();
+    }
+	
+	@SuppressWarnings("unused")
 	@RequestMapping("/index")
     public ModelAndView home(){
         ModelAndView mv = new ModelAndView("home");
+        List<UserVo> result =  userService.getAll();
+        mv.addObject("objeto", result);
+        
         return mv;
     }
+	
+	@RequestMapping("/test")
+	@ResponseBody
+	public String test() {
+		List<UserVo> result =  userService.getAll();
+		return new Gson().toJson(result);
+	} 
+	
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ctc.traccar.web">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/configs"/>
+        <dependent-module archiveName="ctc.traccar.bussines.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ctc.traccar.bussines/ctc.traccar.bussines">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ctc.traccar.data.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ctc.traccar.data/ctc.traccar.data">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ctc.traccar.models.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ctc.traccar.models/ctc.traccar.models">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="ctc.traccar.web"/>
+        <property name="java-output-path" value="/ctc.traccar.web/build/classes"/>
+    </wb-module>
+</project-modules>

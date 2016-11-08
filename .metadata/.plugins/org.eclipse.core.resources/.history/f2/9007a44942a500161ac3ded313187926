@@ -1,0 +1,114 @@
+package ctc.traccar.bussines.helpers;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import ctc.traccar.data.entities.User;
+import ctc.traccar.models.vo.UserVo;
+
+public class UserHelper {
+	
+	public User convert(UserVo vo){
+		User obj = new User();
+		if(vo!=null){
+			
+			if (vo.getAttributes()!=null){
+				obj.setAttributes(vo.getAttributes());
+			}
+			if (vo.getCoordinateformat()!=null){
+				obj.setAttributes(vo.getCoordinateformat());
+			}
+			if (vo.getDistanceunit()!=null){
+				obj.setAttributes(vo.getDistanceunit());
+			}
+			if (vo.getEmail()!=null){
+				obj.setAttributes(vo.getEmail());
+			}
+			if (vo.getHashedpassword()!=null){
+				obj.setAttributes(vo.getHashedpassword());
+			}
+			if (vo.getMap()!=null){
+				obj.setAttributes(vo.getMap());
+			}
+			if (vo.getName()!=null){
+				obj.setAttributes(vo.getName());
+			}
+			if (vo.getSalt()!=null){
+				obj.setAttributes(vo.getSalt());
+			}
+			if (vo.getSpeedunit()!=null){
+				obj.setAttributes(vo.getSalt());
+			}
+			
+			obj.setAdmin(vo.isAdmin());
+			obj.setReadonly(vo.isReadonly());
+			obj.setId(vo.getId());
+			obj.setLatitude(vo.getLatitude());
+			obj.setLongitude(vo.getLongitude());
+			obj.setZoom(vo.getZoom());
+			obj.setTwelvehourformat(vo.isTwelvehourformat());
+		} 
+		return obj;
+	}
+	
+	public UserVo convert(User obj){
+		UserVo vo = new UserVo();
+		if(obj!=null){
+			
+			if (obj.getAttributes()!=null){
+				vo.setAttributes(obj.getAttributes());
+			}
+			if (obj.getCoordinateformat()!=null){
+				vo.setAttributes(obj.getCoordinateformat());
+			}
+			if (obj.getDistanceunit()!=null){
+				vo.setAttributes(obj.getDistanceunit());
+			}
+			if (obj.getEmail()!=null){
+				vo.setAttributes(obj.getEmail());
+			}
+			if (obj.getHashedpassword()!=null){
+				vo.setAttributes(obj.getHashedpassword());
+			}
+			if (obj.getMap()!=null){
+				vo.setAttributes(obj.getMap());
+			}
+			if (obj.getName()!=null){
+				vo.setAttributes(obj.getName());
+			}
+			if (obj.getSalt()!=null){
+				vo.setAttributes(obj.getSalt());
+			}
+			if (obj.getSpeedunit()!=null){
+				vo.setAttributes(obj.getSalt());
+			}
+			
+			vo.setAdmin(obj.isAdmin());
+			vo.setReadonly(obj.isReadonly());
+			vo.setId(obj.getId());
+			vo.setLatitude(obj.getLatitude());
+			vo.setLongitude(obj.getLongitude());
+			vo.setZoom(obj.getZoom());
+			vo.setTwelvehourformat(obj.isTwelvehourformat());
+		} 
+		return vo;
+	}
+	
+	public List<UserVo> converToVo(List<User> users){
+		List<UserVo> result = new ArrayList<UserVo>();
+		for (User usr:users){
+			result.add(convert(usr));
+		}
+		return result;
+		
+	}
+	
+	public List<User> converToObjs(List<UserVo> users){
+		
+		List<User> result = new ArrayList<User>();
+		for (User vo:users){
+			result.add(convert(vo));
+		}
+		return result;
+	}
+}

@@ -1,5 +1,6 @@
 #Tomcat publish data
-#Fri Nov 04 12:08:37 CST 2016
+#Mon Nov 07 18:23:29 CST 2016
+org.eclipse.jst.j2ee.server\:ctc.traccar.models=WEB-INF/lib/ctc.traccar.models.jar
 org.eclipse.jst.jee.server\:/binary\:/Users/gerardo/EclipseProjects/ctc.traccar.web/WebContent/WEB-INF/lib/spring-web-4.3.3.RELEASE.jar=WEB-INF/lib/spring-web-4.3.3.RELEASE.jar
-org.eclipse.jst.j2ee.server\:ctc.traccar.bussines=WEB-INF/lib/ctc.traccar.bussines.jar
+org.eclipse.jst.j2ee.server\:ctc.traccar.business=WEB-INF/lib/ctc.traccar.business.jar
 org.eclipse.jst.j2ee.server\:ctc.traccar.data=WEB-INF/lib/ctc.traccar.data.jar
