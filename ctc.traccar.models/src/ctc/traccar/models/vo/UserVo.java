@@ -1,6 +1,7 @@
 package ctc.traccar.models.vo;
 
 import java.io.Serializable;
+import java.util.List;
 
 
 public class UserVo implements Serializable  {
@@ -14,6 +15,8 @@ public class UserVo implements Serializable  {
 	private String email;
 	
 	private String hashedpassword;
+	
+	private String password;
 	
 	private String salt;
 	
@@ -38,6 +41,8 @@ public class UserVo implements Serializable  {
 	private String attributes;
 	
 	private String coordinateformat;
+	
+	private List<NotificationVo> notifications;
 	
 	public Integer getId() {
 		return id;
@@ -165,6 +170,22 @@ public class UserVo implements Serializable  {
 
 	public void setCoordinateformat(String coordinateformat) {
 		this.coordinateformat = coordinateformat;
+	}
+
+	public List<NotificationVo> getNotifications() {
+		return notifications;
+	}
+
+	public void setNotifications(List<NotificationVo> notifications) {
+		this.notifications = notifications;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }

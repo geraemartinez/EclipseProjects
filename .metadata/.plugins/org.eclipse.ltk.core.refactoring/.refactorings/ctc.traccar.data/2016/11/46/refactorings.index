@@ -4,3 +4,9 @@
 1478558948806	Delete elements
 1478559093235	Delete elements
 1478560280958	Copy files
+1478626947053	Rename type 'NotificationReposirtoryInt'
+1478629720955	Encapsulate field 'userid'
+1478629725895	Encapsulate field 'deviceid'
+1478631823350	Rename type 'events'
+1478634157647	Rename type 'Statics'
+1478634977712	Rename type 'DataBaseChangeLogLock'

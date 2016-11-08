@@ -1,0 +1,5 @@
+package ctc.traccar.business.service;
+
+public class NotificationService {
+
+}

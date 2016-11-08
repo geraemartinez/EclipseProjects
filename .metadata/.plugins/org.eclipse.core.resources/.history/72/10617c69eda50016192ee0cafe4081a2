@@ -1,0 +1,5 @@
+package ctc.traccar.data.entities;
+
+public class DataBaseChangeLogLock {
+
+}

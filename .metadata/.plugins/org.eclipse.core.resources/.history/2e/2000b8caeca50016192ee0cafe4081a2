@@ -1,0 +1,28 @@
+package ctc.traccar.data.entities;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@SuppressWarnings("serial")
+@Entity
+@Table(name="server")
+public class Server implements Serializable {
+
+	private Integer id;
+	private Boolean registration;
+	private Double latitude;
+	private Double longitude;
+	private Integer zoom;
+	private String map;
+	private String distanceunit;
+	private String speedunit;
+	private String bingkey;
+	private String mapurl;
+	private Boolean readonly;
+	private Boolean twelvehourformat;
+	private String attributes;
+	private Boolean forcesettings;
+	private String coordinateformat;
+}

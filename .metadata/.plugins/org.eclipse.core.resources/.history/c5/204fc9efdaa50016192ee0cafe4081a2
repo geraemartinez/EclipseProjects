@@ -1,0 +1,5 @@
+package ctc.traccar.data.dao;
+
+public class NotificationRepository {
+
+}

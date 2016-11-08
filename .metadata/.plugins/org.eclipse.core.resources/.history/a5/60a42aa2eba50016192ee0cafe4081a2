@@ -1,0 +1,9 @@
+package ctc.traccar.data.entities;
+
+import java.io.Serializable;
+
+@Entity
+@Table(name="statistics")
+public class Statistic implements Serializable {
+
+}

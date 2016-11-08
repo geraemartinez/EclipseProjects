@@ -1,0 +1,17 @@
+package ctc.traccar.data.entities;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@SuppressWarnings("serial")
+@Entity
+@Table(name="user_geofence")
+public class UserGeofence implements Serializable{
+
+	public Integer userid;
+	public Integer geofenceid;
+
+	
+}
