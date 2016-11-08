@@ -39,7 +39,10 @@ public class UserHelper {
 			if (vo.getSpeedunit()!=null){
 				obj.setSpeedunit(vo.getSpeedunit());
 			}
-			
+			if(vo.getNotifications()!=null){
+				obj.setNotifications(NotificationHelper.convertToObjs(vo.getNotifications()));
+			}
+
 			obj.setAdmin(vo.isAdmin());
 			obj.setReadonly(vo.isReadonly());
 			obj.setId(vo.getId());
@@ -81,6 +84,9 @@ public class UserHelper {
 			}
 			if (obj.getSpeedunit()!=null){
 				vo.setSpeedunit(obj.getSpeedunit());
+			}	
+			if(obj.getNotifications()!=null){
+				vo.setNotifications(NotificationHelper.convertToVos(obj.getNotifications()));
 			}
 			
 			vo.setAdmin(obj.isAdmin());
@@ -96,9 +102,13 @@ public class UserHelper {
 	
 	public static List<UserVo> converToVo(List<User> users){
 		List<UserVo> result = new ArrayList<UserVo>();
-		for (User usr:users){
-			result.add(convert(usr));
+		
+		if(users!=null){
+			for (User usr:users){
+				result.add(convert(usr));
+			}
 		}
+		
 		return result;
 		
 	}
@@ -106,9 +116,15 @@ public class UserHelper {
 	public static List<User> converToObjs(List<UserVo> users){
 		
 		List<User> result = new ArrayList<User>();
-		for (UserVo vo:users){
-			result.add(convert(vo));
+		
+		if(users!=null){
+			for (UserVo vo:users){
+				result.add(convert(vo));
+			}
 		}
+		
 		return result;
 	}
+
 }
+
