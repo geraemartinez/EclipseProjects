@@ -3,7 +3,6 @@ package ctc.traccar.models.vo;
 import java.io.Serializable;
 import java.util.List;
 
-
 public class UserVo implements Serializable  {
 
 	private static final long serialVersionUID = 1L;
@@ -44,6 +43,41 @@ public class UserVo implements Serializable  {
 	
 	private List<NotificationVo> notifications;
 	
+	private List<DeviceVo> devices;
+	
+	private List<GeofenceVo> geofences;
+    
+	private List<GroupVo> groups;
+
+	
+	public List<DeviceVo> getDevices() {
+		return devices;
+	}
+
+	public void setDevices(List<DeviceVo> devices) {
+		this.devices = devices;
+	}
+
+	public List<GeofenceVo> getGeofences() {
+		return geofences;
+	}
+
+	public void setGeofences(List<GeofenceVo> geofences) {
+		this.geofences = geofences;
+	}
+
+	public List<GroupVo> getGroups() {
+		return groups;
+	}
+
+	public void setGroups(List<GroupVo> groups) {
+		this.groups = groups;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	public Integer getId() {
 		return id;
 	}

@@ -12,6 +12,7 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 
 import ctc.traccar.data.entities.Notification;
+import ctc.traccar.data.entities.User;
 
 @Repository
 public class NotificationRepository implements NotificationRepositoryInt {
@@ -52,6 +53,23 @@ public class NotificationRepository implements NotificationRepositoryInt {
 			return null;
 		}catch(Exception e){
 			logger.error("[ERROR] Uncaught Exception - the following error ocurred at NotificationRepository in getById() method \n "+ e);
+			return null;
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Notification> getByUserId(User user) {
+		try{
+			StringBuilder sql = new StringBuilder("SELECT n FROM Notification n where n.userid = :userid ");
+			Query q = entityManager.createQuery(sql.toString());
+			q.setParameter("userid",  user.getId());	
+			return (List<Notification>)q.getResultList();
+		}catch(PersistenceException e){
+			logger.error("[ERROR] PersistenceExceptio - the following error ocurred at NotificationRepository in getByUserId() method \n "+ e);
+			return null;
+		}catch(Exception e){
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at NotificationRepository in getByUserId() method \n "+ e);
 			return null;
 		}
 	}

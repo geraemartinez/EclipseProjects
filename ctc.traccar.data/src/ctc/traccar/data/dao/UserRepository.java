@@ -31,7 +31,8 @@ public class UserRepository implements UserRepositoryInt {
 		try{
 			StringBuilder sql = new StringBuilder("SELECT u FROM User u");
 			Query q = entityManager.createQuery(sql.toString());
-			return (List<User>)q.getResultList();
+			List<User> result = (List<User>)q.getResultList();
+			return result;
 		}catch(PersistenceException e){
 			logger.error("[ERROR] PersistenceExceptio - the following error ocurred at UserRepository in getAll() method \n "+ e);
 			return null;

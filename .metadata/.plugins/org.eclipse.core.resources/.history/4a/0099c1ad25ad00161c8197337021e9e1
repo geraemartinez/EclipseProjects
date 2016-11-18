@@ -1,0 +1,35 @@
+package ctc.traccar.data.dao;
+
+import java.util.List;
+
+import ctc.traccar.data.entities.Device;
+import ctc.traccar.data.entities.Position;
+
+public class PositionRepository implements PositionRepositoryInt {
+
+	@Override
+	public List<Position> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Position getById(Position obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Position> getByIdDevice(Position obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Position> getByIdDevice(Device obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}

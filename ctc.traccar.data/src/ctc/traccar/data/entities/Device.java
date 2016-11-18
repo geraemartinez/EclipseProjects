@@ -2,13 +2,20 @@ package ctc.traccar.data.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -54,6 +61,31 @@ public class Device implements Serializable {
 	
 	@Column(name="category")
 	private String category;
+	
+	@OneToMany(mappedBy="device",targetEntity=Position.class,fetch=FetchType.EAGER)
+	List<Position> positions;
+	
+	@OneToMany(mappedBy="device",targetEntity=Position.class,fetch=FetchType.EAGER)
+	List<Event> events;
+	
+	@OneToMany(mappedBy="device",targetEntity=Position.class,fetch=FetchType.EAGER)
+	List<AttributeAliase> attributeAliases;
+	
+	@ManyToMany(mappedBy="devices")
+	private List<User> users;
+	
+	@ManyToMany
+	  @JoinTable(
+	      name="device_geofence",
+	      joinColumns= 
+	      	@JoinColumn (name="deviceid"),
+	      inverseJoinColumns= 
+	      	@JoinColumn(name="geofenceid"))
+	private List<Geofence> geofences;
+	
+	@ManyToOne(optional=false)
+	@JoinColumn(name="id",insertable=false, updatable=false)
+	private Group group; 
 	
 	public Integer getId() {
 		return id;
@@ -120,6 +152,48 @@ public class Device implements Serializable {
 	}
 	public void setCategory(String category) {
 		this.category = category;
+	}
+	public Date getLastupdate() {
+		return lastupdate;
+	}
+	public void setLastupdate(Date lastupdate) {
+		this.lastupdate = lastupdate;
+	}
+	public List<Position> getPositions() {
+		return positions;
+	}
+	public void setPositions(List<Position> positions) {
+		this.positions = positions;
+	}
+	public List<Event> getEvents() {
+		return events;
+	}
+	public void setEvents(List<Event> events) {
+		this.events = events;
+	}
+	public List<AttributeAliase> getAttributeAliases() {
+		return attributeAliases;
+	}
+	public void setAttributeAliases(List<AttributeAliase> attributeAliases) {
+		this.attributeAliases = attributeAliases;
+	}
+	public List<User> getUsers() {
+		return users;
+	}
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+	public List<Geofence> getGeofences() {
+		return geofences;
+	}
+	public void setGeofences(List<Geofence> geofences) {
+		this.geofences = geofences;
+	}
+	public Group getGroup() {
+		return group;
+	}
+	public void setGroup(Group group) {
+		this.group = group;
 	}
 	
 }

@@ -1,5 +1,0 @@
-package ctc.traccar.web.controllers;
-
-public class HomeController {
-
-}

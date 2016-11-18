@@ -1,7 +1,0 @@
-package ctc.traccar.data.entities;
-
-public class UserDevice {
-	
-	private Integer userid;
-	private Integer deviceid;
-}

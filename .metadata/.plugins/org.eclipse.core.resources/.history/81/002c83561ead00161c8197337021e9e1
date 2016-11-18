@@ -1,0 +1,5 @@
+package ctc.traccar.models.vo;
+
+public class StatisticVo {
+
+}

@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="DeviceGeofence"/>
 			<item value="http://www.springframework.org/schema/context/spring-context-4.0.xsd"/>
 			<item value="http://www.springframework.org/schema/beans/spring-beans-4.0.xsd"/>
 		</list>

@@ -74,4 +74,5 @@ public class Notification implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	
 }

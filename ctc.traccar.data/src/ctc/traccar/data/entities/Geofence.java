@@ -1,12 +1,14 @@
 package ctc.traccar.data.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @SuppressWarnings("serial")
@@ -30,6 +32,16 @@ public class Geofence implements Serializable  {
 	
 	@Column(name="attributes")
 	private String attributes;
+	
+	@ManyToMany(mappedBy="geofences")
+	private List<User> users;
+	
+	@ManyToMany(mappedBy="geofences")
+	private List<Device> devices;
+
+	@ManyToMany(mappedBy="geofences")
+	private List<Group> groups;
+
 
 	public Integer getId() {
 		return id;
@@ -69,6 +81,30 @@ public class Geofence implements Serializable  {
 
 	public void setAttributes(String attributes) {
 		this.attributes = attributes;
+	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+
+	public List<Device> getDevices() {
+		return devices;
+	}
+
+	public void setDevices(List<Device> devices) {
+		this.devices = devices;
+	}
+
+	public List<Group> getGroups() {
+		return groups;
+	}
+
+	public void setGroups(List<Group> groups) {
+		this.groups = groups;
 	}
 	
 	

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;ctc.traccar.models.vo.Statistic&apos; to &apos;StatisticVo&apos;&#x0A;- Original project: &apos;ctc.traccar.models&apos;&#x0A;- Original element: &apos;ctc.traccar.models.vo.Statistic&apos;&#x0A;- Renamed element: &apos;ctc.traccar.models.vo.StatisticVo&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Statistic&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;ctc.traccar.models.vo{Statistic.java[Statistic" matchStrategy="1" name="StatisticVo" qualified="false" references="true" similarDeclarations="false" stamp="1479425584995" textual="false" version="1.0"/>
+</session>
