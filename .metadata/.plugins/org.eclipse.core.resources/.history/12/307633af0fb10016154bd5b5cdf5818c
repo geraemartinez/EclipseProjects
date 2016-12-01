@@ -1,0 +1,166 @@
+package model;
+
+import java.io.Serializable;
+import javax.persistence.*;
+import java.util.Date;
+import java.math.BigInteger;
+
+
+/**
+ * The persistent class for the positions database table.
+ * 
+ */
+@Entity
+@Table(name="positions")
+@NamedQuery(name="Position.findAll", query="SELECT p FROM Position p")
+public class Position implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	private String id;
+
+	private String address;
+
+	private double altitude;
+
+	private double course;
+
+	@Column(name="device_id")
+	private BigInteger deviceId;
+
+	private double latitude;
+
+	private double longitude;
+
+	private String other;
+
+	private double power;
+
+	private String protocol;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date serverTime;
+
+	private double speed;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date time;
+
+	private byte valid;
+
+	public Position() {
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public double getAltitude() {
+		return this.altitude;
+	}
+
+	public void setAltitude(double altitude) {
+		this.altitude = altitude;
+	}
+
+	public double getCourse() {
+		return this.course;
+	}
+
+	public void setCourse(double course) {
+		this.course = course;
+	}
+
+	public BigInteger getDeviceId() {
+		return this.deviceId;
+	}
+
+	public void setDeviceId(BigInteger deviceId) {
+		this.deviceId = deviceId;
+	}
+
+	public double getLatitude() {
+		return this.latitude;
+	}
+
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+
+	public double getLongitude() {
+		return this.longitude;
+	}
+
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+	}
+
+	public String getOther() {
+		return this.other;
+	}
+
+	public void setOther(String other) {
+		this.other = other;
+	}
+
+	public double getPower() {
+		return this.power;
+	}
+
+	public void setPower(double power) {
+		this.power = power;
+	}
+
+	public String getProtocol() {
+		return this.protocol;
+	}
+
+	public void setProtocol(String protocol) {
+		this.protocol = protocol;
+	}
+
+	public Date getServerTime() {
+		return this.serverTime;
+	}
+
+	public void setServerTime(Date serverTime) {
+		this.serverTime = serverTime;
+	}
+
+	public double getSpeed() {
+		return this.speed;
+	}
+
+	public void setSpeed(double speed) {
+		this.speed = speed;
+	}
+
+	public Date getTime() {
+		return this.time;
+	}
+
+	public void setTime(Date time) {
+		this.time = time;
+	}
+
+	public byte getValid() {
+		return this.valid;
+	}
+
+	public void setValid(byte valid) {
+		this.valid = valid;
+	}
+
+}

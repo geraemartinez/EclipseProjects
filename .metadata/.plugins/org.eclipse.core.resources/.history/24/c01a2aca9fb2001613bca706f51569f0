@@ -1,0 +1,381 @@
+package ctc.traccar.data.entities;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import java.util.Date;
+import java.math.BigInteger;
+
+
+/**
+ * COLUMNS AND MAPS READY
+ * 
+ */
+@Entity
+@Table(name="devices")
+public class Device implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name="id")
+	private BigInteger id;
+	
+	@Column(name="autoUpdateOdometer")
+	private byte autoUpdateOdometer;
+	
+	@Column(name="description")
+	private String description;
+
+	@Column(name="group_id")
+	private BigInteger groupId;
+
+	@Column(name="icon_id")
+	private BigInteger iconId;
+
+	@Column(name="iconArrowMovingColor")
+	private String iconArrowMovingColor;
+
+	@Column(name="iconArrowOfflineColor")
+	private String iconArrowOfflineColor;
+
+	@Column(name="iconArrowPausedColor")
+	private String iconArrowPausedColor;
+
+	@Column(name="iconArrowRadius")
+	private double iconArrowRadius;
+
+	@Column(name="iconArrowStoppedColor")
+	private String iconArrowStoppedColor;
+
+	@Column(name="iconMode")
+	private String iconMode;
+
+	@Column(name="iconRotation")
+	private byte iconRotation;
+
+	@Column(name="iconType")
+	private String iconType;
+
+	@Column(name="idleSpeedThreshold")
+	private double idleSpeedThreshold;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="lastupdate")
+	private Date lastupdate;
+	
+	@Column(name="latestPosition_id")
+	private BigInteger latestPosition_id;
+
+	@Column(name="minIdleTime")
+	private int minIdleTime;
+
+	@Column(name="name")
+	private String name;
+
+	@Column(name="odometer")
+	private double odometer;
+
+	@Column(name="owner_id")
+	private BigInteger ownerId;
+	
+	@Column(name="phoneNumber")
+	private String phoneNumber;
+
+	@Column(name="photo_id")
+	private BigInteger photoId;
+
+	@Column(name="plateNumber")
+	private String plateNumber;
+
+	@Column(name="showName")
+	private byte showName;
+
+	@Column(name="showOdometer")
+	private byte showOdometer;
+
+	@Column(name="showProtocol")
+	private byte showProtocol;
+
+	@Column(name="speedLimit")
+	private double speedLimit;
+
+	@Column(name="status")
+	private String status;
+
+	@Column(name="timeout")
+	private int timeout;
+
+	@Column(name="uniqueId")
+	private String uniqueId;
+
+	@Column(name="vehicleInfo")
+	private String vehicleInfo;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="owner_id",insertable=false, updatable = false)
+	@JsonManagedReference
+	private User owner;
+
+	public Device() {
+	}
+
+	public BigInteger getId() {
+		return this.id;
+	}
+
+	public void setId(BigInteger id) {
+		this.id = id;
+	}
+
+	public byte getAutoUpdateOdometer() {
+		return this.autoUpdateOdometer;
+	}
+
+	public void setAutoUpdateOdometer(byte autoUpdateOdometer) {
+		this.autoUpdateOdometer = autoUpdateOdometer;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public BigInteger getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(BigInteger groupId) {
+		this.groupId = groupId;
+	}
+
+	public BigInteger getIconId() {
+		return this.iconId;
+	}
+
+	public void setIconId(BigInteger iconId) {
+		this.iconId = iconId;
+	}
+
+	public String getIconArrowMovingColor() {
+		return this.iconArrowMovingColor;
+	}
+
+	public void setIconArrowMovingColor(String iconArrowMovingColor) {
+		this.iconArrowMovingColor = iconArrowMovingColor;
+	}
+
+	public String getIconArrowOfflineColor() {
+		return this.iconArrowOfflineColor;
+	}
+
+	public void setIconArrowOfflineColor(String iconArrowOfflineColor) {
+		this.iconArrowOfflineColor = iconArrowOfflineColor;
+	}
+
+	public String getIconArrowPausedColor() {
+		return this.iconArrowPausedColor;
+	}
+
+	public void setIconArrowPausedColor(String iconArrowPausedColor) {
+		this.iconArrowPausedColor = iconArrowPausedColor;
+	}
+
+	public double getIconArrowRadius() {
+		return this.iconArrowRadius;
+	}
+
+	public void setIconArrowRadius(double iconArrowRadius) {
+		this.iconArrowRadius = iconArrowRadius;
+	}
+
+	public String getIconArrowStoppedColor() {
+		return this.iconArrowStoppedColor;
+	}
+
+	public void setIconArrowStoppedColor(String iconArrowStoppedColor) {
+		this.iconArrowStoppedColor = iconArrowStoppedColor;
+	}
+
+	public String getIconMode() {
+		return this.iconMode;
+	}
+
+	public void setIconMode(String iconMode) {
+		this.iconMode = iconMode;
+	}
+
+	public byte getIconRotation() {
+		return this.iconRotation;
+	}
+
+	public void setIconRotation(byte iconRotation) {
+		this.iconRotation = iconRotation;
+	}
+
+	public String getIconType() {
+		return this.iconType;
+	}
+
+	public void setIconType(String iconType) {
+		this.iconType = iconType;
+	}
+
+	public double getIdleSpeedThreshold() {
+		return this.idleSpeedThreshold;
+	}
+
+	public void setIdleSpeedThreshold(double idleSpeedThreshold) {
+		this.idleSpeedThreshold = idleSpeedThreshold;
+	}
+
+	public Date getLastupdate() {
+		return this.lastupdate;
+	}
+
+	public void setLastupdate(Date lastupdate) {
+		this.lastupdate = lastupdate;
+	}
+
+	public BigInteger getLatestPosition_id() {
+		return this.latestPosition_id;
+	}
+
+	public void setLatestPosition_id(BigInteger latestPosition_id) {
+		this.latestPosition_id = latestPosition_id;
+	}
+
+	public int getMinIdleTime() {
+		return this.minIdleTime;
+	}
+
+	public void setMinIdleTime(int minIdleTime) {
+		this.minIdleTime = minIdleTime;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getOdometer() {
+		return this.odometer;
+	}
+
+	public void setOdometer(double odometer) {
+		this.odometer = odometer;
+	}
+
+	public BigInteger getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(BigInteger ownerId) {
+		this.ownerId = ownerId;
+	}
+
+	public String getPhoneNumber() {
+		return this.phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public BigInteger getPhotoId() {
+		return this.photoId;
+	}
+
+	public void setPhotoId(BigInteger photoId) {
+		this.photoId = photoId;
+	}
+
+	public String getPlateNumber() {
+		return this.plateNumber;
+	}
+
+	public void setPlateNumber(String plateNumber) {
+		this.plateNumber = plateNumber;
+	}
+
+	public byte getShowName() {
+		return this.showName;
+	}
+
+	public void setShowName(byte showName) {
+		this.showName = showName;
+	}
+
+	public byte getShowOdometer() {
+		return this.showOdometer;
+	}
+
+	public void setShowOdometer(byte showOdometer) {
+		this.showOdometer = showOdometer;
+	}
+
+	public byte getShowProtocol() {
+		return this.showProtocol;
+	}
+
+	public void setShowProtocol(byte showProtocol) {
+		this.showProtocol = showProtocol;
+	}
+
+	public double getSpeedLimit() {
+		return this.speedLimit;
+	}
+
+	public void setSpeedLimit(double speedLimit) {
+		this.speedLimit = speedLimit;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public int getTimeout() {
+		return this.timeout;
+	}
+
+	public void setTimeout(int timeout) {
+		this.timeout = timeout;
+	}
+
+	public String getUniqueId() {
+		return this.uniqueId;
+	}
+
+	public void setUniqueId(String uniqueId) {
+		this.uniqueId = uniqueId;
+	}
+
+	public String getVehicleInfo() {
+		return this.vehicleInfo;
+	}
+
+	public void setVehicleInfo(String vehicleInfo) {
+		this.vehicleInfo = vehicleInfo;
+	}
+
+	public User getOwner() {
+		return owner;
+	}
+
+	public void setOwner(User owner) {
+		this.owner = owner;
+	}
+
+	
+}

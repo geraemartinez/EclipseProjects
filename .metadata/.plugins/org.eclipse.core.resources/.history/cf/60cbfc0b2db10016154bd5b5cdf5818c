@@ -1,0 +1,38 @@
+package ctc.traccar.models.vo;
+
+import java.io.Serializable;
+import java.math.BigInteger;
+
+import javax.persistence.*;
+
+
+
+/**
+ * The persistent class for the reports_devices database table.
+ * 
+ */
+@Entity
+@Table(name="reports_devices")
+public class ReportsDevice implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Column(name="report_id")
+	private BigInteger reportId;
+
+	@Column(name="device_id")
+	private BigInteger deviceId;
+	
+	public BigInteger getReportId() {
+		return this.reportId;
+	}
+	public void setReportId(BigInteger reportId) {
+		this.reportId = reportId;
+	}
+	public BigInteger getDeviceId() {
+		return this.deviceId;
+	}
+	public void setDeviceId(BigInteger deviceId) {
+		this.deviceId = deviceId;
+	}
+
+}

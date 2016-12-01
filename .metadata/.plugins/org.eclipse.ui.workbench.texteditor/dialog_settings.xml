@@ -2,12 +2,15 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="http://www.springframework.org/schema/context/spring-context-4.0.xsd" key="selection"/>
+		<item value="sharedDevices" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="sharedDevices"/>
+			<item value="owner"/>
+			<item value="uiState"/>
 			<item value="DeviceGeofence"/>
 			<item value="http://www.springframework.org/schema/context/spring-context-4.0.xsd"/>
 			<item value="http://www.springframework.org/schema/beans/spring-beans-4.0.xsd"/>

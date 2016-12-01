@@ -1,0 +1,69 @@
+package ctc.traccar.data.entities;
+
+import java.io.Serializable;
+import javax.persistence.*;
+import java.math.BigInteger;
+import java.util.List;
+
+
+/**
+ * COLUMNS AND MAPS READY
+ * 
+ */
+@Entity
+@Table(name="groups")
+public class Group implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name="id")
+	private BigInteger id;
+	
+	@Column(name="description")
+	private String description;
+	
+	@Column(name="name")
+	private String name;
+	
+	@Column(name="parent_id")
+	private BigInteger parentId;
+	
+	@ManyToMany(mappedBy="groups")
+	private List<User> users;
+
+	public Group() {
+	}
+
+	public BigInteger getId() {
+		return this.id;
+	}
+
+	public void setId(BigInteger id) {
+		this.id = id;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public BigInteger getParentId() {
+		return this.parentId;
+	}
+
+	public void setParentId(BigInteger parentId) {
+		this.parentId = parentId;
+	}
+
+}

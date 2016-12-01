@@ -1,103 +1,61 @@
 package ctc.traccar.models.vo;
 
 import java.io.Serializable;
-import java.util.List;
+import java.math.BigInteger;
 
-
+/**
+ * COLUMNS AND MAPS READY
+ * 
+ */
 
 public class GroupVo implements Serializable {
-
 	private static final long serialVersionUID = 1L;
 
-	private Integer id;
+
+	private BigInteger id;
+	
+	private String description;
 	
 	private String name;
 	
-	private Integer groupid;
-	
-	private String attributes;
-	
-    private GroupVo parent;
-	
-    private List<GroupVo> groups;
-	
-	private List<UserVo> users;
-	
-	List<DeviceVo> devices;
-	
-	private List<GeofenceVo> geofences;
+	private BigInteger parentId;
 
-	public Integer getId() {
-		return id;
+
+	public GroupVo() {
 	}
 
-	public void setId(Integer id) {
+	public BigInteger getId() {
+		return this.id;
+	}
+
+	public void setId(BigInteger id) {
 		this.id = id;
 	}
 
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	public Integer getGroupid() {
-		return groupid;
+	public BigInteger getParentId() {
+		return this.parentId;
 	}
 
-	public void setGroupid(Integer groupid) {
-		this.groupid = groupid;
+	public void setParentId(BigInteger parentId) {
+		this.parentId = parentId;
 	}
 
-	public String getAttributes() {
-		return attributes;
-	}
 
-	public void setAttributes(String attributes) {
-		this.attributes = attributes;
-	}
 
-	public GroupVo getParent() {
-		return parent;
-	}
-
-	public void setParent(GroupVo parent) {
-		this.parent = parent;
-	}
-
-	public List<GroupVo> getGroups() {
-		return groups;
-	}
-
-	public void setGroups(List<GroupVo> groups) {
-		this.groups = groups;
-	}
-
-	public List<UserVo> getUsers() {
-		return users;
-	}
-
-	public void setUsers(List<UserVo> users) {
-		this.users = users;
-	}
-
-	public List<DeviceVo> getDevices() {
-		return devices;
-	}
-
-	public void setDevices(List<DeviceVo> devices) {
-		this.devices = devices;
-	}
-
-	public List<GeofenceVo> getGeofences() {
-		return geofences;
-	}
-
-	public void setGeofences(List<GeofenceVo> geofences) {
-		this.geofences = geofences;
-	}
-	
-	
 }

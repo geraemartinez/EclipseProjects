@@ -1,0 +1,16 @@
+package ctc.traccar.data.implementations;
+
+import java.util.List;
+
+import ctc.traccar.data.entities.UsersNotification;
+import ctc.traccar.data.interfaces.UsersNotificationRepositoryInt;
+
+public class UserNotificationRepository implements UsersNotificationRepositoryInt {
+
+	@Override
+	public List<UsersNotification> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

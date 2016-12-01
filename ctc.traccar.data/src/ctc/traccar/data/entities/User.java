@@ -1,129 +1,155 @@
 package ctc.traccar.data.entities;
 
 import java.io.Serializable;
-import java.util.List;
+import javax.persistence.*;
+import java.util.Date;
+import java.util.Set;
+import java.math.BigInteger;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
-@SuppressWarnings("serial")
+/**
+ * The persistent class for the users database table.
+ * 
+ */
 @Entity
 @Table(name="users")
 public class User implements Serializable {
-	
-	@Id
-	@Column(name=" id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
-	
-	@Column(name="name")
-	private String name;
-	
-	@Column(name="email", unique=true)
-	private String email;
-	
-	@Column(name="hashedpassword")
-	private String hashedpassword;
-	
-	@Column(name="salt")
-	private String salt;
-	
-	@Column(name="readonly")
-	private boolean readonly;
-	
-	@Column(name="admin")
-	private boolean admin;
-	
-	@Column(name="map")
-	private String map;
+	private static final long serialVersionUID = 1L;
 
-	@Column(name="distanceunit")
-	private String distanceunit;
+	@Id
+	@Column(name="id")
+	private BigInteger id;
+
+	@Column(name="admin")
+	private Byte admin;
+
+	@Column(name="archive")
+	private Byte archive;
+
+	@Column(name="blocked")
+	private Byte blocked;
+
+	@Column(name="companyName")
+	private String companyName;
+
+	@Column(name="email")
+	private String email;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="expirationDate")
+	private Date expirationDate;
+
+	@Column(name="firstName")
+	private String firstName;
+
+	@Column(name="lastName")
+	private String lastName;
+
+	@Column(name="login")
+	private String login;
+
+	@Column(name="managedBy_id")
+	private BigInteger managedBy_id;
+
+	@Column(name="manager")
+	private Byte manager;
+
+	@Column(name="maxNumOfDevices")
+	private Integer maxNumOfDevices;
+
+	@Column(name="notifications")
+	private Byte notifications;
+
+	@Column(name="password")
+	private String password;
+
+	@Column(name="password_hash_method")
+	private Integer passwordHashMethod;
+
+	@Column(name="phoneNumber")
+	private String phoneNumber;
+
+	@Column(name="readOnly")
+	private Byte readOnly;
 	
-	@Column(name="speedunit")
-	private String speedunit;
-	
-	@Column(name="latitude")
-	private Double latitude;
-	
-	@Column(name="longitude")
-	private Double longitude;
-	
-	@Column(name="zoom")
-	private Integer zoom;
-	
-	@Column(name="twelvehourformat")
-	private boolean twelvehourformat;
-	
-	@Column(name="attributes")
-	private String attributes;
-	
-	@Column(name="coordinateformat")
-	private String coordinateformat;
-	
-	@OneToMany(mappedBy="user",targetEntity=Notification.class,fetch=FetchType.EAGER)
-	List<Notification> notifications;
+	@Column(name="userSettings_id")
+	private BigInteger userSettings_id;
+		
+	@ManyToOne(cascade={CascadeType.ALL})
+	@JoinColumn(name="managedBy_id",insertable=false, updatable = false)
+	private User managedby;
 	
 	@ManyToMany
 	  @JoinTable(
-	      name="user_device",
+	      name="users_geofences",
 	      joinColumns= 
-	      	@JoinColumn (name="userid"),
+	      	@JoinColumn (name="user_id"),
 	      inverseJoinColumns= 
-	      	@JoinColumn(name="deviceid"))
-	  private List<Device> devices;
+	      	@JoinColumn(name="geofence_id"))
+	private Set<Geofence> geofences;
 	
+	
+	@ManyToMany(fetch=FetchType.EAGER)
+	  @JoinTable(
+	      name="users_devices",
+	      joinColumns= 
+	      	@JoinColumn (name="users_id"),
+	      inverseJoinColumns= 
+	      	@JoinColumn(name="devices_id"))
+	private Set<Device> sharedDevices;
+	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="userSettings_id", insertable = false, updatable = false)
+	private UserSetting userSettings;
 	
 	@ManyToMany
 	  @JoinTable(
-	      name="user_geofence",
+	      name="reports_users",
 	      joinColumns= 
-	      	@JoinColumn (name="userid"),
+	      	@JoinColumn (name="user_id"),
 	      inverseJoinColumns= 
-	      	@JoinColumn(name="geofenceid"))
-	  private List<Geofence> geofences;
-	
-	@ManyToMany
-	  @JoinTable(
-	      name="user_group",
-	      joinColumns= 
-	      	@JoinColumn (name="userid"),
-	      inverseJoinColumns= 
-	      	@JoinColumn(name="groupid"))
-	  private List<Group> groups;
+	      	@JoinColumn(name="report_id"))
+	private Set<Report> reports;
 	
 	
-	public Integer getId() {
+	public BigInteger getId() {
 		return id;
 	}
 
-	public List<Notification> getNotifications() {
-		return notifications;
-	}
-
-	public void setNotifications(List<Notification> notifications) {
-		this.notifications = notifications;
-	}
-
-	public void setId(Integer id) {
+	public void setId(BigInteger id) {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public Byte getAdmin() {
+		return admin;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setAdmin(Byte admin) {
+		this.admin = admin;
+	}
+
+	public Byte getArchive() {
+		return archive;
+	}
+
+	public void setArchive(Byte archive) {
+		this.archive = archive;
+	}
+
+	public Byte getBlocked() {
+		return blocked;
+	}
+
+	public void setBlocked(Byte blocked) {
+		this.blocked = blocked;
+	}
+
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 
 	public String getEmail() {
@@ -134,132 +160,148 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
-	public String getHashedpassword() {
-		return hashedpassword;
+	public Date getExpirationDate() {
+		return expirationDate;
 	}
 
-	public void setHashedpassword(String hashedpassword) {
-		this.hashedpassword = hashedpassword;
+	public void setExpirationDate(Date expirationDate) {
+		this.expirationDate = expirationDate;
 	}
 
-	public String getSalt() {
-		return salt;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setSalt(String salt) {
-		this.salt = salt;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public boolean isReadonly() {
-		return readonly;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setReadonly(boolean readonly) {
-		this.readonly = readonly;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
-	public boolean isAdmin() {
-		return admin;
+	public String getLogin() {
+		return login;
 	}
 
-	public void setAdmin(boolean admin) {
-		this.admin = admin;
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
-	public String getMap() {
-		return map;
+	public BigInteger getManagedBy_id() {
+		return managedBy_id;
 	}
 
-	public void setMap(String map) {
-		this.map = map;
+	public void setManagedBy_id(BigInteger managedBy_id) {
+		this.managedBy_id = managedBy_id;
 	}
 
-	public String getDistanceunit() {
-		return distanceunit;
+	public Byte getManager() {
+		return manager;
 	}
 
-	public void setDistanceunit(String distanceunit) {
-		this.distanceunit = distanceunit;
+	public void setManager(Byte manager) {
+		this.manager = manager;
 	}
 
-	public String getSpeedunit() {
-		return speedunit;
+	public Integer getMaxNumOfDevices() {
+		return maxNumOfDevices;
 	}
 
-	public void setSpeedunit(String speedunit) {
-		this.speedunit = speedunit;
+	public void setMaxNumOfDevices(Integer maxNumOfDevices) {
+		this.maxNumOfDevices = maxNumOfDevices;
 	}
 
-	public Double getLatitude() {
-		return latitude;
+	public Byte getNotifications() {
+		return notifications;
 	}
 
-	public void setLatitude(Double latitude) {
-		this.latitude = latitude;
+	public void setNotifications(Byte notifications) {
+		this.notifications = notifications;
 	}
 
-	public Double getLongitude() {
-		return longitude;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setLongitude(Double longitude) {
-		this.longitude = longitude;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public Integer getZoom() {
-		return zoom;
+	public Integer getPasswordHashMethod() {
+		return passwordHashMethod;
 	}
 
-	public void setZoom(Integer zoom) {
-		this.zoom = zoom;
+	public void setPasswordHashMethod(Integer passwordHashMethod) {
+		this.passwordHashMethod = passwordHashMethod;
 	}
 
-	public boolean isTwelvehourformat() {
-		return twelvehourformat;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
 
-	public void setTwelvehourformat(boolean twelvehourformat) {
-		this.twelvehourformat = twelvehourformat;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
-	public String getAttributes() {
-		return attributes;
+	public Byte getReadOnly() {
+		return readOnly;
 	}
 
-	public void setAttributes(String attributes) {
-		this.attributes = attributes;
+	public void setReadOnly(Byte readOnly) {
+		this.readOnly = readOnly;
 	}
 
-	public String getCoordinateformat() {
-		return coordinateformat;
+	public BigInteger getUserSettings_id() {
+		return userSettings_id;
 	}
 
-	public void setCoordinateformat(String coordinateformat) {
-		this.coordinateformat = coordinateformat;
+	public void setUserSettings_id(BigInteger userSettings_id) {
+		this.userSettings_id = userSettings_id;
 	}
 
-	public List<Device> getDevices() {
-		return devices;
+	public User getManagedby() {
+		return managedby;
 	}
 
-	public void setDevices(List<Device> devices) {
-		this.devices = devices;
+	public void setManagedby(User managedby) {
+		this.managedby = managedby;
 	}
-
-	public List<Geofence> getGeofences() {
+	
+	public Set<Geofence> getGeofences() {
 		return geofences;
 	}
 
-	public void setGeofences(List<Geofence> geofences) {
+	public void setGeofences(Set<Geofence> geofences) {
 		this.geofences = geofences;
 	}
 
-	public List<Group> getGroups() {
-		return groups;
+	public Set<Device> getSharedDevices() {
+		return sharedDevices;
 	}
 
-	public void setGroups(List<Group> groups) {
-		this.groups = groups;
+	public void setSharedDevices(Set<Device> sharedDevices) {
+		this.sharedDevices = sharedDevices;
+	}
+
+	public UserSetting getUserSettings() {
+		return userSettings;
+	}
+
+	public void setUserSettings(UserSetting userSettings) {
+		this.userSettings = userSettings;
+	}
+
+	public Set<Report> getReports() {
+		return reports;
+	}
+
+	public void setReports(Set<Report> reports) {
+		this.reports = reports;
 	}
 	
 	

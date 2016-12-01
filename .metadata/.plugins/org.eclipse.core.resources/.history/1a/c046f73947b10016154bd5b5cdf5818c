@@ -1,0 +1,9 @@
+package ctc.traccar.data.interfaces;
+
+import java.util.List;
+
+
+public interface UsersNotificationRepositoryInt {
+	public List<UsersNotification> getAll();
+
+}

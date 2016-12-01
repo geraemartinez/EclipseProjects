@@ -1,0 +1,6 @@
+package ctc.traccar.data.dao;
+
+public class UserRepository implements UserRepositoryInt {
+
+	
+}

@@ -1,108 +1,141 @@
 package ctc.traccar.data.entities;
 
 import java.io.Serializable;
+import javax.persistence.*;
+
 import java.util.Date;
+import java.math.BigInteger;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
-@SuppressWarnings("serial")
+/**
+ * COLUMNS AND MAPS READY
+ * 
+ */
 @Entity
 @Table(name="events")
 public class Event implements Serializable {
-	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@Column(name="id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private BigInteger id;
+
+	@Column(name="device_id")
+	private BigInteger deviceId;
 	
+	@Column(name="expired")
+	private Byte expired;
+
+	@Column(name="geoFence_id")
+	private BigInteger geoFence_id;
+
+	@Column(name="maintenance_id")
+	private BigInteger maintenanceId;
+
+	@Column(name="notificationSent")
+	private Byte notificationSent;
+
+	@Column(name="position_id")
+	private BigInteger positionId;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="time")
+	private Date time;
+
 	@Column(name="type")
 	private String type;
 	
-	@Basic(optional = false)
-	@Column(name = "servertime", insertable = false, updatable = false)
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date servertime;
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="device_id",insertable=false, updatable = false)
+	private Device device;
 	
-	@Column(name="deviceid")
-	private Integer deviceid;
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="geoFence_id",insertable=false, updatable = false)
+	private Geofence geofence;
 	
-	@Column(name="positionid")
-	private Integer positionid;
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="maintenance_id",insertable=false, updatable = false)
+	private Maintenance maintenance;
 	
-	@Column(name="geofenceid")
-	private Integer geofenceid;
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="position_id",insertable=false, updatable = false)
+	private Position position;
 	
-	@Column(name="attributes")
-	private String attributes;
+	
 
-	@ManyToOne(optional=false)
-	@JoinColumn(name="id",insertable=false, updatable=false)
-	private Device device; 
-	
-	public Integer getId() {
-		return id;
+	public Event() {
 	}
 
-	public void setId(Integer id) {
+	public BigInteger getId() {
+		return this.id;
+	}
+
+	public void setId(BigInteger id) {
 		this.id = id;
 	}
 
+	public BigInteger getDeviceId() {
+		return this.deviceId;
+	}
+
+	public void setDeviceId(BigInteger deviceId) {
+		this.deviceId = deviceId;
+	}
+
+	public Byte getExpired() {
+		return this.expired;
+	}
+
+	public void setExpired(Byte expired) {
+		this.expired = expired;
+	}
+
+	public BigInteger getGeoFence_id() {
+		return this.geoFence_id;
+	}
+
+	public void setGeoFence_id(BigInteger geoFence_id) {
+		this.geoFence_id = geoFence_id;
+	}
+
+	public BigInteger getMaintenanceId() {
+		return this.maintenanceId;
+	}
+
+	public void setMaintenanceId(BigInteger maintenanceId) {
+		this.maintenanceId = maintenanceId;
+	}
+
+	public Byte getNotificationSent() {
+		return this.notificationSent;
+	}
+
+	public void setNotificationSent(Byte notificationSent) {
+		this.notificationSent = notificationSent;
+	}
+
+	public BigInteger getPositionId() {
+		return this.positionId;
+	}
+
+	public void setPositionId(BigInteger positionId) {
+		this.positionId = positionId;
+	}
+
+	public Date getTime() {
+		return this.time;
+	}
+
+	public void setTime(Date time) {
+		this.time = time;
+	}
+
 	public String getType() {
-		return type;
+		return this.type;
 	}
 
 	public void setType(String type) {
 		this.type = type;
-	}
-
-	public Date getServertime() {
-		return servertime;
-	}
-
-	public void setServertime(Date servertime) {
-		this.servertime = servertime;
-	}
-
-	public Integer getDeviceid() {
-		return deviceid;
-	}
-
-	public void setDeviceid(Integer deviceid) {
-		this.deviceid = deviceid;
-	}
-
-	public Integer getPositionid() {
-		return positionid;
-	}
-
-	public void setPositionid(Integer positionid) {
-		this.positionid = positionid;
-	}
-
-	public Integer getGeofenceid() {
-		return geofenceid;
-	}
-
-	public void setGeofenceid(Integer geofenceid) {
-		this.geofenceid = geofenceid;
-	}
-
-	public String getAttributes() {
-		return attributes;
-	}
-
-	public void setAttributes(String attributes) {
-		this.attributes = attributes;
 	}
 
 	public Device getDevice() {
@@ -112,6 +145,31 @@ public class Event implements Serializable {
 	public void setDevice(Device device) {
 		this.device = device;
 	}
-	
-	
+
+	public Geofence getGeofence() {
+		return geofence;
+	}
+
+	public void setGeofence(Geofence geofence) {
+		this.geofence = geofence;
+	}
+
+	public Maintenance getMaintenance() {
+		return maintenance;
+	}
+
+	public void setMaintenance(Maintenance maintenance) {
+		this.maintenance = maintenance;
+	}
+
+	public Position getPosition() {
+		return position;
+	}
+
+	public void setPosition(Position position) {
+		this.position = position;
+	}
+
+
+
 }

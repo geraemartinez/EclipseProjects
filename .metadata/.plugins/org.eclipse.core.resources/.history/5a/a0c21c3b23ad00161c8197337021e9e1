@@ -1,8 +1,0 @@
-package ctc.traccar.data.dao;
-
-public interface StatisticInt {
-
-	public List<Statistic> getAll();
-	public List<Statistic> getById();
-	
-}

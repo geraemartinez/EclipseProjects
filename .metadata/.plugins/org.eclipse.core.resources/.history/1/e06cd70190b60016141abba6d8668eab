@@ -1,0 +1,32 @@
+package ctc.traccar.models.vo;
+
+import java.io.Serializable;
+import java.math.BigInteger;
+
+
+
+/**
+ * COLUMNS AND MAPS READY
+ * 
+ */
+public class DevicesGeofence implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
+	private BigInteger geofenceId;
+
+	private BigInteger deviceId;
+	
+	public BigInteger getGeofenceId() {
+		return this.geofenceId;
+	}
+	public void setGeofenceId(BigInteger geofenceId) {
+		this.geofenceId = geofenceId;
+	}
+	public BigInteger getDeviceId() {
+		return this.deviceId;
+	}
+	public void setDeviceId(BigInteger deviceId) {
+		this.deviceId = deviceId;
+	}
+
+}

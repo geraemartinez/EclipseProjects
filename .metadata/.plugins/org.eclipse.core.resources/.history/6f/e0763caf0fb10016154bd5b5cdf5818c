@@ -1,0 +1,82 @@
+package model;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+
+/**
+ * The persistent class for the pictures database table.
+ * 
+ */
+@Entity
+@Table(name="pictures")
+@NamedQuery(name="Picture.findAll", query="SELECT p FROM Picture p")
+public class Picture implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	private String id;
+
+	@Lob
+	private byte[] data;
+
+	private int height;
+
+	private String mimeType;
+
+	private String type;
+
+	private int width;
+
+	public Picture() {
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public byte[] getData() {
+		return this.data;
+	}
+
+	public void setData(byte[] data) {
+		this.data = data;
+	}
+
+	public int getHeight() {
+		return this.height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public String getMimeType() {
+		return this.mimeType;
+	}
+
+	public void setMimeType(String mimeType) {
+		this.mimeType = mimeType;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public int getWidth() {
+		return this.width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+}

@@ -1,0 +1,41 @@
+package ctc.traccar.data.entities;
+
+import java.io.Serializable;
+import java.math.BigInteger;
+
+import javax.persistence.*;
+
+
+
+/**
+ * The persistent class for the groups_users database table.
+ * 
+ */
+@Entity
+@Table(name="groups_users")
+public class GroupsUser implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+
+	@Column(name="group_id")
+	private BigInteger groupId;
+
+	@Column(name="user_id")
+	private BigInteger userId;
+
+	public GroupsUser() {
+	}
+
+	public BigInteger getGroupId() {
+		return this.groupId;
+	}
+	public void setGroupId(BigInteger groupId) {
+		this.groupId = groupId;
+	}
+	public BigInteger getUserId() {
+		return this.userId;
+	}
+	public void setUserId(BigInteger userId) {
+		this.userId = userId;
+	}
+}

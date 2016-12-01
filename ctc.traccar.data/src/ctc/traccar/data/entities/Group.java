@@ -1,115 +1,110 @@
 package ctc.traccar.data.entities;
 
 import java.io.Serializable;
-import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-@SuppressWarnings("serial")
+import java.math.BigInteger;
+import java.util.Set;
+
+
+/**
+ * COLUMNS AND MAPS READY
+ * 
+ */
 @Entity
 @Table(name="groups")
 public class Group implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name="id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private BigInteger id;
+	
+	@Column(name="description")
+	private String description;
 	
 	@Column(name="name")
 	private String name;
 	
-	@Column(name="groupid")
-	private Integer groupid;
+	@Column(name="parent_id")
+	private BigInteger parentId;
 	
-	@Column(name="attributes")
-	private String attributes;
-	
-	@ManyToOne
-    private Group parent;
+	@ManyToOne(cascade={CascadeType.ALL})
+	@JoinColumn(name="parent_id",insertable=false, updatable = false)
+	private Group parent;
 	
     @OneToMany(mappedBy="parent")
-    private List<Group> groups;
-	
-	@ManyToMany(mappedBy="groups")
-	private List<User> users;
-	
-	@OneToMany(mappedBy="group",targetEntity=Device.class,fetch=FetchType.EAGER)
-	List<Device> devices;
-	
+    private Set<Group> groups;
+
 	@ManyToMany
 	  @JoinTable(
-	      name="group_geofence",
-	      joinColumns= 
-	      	@JoinColumn (name="groupid"),
-	      inverseJoinColumns= 
-	      	@JoinColumn(name="geofenceid"))
-	private List<Geofence> geofences;
+	      name="groups_users",
+	  joinColumns= 
+	  	@JoinColumn (name="group_id"),
+	  inverseJoinColumns= 
+	  	@JoinColumn(name="user_id"))
+	private Set<User> users;
 	
-	public Integer getId() {
-		return id;
+	public Group() {
 	}
-	public void setId(Integer id) {
+
+	public BigInteger getId() {
+		return this.id;
+	}
+
+	public void setId(BigInteger id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+
+	public String getDescription() {
+		return this.description;
 	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Integer getGroupid() {
-		return groupid;
+
+	public BigInteger getParentId() {
+		return this.parentId;
 	}
-	public void setGroupid(Integer groupid) {
-		this.groupid = groupid;
+
+	public void setParentId(BigInteger parentId) {
+		this.parentId = parentId;
 	}
-	public String getAttributes() {
-		return attributes;
-	}
-	public void setAttributes(String attributes) {
-		this.attributes = attributes;
-	}
+
+
 	public Group getParent() {
 		return parent;
 	}
+
 	public void setParent(Group parent) {
 		this.parent = parent;
 	}
-	public List<Group> getGroups() {
+
+	public Set<Group> getGroups() {
 		return groups;
 	}
-	public void setGroups(List<Group> groups) {
+
+	public void setGroups(Set<Group> groups) {
 		this.groups = groups;
 	}
-	public List<User> getUsers() {
+
+	public Set<User> getUsers() {
 		return users;
 	}
-	public void setUsers(List<User> users) {
+
+	public void setUsers(Set<User> users) {
 		this.users = users;
 	}
-	public List<Device> getDevices() {
-		return devices;
-	}
-	public void setDevices(List<Device> devices) {
-		this.devices = devices;
-	}
-	public List<Geofence> getGeofences() {
-		return geofences;
-	}
-	public void setGeofences(List<Geofence> geofences) {
-		this.geofences = geofences;
-	}
-	
-	
+
+
 	
 }

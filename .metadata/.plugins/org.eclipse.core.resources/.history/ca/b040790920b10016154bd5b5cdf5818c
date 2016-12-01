@@ -1,0 +1,33 @@
+package ctc.traccar.data.entities;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+import model.UsersDevicePK;
+
+
+/**
+ * The persistent class for the users_devices database table.
+ * 
+ */
+@Entity
+@Table(name="users_devices")
+@NamedQuery(name="UsersDevice.findAll", query="SELECT u FROM UsersDevice u")
+public class UsersDevice implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@EmbeddedId
+	private UsersDevicePK id;
+
+	public UsersDevice() {
+	}
+
+	public UsersDevicePK getId() {
+		return this.id;
+	}
+
+	public void setId(UsersDevicePK id) {
+		this.id = id;
+	}
+
+}

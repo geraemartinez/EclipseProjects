@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;UserController.java&apos; to &apos;ctc.traccar.web/src/ctc.traccar.web.controllers&apos;&#x0A;- Original project: &apos;ctc.traccar.web&apos;&#x0A;- Destination element: &apos;ctc.traccar.web/src/ctc.traccar.web.controllers&apos;&#x0A;- Original element: &apos;ctc.traccar.web.controllers.UserController.java&apos;" description="Copy compilation unit" destination="/src&lt;ctc.traccar.web.controllers" element1="/src&lt;ctc.traccar.web.controllers{UserController.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1480446801870" units="1" version="1.0"/>
+</session>

@@ -2,5 +2,11 @@
     <wb-module deploy-name="ctc.traccar.business">
         <wb-resource deploy-path="/" source-path="/src"/>
         <wb-resource deploy-path="/" source-path="/config"/>
+        <dependent-module archiveName="ctc.traccar.data.jar" deploy-path="/" handle="module:/resource/ctc.traccar.data/ctc.traccar.data">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ctc.traccar.models.jar" deploy-path="/" handle="module:/resource/ctc.traccar.models/ctc.traccar.models">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
     </wb-module>
 </project-modules>

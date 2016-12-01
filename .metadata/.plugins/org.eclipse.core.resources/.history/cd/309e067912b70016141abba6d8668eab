@@ -1,0 +1,163 @@
+package ctc.traccar.models.vo;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import ctc.traccar.data.entities.Device;
+import ctc.traccar.data.entities.Geofence;
+import ctc.traccar.data.entities.Maintenance;
+import ctc.traccar.data.entities.Position;
+
+import java.math.BigInteger;
+
+
+/**
+ * COLUMNS AND MAPS READY
+ * 
+ */
+
+public class EventVo implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+
+	private BigInteger id;
+
+	private BigInteger deviceId;
+	
+	private Byte expired;
+
+	private BigInteger geoFence_id;
+
+	private BigInteger maintenanceId;
+
+	private Byte notificationSent;
+
+	private BigInteger positionId;
+
+	private Date time;
+
+	private String type;
+	
+	private MaintenanceVo maintenance;
+	
+	private DeviceVo device;
+
+	private GeofenceVo geofence;
+
+	private PositionVo position;
+
+	public EventVo() {
+	}
+
+	public BigInteger getId() {
+		return this.id;
+	}
+
+	public void setId(BigInteger id) {
+		this.id = id;
+	}
+
+	public BigInteger getDeviceId() {
+		return this.deviceId;
+	}
+
+	public void setDeviceId(BigInteger deviceId) {
+		this.deviceId = deviceId;
+	}
+
+	public byte getExpired() {
+		return this.expired;
+	}
+
+	public void setExpired(byte expired) {
+		this.expired = expired;
+	}
+
+	public BigInteger getGeoFence_id() {
+		return this.geoFence_id;
+	}
+
+	public void setGeoFence_id(BigInteger geoFence_id) {
+		this.geoFence_id = geoFence_id;
+	}
+
+	public BigInteger getMaintenanceId() {
+		return this.maintenanceId;
+	}
+
+	public void setMaintenanceId(BigInteger maintenanceId) {
+		this.maintenanceId = maintenanceId;
+	}
+
+	public byte getNotificationSent() {
+		return this.notificationSent;
+	}
+
+	public void setNotificationSent(byte notificationSent) {
+		this.notificationSent = notificationSent;
+	}
+
+	public BigInteger getPositionId() {
+		return this.positionId;
+	}
+
+	public void setPositionId(BigInteger positionId) {
+		this.positionId = positionId;
+	}
+
+	public Date getTime() {
+		return this.time;
+	}
+
+	public void setTime(Date time) {
+		this.time = time;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public MaintenanceVo getMaintenance() {
+		return maintenance;
+	}
+
+	public void setMaintenance(MaintenanceVo maintenance) {
+		this.maintenance = maintenance;
+	}
+
+	public DeviceVo getDevice() {
+		return device;
+	}
+
+	public void setDevice(DeviceVo device) {
+		this.device = device;
+	}
+
+	public GeofenceVo getGeofence() {
+		return geofence;
+	}
+
+	public void setGeofence(GeofenceVo geofence) {
+		this.geofence = geofence;
+	}
+
+	public PositionVo getPosition() {
+		return position;
+	}
+
+	public void setPosition(PositionVo position) {
+		this.position = position;
+	}
+
+	
+}

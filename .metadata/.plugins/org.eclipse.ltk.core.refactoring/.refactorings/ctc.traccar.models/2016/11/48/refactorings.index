@@ -1,0 +1,17 @@
+1479870616158	Delete elements
+1479870668735	Rename type 'User'
+1479870680188	Rename type 'UsersNotification'
+1479914494143	Delete elements
+1479925296984	Rename type 'UiState'
+1479925314511	Encapsulate field 'uiStateVo'
+1479931639660	Delete element
+1479938088233	Copy files
+1479939931562	Rename type 'UiState'
+1480017504573	Rename type 'NotificationSetting'
+1480027544429	Rename type 'NotificationTemplate'
+1480029406141	Rename type 'Group'
+1480031396184	Rename type 'Device'
+1480034323414	Rename type 'Geofence'
+1480034418088	Rename type 'Report'
+1480034723052	Rename type 'UserSetting'
+1480034810985	Rename type 'ApplicationSetting'

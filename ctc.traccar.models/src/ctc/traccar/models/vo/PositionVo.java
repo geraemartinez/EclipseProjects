@@ -2,152 +2,165 @@ package ctc.traccar.models.vo;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+import java.math.BigInteger;
 
+
+/**
+ * The persistent class for the positions database table.
+ * 
+ */
 
 public class PositionVo implements Serializable {
-	
 	private static final long serialVersionUID = 1L;
 
-	private Integer id;
-	
-	private String protocol;
-	
-	private Integer deviceid;
-	
-	private Date servertime;
-	
-	private Date devicetime;
+	private BigInteger id;
 
-	private Date fixtime;
-	
-	private Boolean valid;
-	
-	private Double latitude;
-	
-	private Double longitude;
-	
-	private Float altitude;
-	
-	private Float speed;
-	
-	private Float course;
-	
 	private String address;
-	
-	private String attributes;
-	
+
+	private double altitude;
+
+	private double course;
+
+	private BigInteger deviceId;
+
+	private double latitude;
+
+	private double longitude;
+
+	private String other;
+
+	private double power;
+
+	private String protocol;
+
+	private Date serverTime;
+
+	private double speed;
+
+	private Date time;
+
+	private byte valid;
+
 	private DeviceVo device;
 
-	public Integer getId() {
-		return id;
+	private List<DeviceVo> devices;
+	
+	private List<EventVo> events;
+	
+	public PositionVo() {
 	}
 
-	public void setId(Integer id) {
+	public BigInteger getId() {
+		return this.id;
+	}
+
+	public void setId(BigInteger id) {
 		this.id = id;
 	}
 
-	public String getProtocol() {
-		return protocol;
-	}
-
-	public void setProtocol(String protocol) {
-		this.protocol = protocol;
-	}
-
-	public Integer getDeviceid() {
-		return deviceid;
-	}
-
-	public void setDeviceid(Integer deviceid) {
-		this.deviceid = deviceid;
-	}
-
-	public Date getServertime() {
-		return servertime;
-	}
-
-	public void setServertime(Date servertime) {
-		this.servertime = servertime;
-	}
-
-	public Date getDevicetime() {
-		return devicetime;
-	}
-
-	public void setDevicetime(Date devicetime) {
-		this.devicetime = devicetime;
-	}
-
-	public Date getFixtime() {
-		return fixtime;
-	}
-
-	public void setFixtime(Date fixtime) {
-		this.fixtime = fixtime;
-	}
-
-	public Boolean getValid() {
-		return valid;
-	}
-
-	public void setValid(Boolean valid) {
-		this.valid = valid;
-	}
-
-	public Double getLatitude() {
-		return latitude;
-	}
-
-	public void setLatitude(Double latitude) {
-		this.latitude = latitude;
-	}
-
-	public Double getLongitude() {
-		return longitude;
-	}
-
-	public void setLongitude(Double longitude) {
-		this.longitude = longitude;
-	}
-
-	public Float getAltitude() {
-		return altitude;
-	}
-
-	public void setAltitude(Float altitude) {
-		this.altitude = altitude;
-	}
-
-	public Float getSpeed() {
-		return speed;
-	}
-
-	public void setSpeed(Float speed) {
-		this.speed = speed;
-	}
-
-	public Float getCourse() {
-		return course;
-	}
-
-	public void setCourse(Float course) {
-		this.course = course;
-	}
-
 	public String getAddress() {
-		return address;
+		return this.address;
 	}
 
 	public void setAddress(String address) {
 		this.address = address;
 	}
 
-	public String getAttributes() {
-		return attributes;
+	public double getAltitude() {
+		return this.altitude;
 	}
 
-	public void setAttributes(String attributes) {
-		this.attributes = attributes;
+	public void setAltitude(double altitude) {
+		this.altitude = altitude;
+	}
+
+	public double getCourse() {
+		return this.course;
+	}
+
+	public void setCourse(double course) {
+		this.course = course;
+	}
+
+	public BigInteger getDeviceId() {
+		return this.deviceId;
+	}
+
+	public void setDeviceId(BigInteger deviceId) {
+		this.deviceId = deviceId;
+	}
+
+	public double getLatitude() {
+		return this.latitude;
+	}
+
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+
+	public double getLongitude() {
+		return this.longitude;
+	}
+
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+	}
+
+	public String getOther() {
+		return this.other;
+	}
+
+	public void setOther(String other) {
+		this.other = other;
+	}
+
+	public double getPower() {
+		return this.power;
+	}
+
+	public void setPower(double power) {
+		this.power = power;
+	}
+
+	public String getProtocol() {
+		return this.protocol;
+	}
+
+	public void setProtocol(String protocol) {
+		this.protocol = protocol;
+	}
+
+	public Date getServerTime() {
+		return this.serverTime;
+	}
+
+	public void setServerTime(Date serverTime) {
+		this.serverTime = serverTime;
+	}
+
+	public double getSpeed() {
+		return this.speed;
+	}
+
+	public void setSpeed(double speed) {
+		this.speed = speed;
+	}
+
+	public Date getTime() {
+		return this.time;
+	}
+
+	public void setTime(Date time) {
+		this.time = time;
+	}
+
+	public byte getValid() {
+		return this.valid;
+	}
+
+	public void setValid(byte valid) {
+		this.valid = valid;
 	}
 
 	public DeviceVo getDevice() {
@@ -158,9 +171,21 @@ public class PositionVo implements Serializable {
 		this.device = device;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public List<DeviceVo> getDevices() {
+		return devices;
 	}
-	
+
+	public void setDevices(List<DeviceVo> devices) {
+		this.devices = devices;
+	}
+
+	public List<EventVo> getEvents() {
+		return events;
+	}
+
+	public void setEvents(List<EventVo> events) {
+		this.events = events;
+	}
+
 	
 }

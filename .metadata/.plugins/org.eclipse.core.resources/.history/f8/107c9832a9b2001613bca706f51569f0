@@ -1,0 +1,354 @@
+package ctc.traccar.models.vo;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+
+import ctc.traccar.data.entities.User;
+
+import java.math.BigInteger;
+
+
+/**
+ * COLUMNS AND MAPS READY
+ * 
+ */
+
+public class DeviceVo implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+
+	private BigInteger id;
+	
+	private byte autoUpdateOdometer;
+	
+	private String description;
+
+	private BigInteger groupId;
+
+	private BigInteger iconId;
+
+	private String iconArrowMovingColor;
+
+	private String iconArrowOfflineColor;
+
+	private String iconArrowPausedColor;
+
+	private double iconArrowRadius;
+
+	private String iconArrowStoppedColor;
+
+	private String iconMode;
+
+	private byte iconRotation;
+
+	private String iconType;
+
+	private double idleSpeedThreshold;
+
+	private Date lastupdate;
+	
+	private BigInteger latestPosition_id;
+
+	private int minIdleTime;
+
+	private String name;
+
+	private double odometer;
+
+	private BigInteger ownerId;
+	
+	private String phoneNumber;
+
+	private BigInteger photoId;
+
+	private String plateNumber;
+
+	private byte showName;
+
+	private byte showOdometer;
+
+	private byte showProtocol;
+
+	private double speedLimit;
+
+	private String status;
+
+	private int timeout;
+
+	private String uniqueId;
+
+	private String vehicleInfo;
+	
+	private UserVo owner;
+	
+	private List<UserVo> sharedUsers;
+
+	public DeviceVo() {
+	}
+
+	public BigInteger getId() {
+		return this.id;
+	}
+
+	public void setId(BigInteger id) {
+		this.id = id;
+	}
+
+	public byte getAutoUpdateOdometer() {
+		return this.autoUpdateOdometer;
+	}
+
+	public void setAutoUpdateOdometer(byte autoUpdateOdometer) {
+		this.autoUpdateOdometer = autoUpdateOdometer;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public BigInteger getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(BigInteger groupId) {
+		this.groupId = groupId;
+	}
+
+	public BigInteger getIconId() {
+		return this.iconId;
+	}
+
+	public void setIconId(BigInteger iconId) {
+		this.iconId = iconId;
+	}
+
+	public String getIconArrowMovingColor() {
+		return this.iconArrowMovingColor;
+	}
+
+	public void setIconArrowMovingColor(String iconArrowMovingColor) {
+		this.iconArrowMovingColor = iconArrowMovingColor;
+	}
+
+	public String getIconArrowOfflineColor() {
+		return this.iconArrowOfflineColor;
+	}
+
+	public void setIconArrowOfflineColor(String iconArrowOfflineColor) {
+		this.iconArrowOfflineColor = iconArrowOfflineColor;
+	}
+
+	public String getIconArrowPausedColor() {
+		return this.iconArrowPausedColor;
+	}
+
+	public void setIconArrowPausedColor(String iconArrowPausedColor) {
+		this.iconArrowPausedColor = iconArrowPausedColor;
+	}
+
+	public double getIconArrowRadius() {
+		return this.iconArrowRadius;
+	}
+
+	public void setIconArrowRadius(double iconArrowRadius) {
+		this.iconArrowRadius = iconArrowRadius;
+	}
+
+	public String getIconArrowStoppedColor() {
+		return this.iconArrowStoppedColor;
+	}
+
+	public void setIconArrowStoppedColor(String iconArrowStoppedColor) {
+		this.iconArrowStoppedColor = iconArrowStoppedColor;
+	}
+
+	public String getIconMode() {
+		return this.iconMode;
+	}
+
+	public void setIconMode(String iconMode) {
+		this.iconMode = iconMode;
+	}
+
+	public byte getIconRotation() {
+		return this.iconRotation;
+	}
+
+	public void setIconRotation(byte iconRotation) {
+		this.iconRotation = iconRotation;
+	}
+
+	public String getIconType() {
+		return this.iconType;
+	}
+
+	public void setIconType(String iconType) {
+		this.iconType = iconType;
+	}
+
+	public double getIdleSpeedThreshold() {
+		return this.idleSpeedThreshold;
+	}
+
+	public void setIdleSpeedThreshold(double idleSpeedThreshold) {
+		this.idleSpeedThreshold = idleSpeedThreshold;
+	}
+
+	public Date getLastupdate() {
+		return this.lastupdate;
+	}
+
+	public void setLastupdate(Date lastupdate) {
+		this.lastupdate = lastupdate;
+	}
+
+	public BigInteger getLatestPosition_id() {
+		return this.latestPosition_id;
+	}
+
+	public void setLatestPosition_id(BigInteger latestPosition_id) {
+		this.latestPosition_id = latestPosition_id;
+	}
+
+	public int getMinIdleTime() {
+		return this.minIdleTime;
+	}
+
+	public void setMinIdleTime(int minIdleTime) {
+		this.minIdleTime = minIdleTime;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getOdometer() {
+		return this.odometer;
+	}
+
+	public void setOdometer(double odometer) {
+		this.odometer = odometer;
+	}
+
+	public BigInteger getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(BigInteger ownerId) {
+		this.ownerId = ownerId;
+	}
+
+	public String getPhoneNumber() {
+		return this.phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public BigInteger getPhotoId() {
+		return this.photoId;
+	}
+
+	public void setPhotoId(BigInteger photoId) {
+		this.photoId = photoId;
+	}
+
+	public String getPlateNumber() {
+		return this.plateNumber;
+	}
+
+	public void setPlateNumber(String plateNumber) {
+		this.plateNumber = plateNumber;
+	}
+
+	public byte getShowName() {
+		return this.showName;
+	}
+
+	public void setShowName(byte showName) {
+		this.showName = showName;
+	}
+
+	public byte getShowOdometer() {
+		return this.showOdometer;
+	}
+
+	public void setShowOdometer(byte showOdometer) {
+		this.showOdometer = showOdometer;
+	}
+
+	public byte getShowProtocol() {
+		return this.showProtocol;
+	}
+
+	public void setShowProtocol(byte showProtocol) {
+		this.showProtocol = showProtocol;
+	}
+
+	public double getSpeedLimit() {
+		return this.speedLimit;
+	}
+
+	public void setSpeedLimit(double speedLimit) {
+		this.speedLimit = speedLimit;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public int getTimeout() {
+		return this.timeout;
+	}
+
+	public void setTimeout(int timeout) {
+		this.timeout = timeout;
+	}
+
+	public String getUniqueId() {
+		return this.uniqueId;
+	}
+
+	public void setUniqueId(String uniqueId) {
+		this.uniqueId = uniqueId;
+	}
+
+	public String getVehicleInfo() {
+		return this.vehicleInfo;
+	}
+
+	public void setVehicleInfo(String vehicleInfo) {
+		this.vehicleInfo = vehicleInfo;
+	}
+
+	public UserVo getOwner() {
+		return owner;
+	}
+
+	public void setOwner(UserVo owner) {
+		this.owner = owner;
+	}
+
+	public List<UserVo> getSharedUsers() {
+		return sharedUsers;
+	}
+
+	public void setSharedUsers(List<UserVo> sharedUsers) {
+		this.sharedUsers = sharedUsers;
+	}
+
+}

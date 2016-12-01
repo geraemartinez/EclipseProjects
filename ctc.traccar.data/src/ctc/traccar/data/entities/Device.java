@@ -1,199 +1,420 @@
 package ctc.traccar.data.entities;
 
 import java.io.Serializable;
+import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import java.math.BigInteger;
 
-@SuppressWarnings("serial")
 @Entity
-@Table (name="devices")
+@Table(name="devices")
 public class Device implements Serializable {
-	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@Column(name="id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private BigInteger id;
 	
-	@Column(name="name")
-	private String name;
+	@Column(name="autoUpdateOdometer")
+	private Byte autoUpdateOdometer;
 	
-	@Column(name="uniqueid",unique=true)
-	private String uniqueid;
-	
-	@Basic(optional = false)
-	@Column(name = "lastupdate", insertable = false, updatable = false)
+	@Column(name="description")
+	private String description;
+
+	@Column(name="group_id")
+	private BigInteger groupId;
+
+	@Column(name="icon_id")
+	private BigInteger iconId;
+
+	@Column(name="iconArrowMovingColor")
+	private String iconArrowMovingColor;
+
+	@Column(name="iconArrowOfflineColor")
+	private String iconArrowOfflineColor;
+
+	@Column(name="iconArrowPausedColor")
+	private String iconArrowPausedColor;
+
+	@Column(name="iconArrowRadius")
+	private Double iconArrowRadius;
+
+	@Column(name="iconArrowStoppedColor")
+	private String iconArrowStoppedColor;
+
+	@Column(name="iconMode")
+	private String iconMode;
+
+	@Column(name="iconRotation")
+	private Byte iconRotation;
+
+	@Column(name="iconType")
+	private String iconType;
+
+	@Column(name="idleSpeedThreshold")
+	private Double idleSpeedThreshold;
+
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="lastupdate")
 	private Date lastupdate;
 	
-	@Column(name="positionid")
-	private Integer positionid;
+	@Column(name="latestPosition_id")
+	private BigInteger latestPosition_id;
+
+	@Column(name="minIdleTime")
+	private Integer minIdleTime;
+
+	@Column(name="name")
+	private String name;
+
+	@Column(name="odometer")
+	private Double odometer;
+
+	@Column(name="owner_id")
+	private BigInteger ownerId;
 	
-	@Column(name="groupid")
-	private Integer groupid;
+	@Column(name="phoneNumber")
+	private String phoneNumber;
+
+	@Column(name="photo_id")
+	private BigInteger photoId;
+
+	@Column(name="plateNumber")
+	private String plateNumber;
+
+	@Column(name="showName")
+	private Byte showName;
+
+	@Column(name="showOdometer")
+	private Byte showOdometer;
+
+	@Column(name="showProtocol")
+	private Byte showProtocol;
+
+	@Column(name="speedLimit")
+	private Double speedLimit;
+
+	@Column(name="status")
+	private String status;
+
+	@Column(name="timeout")
+	private Integer timeout;
+
+	@Column(name="uniqueId")
+	private String uniqueId;
+
+	@Column(name="vehicleInfo")
+	private String vehicleInfo;
 	
-	@Column(name="attributes")
-	private String attributes;
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="owner_id",insertable=false, updatable = false)
+	private User owner;
 	
-	@Column(name="phone")
-	private String phone;
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="icon_id",insertable=false, updatable = false)
+	private DeviceIcon deviceIcon;
 	
-	@Column(name="model")
-	private String model;
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="photo_id",insertable=false, updatable = false)
+	private Picture picture;
 	
-	@Column(name="contact")
-	private String contact;
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="latestPosition_id",insertable=false, updatable = false)
+	private Position lastPosition;
 	
-	@Column(name="category")
-	private String category;
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="group_id",insertable=false, updatable = false)
+	private Group group;
 	
-	@OneToMany(mappedBy="device",targetEntity=Position.class,fetch=FetchType.EAGER)
-	List<Position> positions;
 	
-	@OneToMany(mappedBy="device",targetEntity=Position.class,fetch=FetchType.EAGER)
-	List<Event> events;
-	
-	@OneToMany(mappedBy="device",targetEntity=Position.class,fetch=FetchType.EAGER)
-	List<AttributeAliase> attributeAliases;
-	
-	@ManyToMany(mappedBy="devices")
-	private List<User> users;
-	
-	@ManyToMany
-	  @JoinTable(
-	      name="device_geofence",
-	      joinColumns= 
-	      	@JoinColumn (name="deviceid"),
-	      inverseJoinColumns= 
-	      	@JoinColumn(name="geofenceid"))
-	private List<Geofence> geofences;
-	
-	@ManyToOne(optional=false)
-	@JoinColumn(name="id",insertable=false, updatable=false)
-	private Group group; 
-	
-	public Integer getId() {
-		return id;
+
+	public BigInteger getId() {
+		return this.id;
 	}
-	public void setId(Integer id) {
+
+	public void setId(BigInteger id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+
+	public Byte getAutoUpdateOdometer() {
+		return this.autoUpdateOdometer;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setAutoUpdateOdometer(Byte autoUpdateOdometer) {
+		this.autoUpdateOdometer = autoUpdateOdometer;
 	}
-	public String getUniqueid() {
-		return uniqueid;
+
+	public String getDescription() {
+		return this.description;
 	}
-	public void setUniqueid(String uniqueid) {
-		this.uniqueid = uniqueid;
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
-	public Date getLastTouched() {
-		return lastupdate;
+
+	public BigInteger getGroupId() {
+		return this.groupId;
 	}
-	public void setLastTouched(Date lastupdate) {
-		this.lastupdate = lastupdate;
+
+	public void setGroupId(BigInteger groupId) {
+		this.groupId = groupId;
 	}
-	public Integer getPositionid() {
-		return positionid;
+
+	public BigInteger getIconId() {
+		return this.iconId;
 	}
-	public void setPositionid(Integer positionid) {
-		this.positionid = positionid;
+
+	public void setIconId(BigInteger iconId) {
+		this.iconId = iconId;
 	}
-	public Integer getGroupid() {
-		return groupid;
+
+	public String getIconArrowMovingColor() {
+		return this.iconArrowMovingColor;
 	}
-	public void setGroupid(Integer groupid) {
-		this.groupid = groupid;
+
+	public void setIconArrowMovingColor(String iconArrowMovingColor) {
+		this.iconArrowMovingColor = iconArrowMovingColor;
 	}
-	public String getAttributes() {
-		return attributes;
+
+	public String getIconArrowOfflineColor() {
+		return this.iconArrowOfflineColor;
 	}
-	public void setAttributes(String attributes) {
-		this.attributes = attributes;
+
+	public void setIconArrowOfflineColor(String iconArrowOfflineColor) {
+		this.iconArrowOfflineColor = iconArrowOfflineColor;
 	}
-	public String getPhone() {
-		return phone;
+
+	public String getIconArrowPausedColor() {
+		return this.iconArrowPausedColor;
 	}
-	public void setPhone(String phone) {
-		this.phone = phone;
+
+	public void setIconArrowPausedColor(String iconArrowPausedColor) {
+		this.iconArrowPausedColor = iconArrowPausedColor;
 	}
-	public String getModel() {
-		return model;
+
+	public Double getIconArrowRadius() {
+		return this.iconArrowRadius;
 	}
-	public void setModel(String model) {
-		this.model = model;
+
+	public void setIconArrowRadius(Double iconArrowRadius) {
+		this.iconArrowRadius = iconArrowRadius;
 	}
-	public String getContact() {
-		return contact;
+
+	public String getIconArrowStoppedColor() {
+		return this.iconArrowStoppedColor;
 	}
-	public void setContact(String contact) {
-		this.contact = contact;
+
+	public void setIconArrowStoppedColor(String iconArrowStoppedColor) {
+		this.iconArrowStoppedColor = iconArrowStoppedColor;
 	}
-	public String getCategory() {
-		return category;
+
+	public String getIconMode() {
+		return this.iconMode;
 	}
-	public void setCategory(String category) {
-		this.category = category;
+
+	public void setIconMode(String iconMode) {
+		this.iconMode = iconMode;
 	}
+
+	public Byte getIconRotation() {
+		return this.iconRotation;
+	}
+
+	public void setIconRotation(Byte iconRotation) {
+		this.iconRotation = iconRotation;
+	}
+
+	public String getIconType() {
+		return this.iconType;
+	}
+
+	public void setIconType(String iconType) {
+		this.iconType = iconType;
+	}
+
+	public Double getIdleSpeedThreshold() {
+		return this.idleSpeedThreshold;
+	}
+
+	public void setIdleSpeedThreshold(Double idleSpeedThreshold) {
+		this.idleSpeedThreshold = idleSpeedThreshold;
+	}
+
 	public Date getLastupdate() {
-		return lastupdate;
+		return this.lastupdate;
 	}
+
 	public void setLastupdate(Date lastupdate) {
 		this.lastupdate = lastupdate;
 	}
-	public List<Position> getPositions() {
-		return positions;
+
+	public BigInteger getLatestPosition_id() {
+		return this.latestPosition_id;
 	}
-	public void setPositions(List<Position> positions) {
-		this.positions = positions;
+
+	public void setLatestPosition_id(BigInteger latestPosition_id) {
+		this.latestPosition_id = latestPosition_id;
 	}
-	public List<Event> getEvents() {
-		return events;
+
+	public Integer getMinIdleTime() {
+		return this.minIdleTime;
 	}
-	public void setEvents(List<Event> events) {
-		this.events = events;
+
+	public void setMinIdleTime(Integer minIdleTime) {
+		this.minIdleTime = minIdleTime;
 	}
-	public List<AttributeAliase> getAttributeAliases() {
-		return attributeAliases;
+
+	public String getName() {
+		return this.name;
 	}
-	public void setAttributeAliases(List<AttributeAliase> attributeAliases) {
-		this.attributeAliases = attributeAliases;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	public List<User> getUsers() {
-		return users;
+
+	public Double getOdometer() {
+		return this.odometer;
 	}
-	public void setUsers(List<User> users) {
-		this.users = users;
+
+	public void setOdometer(Double odometer) {
+		this.odometer = odometer;
 	}
-	public List<Geofence> getGeofences() {
-		return geofences;
+
+	public BigInteger getOwnerId() {
+		return this.ownerId;
 	}
-	public void setGeofences(List<Geofence> geofences) {
-		this.geofences = geofences;
+
+	public void setOwnerId(BigInteger ownerId) {
+		this.ownerId = ownerId;
 	}
+
+	public String getPhoneNumber() {
+		return this.phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public BigInteger getPhotoId() {
+		return this.photoId;
+	}
+
+	public void setPhotoId(BigInteger photoId) {
+		this.photoId = photoId;
+	}
+
+	public String getPlateNumber() {
+		return this.plateNumber;
+	}
+
+	public void setPlateNumber(String plateNumber) {
+		this.plateNumber = plateNumber;
+	}
+
+	public Byte getShowName() {
+		return this.showName;
+	}
+
+	public void setShowName(Byte showName) {
+		this.showName = showName;
+	}
+
+	public byte getShowOdometer() {
+		return this.showOdometer;
+	}
+
+	public void setShowOdometer(Byte showOdometer) {
+		this.showOdometer = showOdometer;
+	}
+
+	public Byte getShowProtocol() {
+		return this.showProtocol;
+	}
+
+	public void setShowProtocol(Byte showProtocol) {
+		this.showProtocol = showProtocol;
+	}
+
+	public Double getSpeedLimit() {
+		return this.speedLimit;
+	}
+
+	public void setSpeedLimit(Double speedLimit) {
+		this.speedLimit = speedLimit;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Integer getTimeout() {
+		return this.timeout;
+	}
+
+	public void setTimeout(Integer timeout) {
+		this.timeout = timeout;
+	}
+
+	public String getUniqueId() {
+		return this.uniqueId;
+	}
+
+	public void setUniqueId(String uniqueId) {
+		this.uniqueId = uniqueId;
+	}
+
+	public String getVehicleInfo() {
+		return this.vehicleInfo;
+	}
+
+	public void setVehicleInfo(String vehicleInfo) {
+		this.vehicleInfo = vehicleInfo;
+	}
+
+	public User getOwner() {
+		return owner;
+	}
+
+	public void setOwner(User owner) {
+		this.owner = owner;
+	}
+
+	public DeviceIcon getDeviceIcon() {
+		return deviceIcon;
+	}
+
+	public void setDeviceIcon(DeviceIcon deviceIcon) {
+		this.deviceIcon = deviceIcon;
+	}
+
+	public Picture getPicture() {
+		return picture;
+	}
+
+	public void setPicture(Picture picture) {
+		this.picture = picture;
+	}
+
+	public Position getLastPosition() {
+		return lastPosition;
+	}
+
+	public void setLastPosition(Position lastPosition) {
+		this.lastPosition = lastPosition;
+	}
+
 	public Group getGroup() {
 		return group;
 	}
+
 	public void setGroup(Group group) {
 		this.group = group;
 	}
-	
+
+
 }

@@ -1,0 +1,192 @@
+package ctc.traccar.data.entities;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import java.util.Date;
+import java.util.List;
+import java.math.BigInteger;
+
+
+/**
+ * The persistent class for the positions database table.
+ * 
+ */
+@Entity
+@Table(name="positions")
+public class Position implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name="id")
+	private BigInteger id;
+
+	@Column(name="address")
+	private String address;
+
+	@Column(name="altitude")
+	private double altitude;
+
+	@Column(name="course")
+	private double course;
+
+	@Column(name="device_id")
+	private BigInteger deviceId;
+
+	@Column(name="latitude")
+	private double latitude;
+
+	@Column(name="longitude")
+	private double longitude;
+
+	@Column(name="other")
+	private String other;
+
+	@Column(name="power")
+	private double power;
+
+	@Column(name="protocol")
+	private String protocol;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="serverTime")
+	private Date serverTime;
+
+	@Column(name="speed")
+	private double speed;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="time")
+	private Date time;
+
+	@Column(name="valid")
+	private byte valid;
+	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="device_id",insertable=false, updatable = false)
+	@JsonBackReference
+	private Device device;
+
+	@OneToMany(mappedBy="lastPosition",fetch=FetchType.EAGER)
+	@JsonManagedReference
+	private List<Device> devices;
+	
+	public Position() {
+	}
+
+	public BigInteger getId() {
+		return this.id;
+	}
+
+	public void setId(BigInteger id) {
+		this.id = id;
+	}
+
+	public String getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public double getAltitude() {
+		return this.altitude;
+	}
+
+	public void setAltitude(double altitude) {
+		this.altitude = altitude;
+	}
+
+	public double getCourse() {
+		return this.course;
+	}
+
+	public void setCourse(double course) {
+		this.course = course;
+	}
+
+	public BigInteger getDeviceId() {
+		return this.deviceId;
+	}
+
+	public void setDeviceId(BigInteger deviceId) {
+		this.deviceId = deviceId;
+	}
+
+	public double getLatitude() {
+		return this.latitude;
+	}
+
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+
+	public double getLongitude() {
+		return this.longitude;
+	}
+
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+	}
+
+	public String getOther() {
+		return this.other;
+	}
+
+	public void setOther(String other) {
+		this.other = other;
+	}
+
+	public double getPower() {
+		return this.power;
+	}
+
+	public void setPower(double power) {
+		this.power = power;
+	}
+
+	public String getProtocol() {
+		return this.protocol;
+	}
+
+	public void setProtocol(String protocol) {
+		this.protocol = protocol;
+	}
+
+	public Date getServerTime() {
+		return this.serverTime;
+	}
+
+	public void setServerTime(Date serverTime) {
+		this.serverTime = serverTime;
+	}
+
+	public double getSpeed() {
+		return this.speed;
+	}
+
+	public void setSpeed(double speed) {
+		this.speed = speed;
+	}
+
+	public Date getTime() {
+		return this.time;
+	}
+
+	public void setTime(Date time) {
+		this.time = time;
+	}
+
+	public byte getValid() {
+		return this.valid;
+	}
+
+	public void setValid(byte valid) {
+		this.valid = valid;
+	}
+
+}

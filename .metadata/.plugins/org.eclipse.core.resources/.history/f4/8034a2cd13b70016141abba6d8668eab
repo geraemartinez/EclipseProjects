@@ -1,0 +1,93 @@
+package ctc.traccar.models.vo;
+
+import java.io.Serializable;
+import java.math.BigInteger;
+import java.util.List;
+
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import ctc.traccar.data.entities.Device;
+import ctc.traccar.data.entities.Event;
+
+
+/**
+ * COLUMNS AND MAPS READY
+ * 
+ */
+
+public class MaintenanceVo implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	private BigInteger id;
+
+	private BigInteger deviceId;
+
+	private Int indexNo;
+
+	private Double lastService;
+
+	private String name;
+
+	private Double serviceInterval;
+
+	private DeviceVo device;
+
+	private List<EventVo> maintenances;
+
+	public MaintenanceVo() {
+	}
+
+	public BigInteger getId() {
+		return this.id;
+	}
+
+	public void setId(BigInteger id) {
+		this.id = id;
+	}
+
+	public BigInteger getDeviceId() {
+		return this.deviceId;
+	}
+
+	public void setDeviceId(BigInteger deviceId) {
+		this.deviceId = deviceId;
+	}
+
+	public int getIndexNo() {
+		return this.indexNo;
+	}
+
+	public void setIndexNo(int indexNo) {
+		this.indexNo = indexNo;
+	}
+
+	public double getLastService() {
+		return this.lastService;
+	}
+
+	public void setLastService(double lastService) {
+		this.lastService = lastService;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getServiceInterval() {
+		return this.serviceInterval;
+	}
+
+	public void setServiceInterval(double serviceInterval) {
+		this.serviceInterval = serviceInterval;
+	}
+
+}

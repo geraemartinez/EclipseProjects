@@ -1,0 +1,33 @@
+package model;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+import model.UsersNotificationPK;
+
+
+/**
+ * The persistent class for the users_notifications database table.
+ * 
+ */
+@Entity
+@Table(name="users_notifications")
+@NamedQuery(name="UsersNotification.findAll", query="SELECT u FROM UsersNotification u")
+public class UsersNotification implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@EmbeddedId
+	private UsersNotificationPK id;
+
+	public UsersNotification() {
+	}
+
+	public UsersNotificationPK getId() {
+		return this.id;
+	}
+
+	public void setId(UsersNotificationPK id) {
+		this.id = id;
+	}
+
+}

@@ -1,97 +1,96 @@
 package ctc.traccar.models.vo;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Date;
+import java.math.BigInteger;
 
-public class UserVo implements Serializable  {
 
+/**
+ * The persistent class for the users database table.
+ * 
+ */
+
+public class UserVo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private Integer id;
-	
-	private String name;
-	
+	private BigInteger id;
+
+	private Byte admin;
+
+	private Byte archive;
+
+	private Byte blocked;
+
+	private String companyName;
+
 	private String email;
 	
-	private String hashedpassword;
-	
+	private Date expirationDate;
+
+	private String firstName;
+
+	private String lastName;
+
+	private String login;
+
+	private BigInteger managedBy_id;
+
+	private Byte manager;
+
+	private Integer maxNumOfDevices;
+
+	private Byte notifications;
+
 	private String password;
-	
-	private String salt;
-	
-	private boolean readonly;
-	
-	private boolean admin;
-	
-	private String map;
 
-	private String distanceunit;
-	
-	private String speedunit;
-	
-	private Double latitude;
-	
-	private Double longitude;
-	
-	private Integer zoom;
-	
-	private boolean twelvehourformat;
-	
-	private String attributes;
-	
-	private String coordinateformat;
-	
-	private List<NotificationVo> notifications;
-	
-	private List<DeviceVo> devices;
-	
-	private List<GeofenceVo> geofences;
-    
-	private List<GroupVo> groups;
+	private Integer passwordHashMethod;
 
+	private String phoneNumber;
+
+	private Byte readOnly;
 	
-	public List<DeviceVo> getDevices() {
-		return devices;
-	}
+	private BigInteger userSettings_id;
+	
+	
 
-	public void setDevices(List<DeviceVo> devices) {
-		this.devices = devices;
-	}
-
-	public List<GeofenceVo> getGeofences() {
-		return geofences;
-	}
-
-	public void setGeofences(List<GeofenceVo> geofences) {
-		this.geofences = geofences;
-	}
-
-	public List<GroupVo> getGroups() {
-		return groups;
-	}
-
-	public void setGroups(List<GroupVo> groups) {
-		this.groups = groups;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-	public Integer getId() {
+	public BigInteger getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(BigInteger id) {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public Byte getAdmin() {
+		return admin;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setAdmin(Byte admin) {
+		this.admin = admin;
+	}
+
+	public Byte getArchive() {
+		return archive;
+	}
+
+	public void setArchive(Byte archive) {
+		this.archive = archive;
+	}
+
+	public Byte getBlocked() {
+		return blocked;
+	}
+
+	public void setBlocked(Byte blocked) {
+		this.blocked = blocked;
+	}
+
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 
 	public String getEmail() {
@@ -102,115 +101,67 @@ public class UserVo implements Serializable  {
 		this.email = email;
 	}
 
-	public String getHashedpassword() {
-		return hashedpassword;
+	public Date getExpirationDate() {
+		return expirationDate;
 	}
 
-	public void setHashedpassword(String hashedpassword) {
-		this.hashedpassword = hashedpassword;
+	public void setExpirationDate(Date expirationDate) {
+		this.expirationDate = expirationDate;
 	}
 
-	public String getSalt() {
-		return salt;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setSalt(String salt) {
-		this.salt = salt;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public boolean isReadonly() {
-		return readonly;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setReadonly(boolean readonly) {
-		this.readonly = readonly;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
-	public boolean isAdmin() {
-		return admin;
+	public String getLogin() {
+		return login;
 	}
 
-	public void setAdmin(boolean admin) {
-		this.admin = admin;
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
-	public String getMap() {
-		return map;
+	public BigInteger getManagedBy_id() {
+		return managedBy_id;
 	}
 
-	public void setMap(String map) {
-		this.map = map;
+	public void setManagedBy_id(BigInteger managedBy_id) {
+		this.managedBy_id = managedBy_id;
 	}
 
-	public String getDistanceunit() {
-		return distanceunit;
+	public Byte getManager() {
+		return manager;
 	}
 
-	public void setDistanceunit(String distanceunit) {
-		this.distanceunit = distanceunit;
+	public void setManager(Byte manager) {
+		this.manager = manager;
 	}
 
-	public String getSpeedunit() {
-		return speedunit;
+	public Integer getMaxNumOfDevices() {
+		return maxNumOfDevices;
 	}
 
-	public void setSpeedunit(String speedunit) {
-		this.speedunit = speedunit;
+	public void setMaxNumOfDevices(Integer maxNumOfDevices) {
+		this.maxNumOfDevices = maxNumOfDevices;
 	}
 
-	public Double getLatitude() {
-		return latitude;
-	}
-
-	public void setLatitude(Double latitude) {
-		this.latitude = latitude;
-	}
-
-	public Double getLongitude() {
-		return longitude;
-	}
-
-	public void setLongitude(Double longitude) {
-		this.longitude = longitude;
-	}
-
-	public Integer getZoom() {
-		return zoom;
-	}
-
-	public void setZoom(Integer zoom) {
-		this.zoom = zoom;
-	}
-
-	public boolean isTwelvehourformat() {
-		return twelvehourformat;
-	}
-
-	public void setTwelvehourformat(boolean twelvehourformat) {
-		this.twelvehourformat = twelvehourformat;
-	}
-
-	public String getAttributes() {
-		return attributes;
-	}
-
-	public void setAttributes(String attributes) {
-		this.attributes = attributes;
-	}
-
-	public String getCoordinateformat() {
-		return coordinateformat;
-	}
-
-	public void setCoordinateformat(String coordinateformat) {
-		this.coordinateformat = coordinateformat;
-	}
-
-	public List<NotificationVo> getNotifications() {
+	public Byte getNotifications() {
 		return notifications;
 	}
 
-	public void setNotifications(List<NotificationVo> notifications) {
+	public void setNotifications(Byte notifications) {
 		this.notifications = notifications;
 	}
 
@@ -220,6 +171,38 @@ public class UserVo implements Serializable  {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Integer getPasswordHashMethod() {
+		return passwordHashMethod;
+	}
+
+	public void setPasswordHashMethod(Integer passwordHashMethod) {
+		this.passwordHashMethod = passwordHashMethod;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public Byte getReadOnly() {
+		return readOnly;
+	}
+
+	public void setReadOnly(Byte readOnly) {
+		this.readOnly = readOnly;
+	}
+
+	public BigInteger getUserSettings_id() {
+		return userSettings_id;
+	}
+
+	public void setUserSettings_id(BigInteger userSettings_id) {
+		this.userSettings_id = userSettings_id;
 	}
 
 }

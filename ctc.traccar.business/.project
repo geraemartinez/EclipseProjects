@@ -3,6 +3,8 @@
 	<name>ctc.traccar.business</name>
 	<comment></comment>
 	<projects>
+		<project>ctc.traccar.data</project>
+		<project>ctc.traccar.models</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -1,0 +1,46 @@
+package ctc.traccar.web.controllers;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import ctc.traccar.business.interfaces.UserServiceInt;
+import ctc.traccar.business.interfaces.UsersNotificationServiceInt;
+import ctc.traccar.models.vo.UserVo;
+import ctc.traccar.models.vo.UsersNotificationVo;
+
+@Controller
+public class HomeController {
+	
+	//This enable log4j to get logs for this controller
+	@SuppressWarnings("unused")
+	private static Logger logger = Logger.getLogger(HomeController.class);
+	
+	@Autowired
+	private UsersNotificationServiceInt notService;
+
+	
+	@RequestMapping("/index")
+    public ModelAndView home(){
+        ModelAndView mv = new ModelAndView("home");
+        return mv;
+    }
+
+	
+	@RequestMapping("//GetAll")
+	@ResponseBody
+	public String NotificationsAll() {
+		List<UsersNotificationVo> result =  notService.getAll();
+		
+		return null;
+	} 
+	
+}

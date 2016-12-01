@@ -1,0 +1,39 @@
+package ctc.traccar.data.entities;
+
+import java.io.Serializable;
+import java.math.BigInteger;
+
+import javax.persistence.*;
+
+
+
+/**
+ * The persistent class for the reports_geofences database table.
+ * 
+ */
+@Embeddable
+@Table(name="reports_geofences")
+public class ReportsGeofence implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Column(name="report_id")
+	private BigInteger reportId;
+
+	@Column(name="geofence_id")
+	private BigInteger geofenceId;
+
+	public BigInteger getReportId() {
+		return this.reportId;
+	}
+	public void setReportId(BigInteger reportId) {
+		this.reportId = reportId;
+	}
+	public BigInteger getGeofenceId() {
+		return this.geofenceId;
+	}
+	public void setGeofenceId(BigInteger geofenceId) {
+		this.geofenceId = geofenceId;
+	}
+	
+
+}

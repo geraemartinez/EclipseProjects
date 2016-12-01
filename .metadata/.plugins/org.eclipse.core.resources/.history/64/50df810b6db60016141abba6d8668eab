@@ -1,0 +1,141 @@
+package ctc.traccar.data.entities;
+
+import java.io.Serializable;
+import java.math.BigInteger;
+import java.util.List;
+
+import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+
+
+/**
+ * The persistent class for the pictures database table.
+ * 
+ */
+@Entity
+@Table(name="pictures")
+public class Picture implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name="id")
+	private BigInteger id;
+
+	@Lob
+	@Column(name="data")
+	private byte[] data;
+
+	@Column(name="height")
+	private int height;
+
+	@Column(name="mimeType")
+	private String mimeType;
+
+	@Column(name="type")
+	private String type;
+
+	@Column(name="width")
+	private int width;
+
+	@OneToMany(mappedBy="defaultIcon",fetch=FetchType.LAZY)
+	@JsonBackReference
+	private List<DeviceIcon> defaultIconsDevices;
+	
+	@OneToMany(mappedBy="offlineIcon",fetch=FetchType.LAZY)
+	@JsonBackReference
+	private List<DeviceIcon> oflineIconsDevices;
+	
+	@OneToMany(mappedBy="selectedIcon",fetch=FetchType.LAZY)
+	@JsonBackReference
+	private List<DeviceIcon> selectedIconsdevices;
+	
+	@OneToMany(mappedBy="picture",fetch=FetchType.LAZY)
+	@JsonBackReference
+	private List<Device> devices;
+	
+	public Picture() {
+	}
+
+	public BigInteger getId() {
+		return this.id;
+	}
+
+	public void setId(BigInteger id) {
+		this.id = id;
+	}
+
+	public byte[] getData() {
+		return this.data;
+	}
+
+	public void setData(byte[] data) {
+		this.data = data;
+	}
+
+	public int getHeight() {
+		return this.height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public String getMimeType() {
+		return this.mimeType;
+	}
+
+	public void setMimeType(String mimeType) {
+		this.mimeType = mimeType;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public int getWidth() {
+		return this.width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	public List<DeviceIcon> getDefaultIconsDevices() {
+		return defaultIconsDevices;
+	}
+
+	public void setDefaultIconsDevices(List<DeviceIcon> defaultIconsDevices) {
+		this.defaultIconsDevices = defaultIconsDevices;
+	}
+
+	public List<DeviceIcon> getOflineIconsDevices() {
+		return oflineIconsDevices;
+	}
+
+	public void setOflineIconsDevices(List<DeviceIcon> oflineIconsDevices) {
+		this.oflineIconsDevices = oflineIconsDevices;
+	}
+
+	public List<DeviceIcon> getSelectedIconsdevices() {
+		return selectedIconsdevices;
+	}
+
+	public void setSelectedIconsdevices(List<DeviceIcon> selectedIconsdevices) {
+		this.selectedIconsdevices = selectedIconsdevices;
+	}
+
+	public List<Device> getDevices() {
+		return devices;
+	}
+
+	public void setDevices(List<Device> devices) {
+		this.devices = devices;
+	}
+}

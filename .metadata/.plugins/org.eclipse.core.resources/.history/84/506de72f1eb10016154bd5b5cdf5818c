@@ -1,0 +1,33 @@
+package ctc.traccar.data.entities;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+import model.ReportsGeofencePK;
+
+
+/**
+ * The persistent class for the reports_geofences database table.
+ * 
+ */
+@Entity
+@Table(name="reports_geofences")
+@NamedQuery(name="ReportsGeofence.findAll", query="SELECT r FROM ReportsGeofence r")
+public class ReportsGeofence implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@EmbeddedId
+	private ReportsGeofencePK id;
+
+	public ReportsGeofence() {
+	}
+
+	public ReportsGeofencePK getId() {
+		return this.id;
+	}
+
+	public void setId(ReportsGeofencePK id) {
+		this.id = id;
+	}
+
+}
