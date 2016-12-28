@@ -2,7 +2,7 @@ package ctc.traccar.data.entities;
 
 import java.io.Serializable;
 import java.math.BigInteger;
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -49,7 +49,7 @@ public class Geofence implements Serializable {
 	      	@JoinColumn (name="geofence_id"),
 	      inverseJoinColumns= 
 	      	@JoinColumn(name="device_id"))
-	private Set<Geofence> users;
+	private List<Device> devices;
 
 	public Geofence() {
 	}
@@ -118,12 +118,20 @@ public class Geofence implements Serializable {
 		this.type = type;
 	}
 
-	public Set<Geofence> getUsers() {
-		return users;
+	public List<Device> getUsers() {
+		return devices;
 	}
 
-	public void setUsers(Set<Geofence> users) {
-		this.users = users;
+	public void setUsers(List<Device> devices) {
+		this.devices = devices;
+	}
+
+	public List<Device> getDevices() {
+		return devices;
+	}
+
+	public void setDevices(List<Device> devices) {
+		this.devices = devices;
 	}
 
 	

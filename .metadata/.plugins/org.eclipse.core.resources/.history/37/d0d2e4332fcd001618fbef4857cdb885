@@ -1,0 +1,9 @@
+package ctc.traccar.business.enums;
+
+public enum TypeException {
+	
+	NOT_RECORD_FOUND,
+	RECORD_EXIST,
+	UNKNOWN_ERROR,
+	ACCESS_DENIED
+}

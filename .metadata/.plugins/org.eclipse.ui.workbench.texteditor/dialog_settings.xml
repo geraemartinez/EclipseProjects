@@ -2,27 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="sharedDevices" key="selection"/>
-		<item value="false" key="casesensitive"/>
+		<item value="Integer" key="selection"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
-		<item value="false" key="wholeword"/>
+		<item value="true" key="wholeword"/>
 		<list key="findhistory">
-			<item value="sharedDevices"/>
-			<item value="owner"/>
-			<item value="uiState"/>
-			<item value="DeviceGeofence"/>
-			<item value="http://www.springframework.org/schema/context/spring-context-4.0.xsd"/>
-			<item value="http://www.springframework.org/schema/beans/spring-beans-4.0.xsd"/>
+			<item value="int"/>
+			<item value="byte"/>
+			<item value="short"/>
+			<item value="double"/>
+			<item value="doubl"/>
+			<item value="@ResponseBody"/>
+			<item value="doHash"/>
+			<item value="Set"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Integer"/>
+			<item value="Byte"/>
+			<item value="Short"/>
+			<item value="Double"/>
+			<item value=""/>
+			<item value="List"/>
+			<item value="HashSet"/>
+			<item value="Set"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="265" key="DIALOG_WIDTH"/>
 		<item value="1|.SF NS Text|11.0|0|COCOA|1|.SFNSText" key="DIALOG_FONT_NAME"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
-		<item value="588" key="DIALOG_X_ORIGIN"/>
-		<item value="184" key="DIALOG_Y_ORIGIN"/>
+		<item value="974" key="DIALOG_X_ORIGIN"/>
+		<item value="172" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

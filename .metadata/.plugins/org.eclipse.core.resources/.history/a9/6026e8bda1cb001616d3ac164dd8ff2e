@@ -1,0 +1,36 @@
+package ctc.traccar.data.implementations;
+
+import java.util.Set;
+
+import ctc.traccar.data.entities.Device;
+import ctc.traccar.data.entities.Geofence;
+import ctc.traccar.data.entities.Report;
+import ctc.traccar.data.interfaces.ReportRepositoryInt;
+
+public class ReportRepository implements ReportRepositoryInt {
+
+	@Override
+	public Set<Report> getAllReports() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Report getReportById(Report report) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<Device> getDevicesByReport(Report report) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<Geofence> getGeofenceByReport(Report report) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;ctc.traccar.models&apos; to &apos;ctc.traccar.api&apos;&#x0A;- Original element: &apos;ctc.traccar.models&apos;&#x0A;- Renamed element: &apos;ctc.traccar.models&apos;&#x0A;- Update references to refactored element" description="Rename Java project &apos;ctc.traccar.models&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=ctc.traccar.models" name="ctc.traccar.api" references="true" stamp="1482855576832" version="1.0"/>
+</session>

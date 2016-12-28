@@ -8,12 +8,26 @@
   </servlet>
   <servlet-mapping>
       <servlet-name>ctc</servlet-name>
-      <url-pattern>*.htm</url-pattern>
+      <url-pattern>/*</url-pattern>
   </servlet-mapping>
   <session-config>
       <session-timeout>30</session-timeout>
   </session-config> 
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
+  </welcome-file-list>
+  
+  <filter>
+	<filter-name>CharacterEncodingFilter</filter-name>
+	<filter-class> ctc.traccar.config.CharacterEncodingFilter</filter-class>
+	<init-param>
+	    <param-name>encoding</param-name>
+	    <param-value>UTF-8</param-value>
+	</init-param>
+  </filter>
+  <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <servlet-name>ctc</servlet-name>
+  </filter-mapping>
+  
 </web-app>

@@ -1,0 +1,16 @@
+package ctc.traccar.data.interfaces;
+
+import java.util.Set;
+
+import ctc.traccar.data.entities.Group;
+
+public interface GroupRepositoryInt {
+
+	public Set<Group> getAllGroups();
+	public Set<Group> getChildGroups(Group group);
+	
+	public Group getGroupById(Group group);
+	public Group getParentGroup(Group group);
+	
+	
+}

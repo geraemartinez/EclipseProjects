@@ -1,0 +1,38 @@
+package ctc.traccar.data.implementations;
+
+import java.util.Set;
+
+import org.springframework.stereotype.Repository;
+
+import ctc.traccar.data.entities.Device;
+import ctc.traccar.data.entities.Position;
+import ctc.traccar.data.interfaces.PositionRepositoryInt;
+
+@Repository
+public class PositionRepository implements PositionRepositoryInt {
+
+	@Override
+	public Set<Position> getAllPosition() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Position getPosition(Position position) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<Position> getPositionsByDevice(Device device) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Device getDeviceByPosition(Position position) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

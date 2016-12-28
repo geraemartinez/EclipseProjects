@@ -1,0 +1,14 @@
+package ctc.traccar.data.interfaces;
+
+import java.util.Set;
+
+import ctc.traccar.data.entities.UiState;
+import ctc.traccar.data.entities.User;
+
+public interface UiStateRepositoryInt {
+
+	public Set<UiState> getAllUiState();
+	public UiState getDevice(UiState ui);
+	public User getUserByUiState(UiState ui);
+	
+}

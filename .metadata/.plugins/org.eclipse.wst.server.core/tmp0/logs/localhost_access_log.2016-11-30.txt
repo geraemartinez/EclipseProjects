@@ -16,3 +16,7 @@
 0:0:0:0:0:0:0:1 - - [30/Nov/2016:18:08:19 -0600] "GET /ctc.traccar.web/Device.htm HTTP/1.1" 200 4471
 0:0:0:0:0:0:0:1 - - [30/Nov/2016:18:08:29 -0600] "GET /ctc.traccar.web/User.htm HTTP/1.1" 200 1567
 127.0.0.1 - - [30/Nov/2016:18:19:16 -0600] "GET / HTTP/1.1" 404 961
+127.0.0.1 - - [30/Nov/2016:18:29:00 -0600] "GET / HTTP/1.1" 404 961
+0:0:0:0:0:0:0:1 - - [30/Nov/2016:18:29:39 -0600] "GET /ctc.traccar.web/User.htm HTTP/1.1" 200 1567
+0:0:0:0:0:0:0:1 - - [30/Nov/2016:18:29:58 -0600] "GET /ctc.traccar.web/device.htm HTTP/1.1" 404 959
+0:0:0:0:0:0:0:1 - - [30/Nov/2016:18:30:08 -0600] "GET /ctc.traccar.web/Device.htm HTTP/1.1" 200 4471

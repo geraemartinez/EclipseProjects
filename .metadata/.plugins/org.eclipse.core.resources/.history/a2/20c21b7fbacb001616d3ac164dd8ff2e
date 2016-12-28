@@ -1,0 +1,15 @@
+package ctc.traccar.business.interfaces;
+
+import java.util.Set;
+
+import ctc.traccar.data.entities.DeviceIcon;
+import ctc.traccar.data.entities.Picture;
+
+public interface DeviceIconServiceInt {
+
+	public Set<DeviceIcon> getAllDeviceIcon();
+	public DeviceIcon getDeviceIconById(DeviceIcon devIcon);
+	public Picture getDefaultIconByDeviceIcon(DeviceIcon devIcon);
+	public Picture getofflineIconByDeviceIcon(DeviceIcon devIcon);
+	public Picture getselectedIconByDeviceIcon(DeviceIcon devIcon);
+}

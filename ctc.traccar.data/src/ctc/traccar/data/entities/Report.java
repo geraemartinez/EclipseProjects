@@ -6,7 +6,7 @@ import java.math.BigInteger;
 import javax.persistence.*;
 
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
 
 
 /**
@@ -55,7 +55,7 @@ public class Report implements Serializable {
 	      	@JoinColumn (name="report_id"),
 	      inverseJoinColumns= 
 	      	@JoinColumn(name="device_id"))
-	private Set<Device> devices;
+	private List<Device> devices;
 	
 	@ManyToMany
 	  @JoinTable(
@@ -64,7 +64,7 @@ public class Report implements Serializable {
 	      	@JoinColumn (name="report_id"),
 	      inverseJoinColumns= 
 	      	@JoinColumn(name="geofence_id"))
-	private Set<Geofence> geofence;
+	private List<Geofence> geofence;
 	
 	public Report() {
 	}
@@ -141,19 +141,19 @@ public class Report implements Serializable {
 		this.type = type;
 	}
 
-	public Set<Device> getDevices() {
+	public List<Device> getDevices() {
 		return devices;
 	}
 
-	public void setDevices(Set<Device> devices) {
+	public void setDevices(List<Device> devices) {
 		this.devices = devices;
 	}
 
-	public Set<Geofence> getGeofence() {
+	public List<Geofence> getGeofence() {
 		return geofence;
 	}
 
-	public void setGeofence(Set<Geofence> geofence) {
+	public void setGeofence(List<Geofence> geofence) {
 		this.geofence = geofence;
 	}
 

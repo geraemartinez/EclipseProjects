@@ -3,8 +3,9 @@ package ctc.traccar.business.helpers;
 import java.util.ArrayList;
 import java.util.List;
 
+import ctc.traccar.api.vos.UserVo;
 import ctc.traccar.data.entities.User;
-import ctc.traccar.models.vo.UserVo;
+
 import org.apache.commons.beanutils.*;
 
 import java.lang.reflect.InvocationTargetException;

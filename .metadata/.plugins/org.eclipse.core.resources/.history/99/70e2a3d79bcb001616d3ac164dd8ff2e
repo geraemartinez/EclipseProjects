@@ -1,0 +1,44 @@
+package ctc.traccar.data.implementations;
+
+import java.util.Set;
+
+import org.springframework.stereotype.Repository;
+
+import ctc.traccar.data.entities.Group;
+import ctc.traccar.data.entities.User;
+import ctc.traccar.data.interfaces.GroupRepositoryInt;
+
+@Repository
+public class GroupRepository implements GroupRepositoryInt {
+
+	@Override
+	public Set<Group> getAllGroups() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<Group> getChildGroups(Group group) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<User> getUsers(Group group) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Group getGroupById(Group group) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Group getParentGroup(Group group) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,18 +1,24 @@
 package ctc.traccar.business.helpers;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
 
-//import ctc.traccar.models.vo.UiStateVo;
+import org.apache.commons.beanutils.BeanUtils;
 
-
+import ctc.traccar.api.vos.UiStateVo;
+import ctc.traccar.data.entities.UiState;
 
 public class UiStateHelper {
-/*
-	public static List<UiStateVo> converToVo(List<UiState> uiStates){
+	
+	
+	
+	public static List<UiStateVo> converToVo(List<UiState> UiStates){
 		List<UiStateVo> result = new ArrayList<UiStateVo>();
 		
-		if(uiStates!=null){
-			for (UiState uis:uiStates){
-				result.add(converToVO(uis));
+		if(UiStates!=null){
+			for (UiState usr:UiStates){
+				result.add(converToVO(usr));
 			}
 		}
 		
@@ -20,12 +26,12 @@ public class UiStateHelper {
 		
 	}
 	
-	public static List<UiState> converToObjs(List<UiStateVo> uiStates){
+	public static List<UiState> converToObjs(List<UiStateVo> UiStates){
 		
 		List<UiState> result = new ArrayList<UiState>();
 		
-		if(uiStates!=null){
-			for (UiStateVo vo:uiStates){
+		if(UiStates!=null){
+			for (UiStateVo vo:UiStates){
 				result.add(converToObj(vo));
 			}
 		}
@@ -57,5 +63,6 @@ public class UiStateHelper {
 			e.printStackTrace();
 		}
 		return null;
-	}*/
+	}
 }
+

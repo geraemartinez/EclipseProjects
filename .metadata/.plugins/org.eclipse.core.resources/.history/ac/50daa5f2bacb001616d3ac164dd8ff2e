@@ -1,0 +1,5 @@
+package ctc.traccar.business.interfaces;
+
+public interface EventServiceInt {
+
+}

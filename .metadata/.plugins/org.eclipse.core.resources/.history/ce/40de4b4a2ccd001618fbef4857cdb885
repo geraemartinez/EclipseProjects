@@ -1,0 +1,5 @@
+package ctc.traccar.business.exceptions;
+
+public class DataException extends Exception {
+
+}

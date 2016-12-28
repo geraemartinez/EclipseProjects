@@ -1,0 +1,11 @@
+package ctc.traccar.data.interfaces;
+
+import java.util.Set;
+
+import ctc.traccar.data.entities.UserSetting;
+
+public interface UserSettingRepositoryInt {
+
+	public Set<UserSetting> getAllUserSetting();
+	public UserSetting getById(UserSetting userSetting);
+}

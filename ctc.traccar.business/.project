@@ -4,7 +4,7 @@
 	<comment></comment>
 	<projects>
 		<project>ctc.traccar.data</project>
-		<project>ctc.traccar.models</project>
+		<project>ctc.traccar.api</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

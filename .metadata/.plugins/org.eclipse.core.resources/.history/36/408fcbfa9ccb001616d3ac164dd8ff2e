@@ -1,0 +1,45 @@
+package ctc.traccar.data.implementations;
+
+import java.util.Set;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
+
+import ctc.traccar.data.entities.Device;
+import ctc.traccar.data.entities.Maintenance;
+import ctc.traccar.data.interfaces.MaintenanceRepositoryInt;
+
+@Repository
+public class MaintenanceRepository implements MaintenanceRepositoryInt {
+
+	private EntityManager entityManager;
+	private static Logger logger = Logger.getLogger(MaintenanceRepository.class);
+
+  	public MaintenanceRepository(){	
+  		EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence");
+  		entityManager = emf.createEntityManager();
+	}
+  	
+	@Override
+	public Set<Maintenance> getAllMaintenance() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Maintenance getMaintenanceById(Maintenance m) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Device getDeviceOfMaintenance(Maintenance m) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

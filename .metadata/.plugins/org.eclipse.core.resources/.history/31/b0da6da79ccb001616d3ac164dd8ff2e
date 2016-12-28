@@ -1,0 +1,29 @@
+package ctc.traccar.data.implementations;
+
+import java.util.Set;
+
+import ctc.traccar.data.entities.Device;
+import ctc.traccar.data.entities.Maintenance;
+import ctc.traccar.data.interfaces.MaintenanceRepositoryInt;
+
+public class MaintenanceRepository implements MaintenanceRepositoryInt {
+
+	@Override
+	public Set<Maintenance> getAllMaintenance() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Maintenance getMaintenanceById(Maintenance m) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Device getDeviceOfMaintenance(Maintenance m) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

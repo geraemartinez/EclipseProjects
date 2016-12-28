@@ -1,6 +1,0 @@
-package ctc.traccar.data.implementations;
-
-public class UserRepository implements UserRepositoryInt {
-
-	
-}

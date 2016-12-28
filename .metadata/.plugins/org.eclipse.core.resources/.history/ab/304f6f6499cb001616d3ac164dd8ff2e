@@ -1,0 +1,29 @@
+package ctc.traccar.data.implementations;
+
+import java.util.Set;
+
+import ctc.traccar.data.entities.Device;
+import ctc.traccar.data.entities.Geofence;
+import ctc.traccar.data.interfaces.GeofenceRepositoryInt;
+
+public class GeofenceRepository implements GeofenceRepositoryInt {
+
+	@Override
+	public Set<Geofence> getAllGeofences() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Geofence getGeofenceById(Geofence id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<Device> getDevicesGeofence(Geofence id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

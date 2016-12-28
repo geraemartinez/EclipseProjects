@@ -1,0 +1,115 @@
+package ctc.traccar.business.implementations;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ctc.traccar.api.vos.GeofenceVo;
+import ctc.traccar.api.vos.ReportVo;
+import ctc.traccar.api.vos.UserSettingVo;
+import ctc.traccar.api.vos.UserVo;
+import ctc.traccar.business.helpers.UserHelper;
+import ctc.traccar.business.interfaces.UserServiceInt;
+import ctc.traccar.data.entities.User;
+import ctc.traccar.data.interfaces.UserRepositoryInt;
+
+@Service
+public class UserService implements UserServiceInt{
+	
+	private static Logger logger = Logger.getLogger(UserService.class);
+	
+	@Autowired
+	UserRepositoryInt userRepo;
+
+	@Override
+	public UserVo getById(UserVo user) {
+
+		try {
+			UserVo result = new UserVo();
+			if(user!=null && user.getId()!=null){
+				
+				User userToSearch = UserHelper.converToObj(user);
+				userToSearch = userRepo.getById(userToSearch);
+				result =  UserHelper.converToVO(userToSearch);
+				return result;
+				
+			}else{
+				
+				return result;
+			}
+			
+		}catch(Exception e){ 
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UserService getById: " + e.getMessage());
+			return null;
+		}
+	}
+
+	@Override
+	public UserVo getByEmail(UserVo user) {
+		try {
+			UserVo result = new UserVo();
+			if(user!=null && user.getEmail()!=null){
+				
+				User userToSearch = UserHelper.converToObj(user);
+				userToSearch = userRepo.getByEmail(userToSearch);
+				result =  UserHelper.converToVO(userToSearch);
+				return result;
+				
+			}else{
+				
+				return result;
+			}
+			
+		}catch(Exception e){ 
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UserService getByEmail() method : " + e.getMessage());
+			return null;
+		}
+	}
+
+	@Override
+	public List<UserVo> getAll() {
+		try {
+			List<UserVo> result = new ArrayList<UserVo>();
+			List<User> users =  castList(userRepo.getAll());
+			
+			if (users!=null && !users.isEmpty()){
+				
+				result =  UserHelper.converToVo(users);
+				return result;
+				
+			}else{
+				
+				return result;
+			}
+						
+		}catch(Exception e){ 
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UserService getByEmail() method : " + e.getMessage());
+			return null;
+		}
+	}
+
+	@Override
+	public List<ReportVo> getReports(UserVo user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<GeofenceVo> getGeofences(UserVo user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserSettingVo getUserSetting(UserVo user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+}

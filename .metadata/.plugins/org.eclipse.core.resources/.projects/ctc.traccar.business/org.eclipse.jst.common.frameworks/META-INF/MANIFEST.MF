@@ -1,6 +1,7 @@
 Manifest-Version: 1.0
-Class-Path: spring-beans-4.3.3.RELEASE.jar spring-core-4.3.3.RELEASE.j
- ar spring-context-4.3.3.RELEASE.jar commons-beanutils-1.9.3.jar commo
- ns-logging-1.2.jar jackson-annotations-2.2.2.jar jackson-core-2.2.2.j
- ar jackson-databind-2.2.2.jar org.apache.commons.collections.jar
+Class-Path: ctc.traccar.api.jar spring-beans-4.3.3.RELEASE.jar spring-
+ core-4.3.3.RELEASE.jar spring-context-4.3.3.RELEASE.jar commons-beanu
+ tils-1.9.3.jar commons-logging-1.2.jar jackson-annotations-2.2.2.jar 
+ jackson-core-2.2.2.jar jackson-databind-2.2.2.jar org.apache.commons.
+ collections.jar
 

@@ -1,0 +1,6 @@
+package ctc.traccar.api.enums;
+
+public enum TransactionStatus {
+	SUCCESS,
+	ERROR
+}

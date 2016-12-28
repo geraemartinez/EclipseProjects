@@ -1,0 +1,17 @@
+package ctc.traccar.data.interfaces;
+
+import java.util.Set;
+
+import ctc.traccar.data.entities.Device;
+import ctc.traccar.data.entities.Position;
+
+public interface PositionRepositoryInt {
+
+	public Set<Position> getAllPosition();
+	public Position getPosition(Position position);
+	public Set<Position> getPositionsByDevice(Device device);
+	public Device getDeviceByPosition(Position position);
+	
+	
+	
+}

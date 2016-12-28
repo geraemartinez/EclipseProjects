@@ -5,7 +5,7 @@
         <dependent-module archiveName="ctc.traccar.data.jar" deploy-path="/" handle="module:/resource/ctc.traccar.data/ctc.traccar.data">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="ctc.traccar.models.jar" deploy-path="/" handle="module:/resource/ctc.traccar.models/ctc.traccar.models">
+        <dependent-module deploy-path="/" handle="module:/resource/ctc.traccar.api/ctc.traccar.api">
             <dependency-type>uses</dependency-type>
         </dependent-module>
     </wb-module>

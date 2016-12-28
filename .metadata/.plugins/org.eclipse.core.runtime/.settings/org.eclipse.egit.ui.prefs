@@ -1,2 +1,2 @@
-commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\n<messages>\n<message>Mapping entities to data base complete, missing some relationships</message>\n</messages>
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\n<messages>\n<message>Se refactoriz\u00F3 el proyecto, ya esta mapeado y estan listos los VO,&\#x0A;siguientes pasos hacer los servicios y controladores</message>\n<message>Mapping entities to data base complete, missing some relationships</message>\n</messages>
 eclipse.preferences.version=1

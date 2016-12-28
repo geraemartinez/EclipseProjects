@@ -1,0 +1,12 @@
+package ctc.traccar.business.interfaces;
+
+import java.util.Set;
+
+import ctc.traccar.models.vo.PictureVo;
+
+
+public interface PictureServiceInt {
+
+	public Set<PictureVo> getAllPicture();
+	public PictureVo getPictureById(PictureVo pi);
+}

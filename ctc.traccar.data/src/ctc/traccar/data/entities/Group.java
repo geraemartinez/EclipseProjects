@@ -4,7 +4,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 import java.math.BigInteger;
-import java.util.Set;
+import java.util.List;
 
 
 /**
@@ -34,7 +34,7 @@ public class Group implements Serializable {
 	private Group parent;
 	
     @OneToMany(mappedBy="parent")
-    private Set<Group> groups;
+    private List<Group> groups;
 
 	@ManyToMany
 	  @JoinTable(
@@ -43,7 +43,7 @@ public class Group implements Serializable {
 	  	@JoinColumn (name="group_id"),
 	  inverseJoinColumns= 
 	  	@JoinColumn(name="user_id"))
-	private Set<User> users;
+	private List<User> users;
 	
 	public Group() {
 	}
@@ -89,19 +89,19 @@ public class Group implements Serializable {
 		this.parent = parent;
 	}
 
-	public Set<Group> getGroups() {
+	public List<Group> getGroups() {
 		return groups;
 	}
 
-	public void setGroups(Set<Group> groups) {
+	public void setGroups(List<Group> groups) {
 		this.groups = groups;
 	}
 
-	public Set<User> getUsers() {
+	public List<User> getUsers() {
 		return users;
 	}
 
-	public void setUsers(Set<User> users) {
+	public void setUsers(List<User> users) {
 		this.users = users;
 	}
 

@@ -1,0 +1,16 @@
+package ctc.traccar.data.interfaces;
+
+import java.util.Set;
+
+import ctc.traccar.data.entities.Device;
+import ctc.traccar.data.entities.Geofence;
+import ctc.traccar.data.entities.Report;
+
+public interface ReportRepositoryInt {
+	
+	public Set<Report> getAllReports();
+	public Report getReportById(Report report);
+	public Set<Device> getDevicesByReport(Report report);
+	public Set<Geofence> getGeofenceByReport(Report report);
+	
+}

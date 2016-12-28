@@ -1,16 +1,15 @@
 package ctc.traccar.business.implementations;
 
-import java.util.List;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ctc.traccar.business.helpers.JsonParserHelper;
-import ctc.traccar.business.helpers.UsersNotificationHelper;
+import ctc.traccar.api.vos.UserVo;
+import ctc.traccar.api.vos.UsersNotificationVo;
 import ctc.traccar.business.interfaces.UsersNotificationServiceInt;
 import ctc.traccar.data.interfaces.UsersNotificationRepositoryInt;
-import ctc.traccar.models.vo.UsersNotificationVo;
 
 @Service
 public class UsersNotificationService implements UsersNotificationServiceInt {
@@ -21,16 +20,23 @@ public class UsersNotificationService implements UsersNotificationServiceInt {
 	@Autowired
 	UsersNotificationRepositoryInt userRepo;
 	
+	
 	@Override
-	public List<UsersNotificationVo> getAll() {
-		return UsersNotificationHelper.converToVo(userRepo.getAll());	
+	public Set<UsersNotificationVo> getAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public String getAllAsJson() {
-		List<UsersNotificationVo> vos = UsersNotificationHelper.converToVo(userRepo.getAll());
-		String result= JsonParserHelper.toJson(vos);
-		return result;
+	public UsersNotificationVo getByUserId(UsersNotificationVo notification) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserVo getUserByUsersNotificationId(UsersNotificationVo notification) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

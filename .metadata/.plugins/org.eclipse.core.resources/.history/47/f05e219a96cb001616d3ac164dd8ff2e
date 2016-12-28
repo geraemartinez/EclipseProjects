@@ -1,0 +1,15 @@
+package ctc.traccar.data.interfaces;
+
+
+import java.util.Set;
+
+import ctc.traccar.data.entities.ApplicationSetting;
+import ctc.traccar.data.entities.UserSetting;
+
+public interface ApplicationSettingsRepositoryInt {
+
+	public Set<ApplicationSetting> getAllApplicationSettings();
+	public ApplicationSetting getApplicationSettingById(ApplicationSetting app);
+	public UserSetting getUserSettingByApplicationSetting(ApplicationSetting app);
+	public ApplicationSetting getApplicationSettingById(UserSetting user);
+}

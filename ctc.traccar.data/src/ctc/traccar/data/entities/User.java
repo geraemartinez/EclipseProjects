@@ -3,7 +3,7 @@ package ctc.traccar.data.entities;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
 import java.math.BigInteger;
 
 
@@ -86,7 +86,7 @@ public class User implements Serializable {
 	      	@JoinColumn (name="user_id"),
 	      inverseJoinColumns= 
 	      	@JoinColumn(name="geofence_id"))
-	private Set<Geofence> geofences;
+	private List<Geofence> geofences;
 	
 	
 	@ManyToMany(fetch=FetchType.EAGER)
@@ -96,7 +96,7 @@ public class User implements Serializable {
 	      	@JoinColumn (name="users_id"),
 	      inverseJoinColumns= 
 	      	@JoinColumn(name="devices_id"))
-	private Set<Device> sharedDevices;
+	private List<Device> sharedDevices;
 	
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="userSettings_id", insertable = false, updatable = false)
@@ -109,7 +109,7 @@ public class User implements Serializable {
 	      	@JoinColumn (name="user_id"),
 	      inverseJoinColumns= 
 	      	@JoinColumn(name="report_id"))
-	private Set<Report> reports;
+	private List<Report> reports;
 	
 	
 	public BigInteger getId() {
@@ -272,19 +272,19 @@ public class User implements Serializable {
 		this.managedby = managedby;
 	}
 	
-	public Set<Geofence> getGeofences() {
+	public List<Geofence> getGeofences() {
 		return geofences;
 	}
 
-	public void setGeofences(Set<Geofence> geofences) {
+	public void setGeofences(List<Geofence> geofences) {
 		this.geofences = geofences;
 	}
 
-	public Set<Device> getSharedDevices() {
+	public List<Device> getSharedDevices() {
 		return sharedDevices;
 	}
 
-	public void setSharedDevices(Set<Device> sharedDevices) {
+	public void setSharedDevices(List<Device> sharedDevices) {
 		this.sharedDevices = sharedDevices;
 	}
 
@@ -296,11 +296,11 @@ public class User implements Serializable {
 		this.userSettings = userSettings;
 	}
 
-	public Set<Report> getReports() {
+	public List<Report> getReports() {
 		return reports;
 	}
 
-	public void setReports(Set<Report> reports) {
+	public void setReports(List<Report> reports) {
 		this.reports = reports;
 	}
 	

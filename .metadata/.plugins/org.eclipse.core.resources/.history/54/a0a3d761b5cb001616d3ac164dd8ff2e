@@ -1,0 +1,32 @@
+package ctc.traccar.data.implementations;
+
+import java.util.Set;
+
+import org.springframework.stereotype.Repository;
+
+import ctc.traccar.data.entities.UiState;
+import ctc.traccar.data.entities.User;
+import ctc.traccar.data.interfaces.UiStateRepositoryInt;
+
+@Repository
+public class UiStateRepository implements UiStateRepositoryInt {
+
+	@Override
+	public Set<UiState> getAllUiState() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UiState getDevice(UiState ui) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User getUserByUiState(UiState ui) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

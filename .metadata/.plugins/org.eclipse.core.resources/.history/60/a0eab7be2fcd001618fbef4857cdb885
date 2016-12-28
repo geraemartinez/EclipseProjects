@@ -1,0 +1,10 @@
+package ctc.traccar.business.enums;
+
+public enum TransactionStatus {
+
+	ERROR,
+	SUCCESS,
+	SAVED,
+	DUPLICATED
+		
+}

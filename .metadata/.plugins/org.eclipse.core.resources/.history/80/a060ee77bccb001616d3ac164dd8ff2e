@@ -1,0 +1,12 @@
+package ctc.traccar.business.interfaces;
+
+import java.util.Set;
+
+import ctc.traccar.models.vo.*;
+
+public interface PositionServiceInt {
+	public Set<PositionVo> getAllPosition();
+	public PositionVo getPosition(PositionVo position);
+	public Set<PositionVo> getPositionsByDevice(DeviceCo device);
+	public DeviceVo getDeviceByPosition(PositionVo position);
+}

@@ -3,9 +3,9 @@
 	<name>ctc.traccar.web</name>
 	<comment></comment>
 	<projects>
-		<project>ctc.traccar.models</project>
 		<project>ctc.traccar.business</project>
 		<project>ctc.traccar.data</project>
+		<project>ctc.traccar.api</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -1,0 +1,32 @@
+package ctc.traccar.data.implementations;
+
+import java.util.Set;
+
+import org.springframework.stereotype.Repository;
+
+import ctc.traccar.data.entities.Device;
+import ctc.traccar.data.entities.Sensor;
+import ctc.traccar.data.interfaces.SensorRepositoryInt;
+
+@Repository
+public class SensorRepository implements SensorRepositoryInt {
+
+	@Override
+	public Set<Sensor> getAllSensors() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Sensor getAllSensor(Sensor sensor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Device getDeviceBySensor(Sensor sensor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

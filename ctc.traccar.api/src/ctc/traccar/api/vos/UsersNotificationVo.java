@@ -1,0 +1,34 @@
+package ctc.traccar.api.vos;
+
+import java.io.Serializable;
+import java.math.BigInteger;
+
+
+
+
+/**
+ * COMPLETED
+ */
+
+public class UsersNotificationVo implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	private BigInteger userId;
+
+	private String type;
+		
+	public BigInteger getUserId() {
+		return this.userId;
+	}
+	public void setUserId(BigInteger userId) {
+		this.userId = userId;
+	}
+	public String getType() {
+		return this.type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	
+}

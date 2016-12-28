@@ -11,13 +11,14 @@ import javax.persistence.Query;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 
+import ctc.traccar.data.entities.User;
 import ctc.traccar.data.entities.UsersNotification;
 import ctc.traccar.data.interfaces.UsersNotificationRepositoryInt;
 
 @Repository
 class UserNotificationRepository implements UsersNotificationRepositoryInt {
 	private EntityManager entityManager;
-	private static Logger logger = Logger.getLogger(UserRepository.class);
+	private static Logger logger = Logger.getLogger(UserNotificationRepository.class);
 
   	public UserNotificationRepository(){	
   		EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence");
@@ -33,10 +34,44 @@ class UserNotificationRepository implements UsersNotificationRepositoryInt {
 			List<UsersNotification> result = (List<UsersNotification>)q.getResultList();
 			return result;
 		}catch(PersistenceException e){
-			logger.error("[ERROR] PersistenceExceptio - the following error ocurred at UserNotificationRepository in getAll() method \n "+ e);
+			logger.error("[ERROR] PersistenceException - the following error ocurred at UserNotificationRepository in getAll() method \n "+ e);
 			return null;
 		}catch(Exception e){
 			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UserNotificationRepository in getAll() method \n "+ e);
+			return null;
+		}
+	}
+
+	@Override
+	public UsersNotification getByUserId(UsersNotification notification) {
+		try{
+			StringBuilder sql = new StringBuilder("SELECT u FROM UsersNotification u.user_id = :user_id");
+			Query q = entityManager.createQuery(sql.toString());
+			q.setParameter("user_id", notification.getUser_id());
+			UsersNotification result = (UsersNotification)q.getSingleResult();
+			return result;
+		}catch(PersistenceException e){
+			logger.error("[ERROR] PersistenceException - the following error ocurred at UserNotificationRepository in getByUserId() method \n "+ e);
+			return null;
+		}catch(Exception e){
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UserNotificationRepository in getByUserId() method \n "+ e);
+			return null;
+		}
+	}
+
+	@Override
+	public User getUserByUsersNotificationId(UsersNotification notification) {
+		try{
+			StringBuilder sql = new StringBuilder("SELECT u FROM UsersNotification u.user_id = :user_id");
+			Query q = entityManager.createQuery(sql.toString());
+			q.setParameter("user_id", notification.getUser_id());
+			UsersNotification result = (UsersNotification)q.getSingleResult();
+			return result.getUser();
+		}catch(PersistenceException e){
+			logger.error("[ERROR] PersistenceException - the following error ocurred at UserNotificationRepository in getUserByUsersNotificationId() method \n "+ e);
+			return null;
+		}catch(Exception e){
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UserNotificationRepository in getUserByUsersNotificationId() method \n "+ e);
 			return null;
 		}
 	}

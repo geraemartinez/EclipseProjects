@@ -1,0 +1,10 @@
+package ctc.traccar.business.interfaces;
+
+import java.util.Set;
+
+import ctc.traccar.models.vo.UserSettingVo;
+
+public interface UserSettingServiceInt {
+	public Set<UserSettingVo> getAllUserSetting();
+	public UserSettingVo getUserSettingById(UserSettingVo userSetting);
+}

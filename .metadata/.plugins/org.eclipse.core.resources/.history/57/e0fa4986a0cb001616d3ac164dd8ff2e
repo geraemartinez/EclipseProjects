@@ -1,0 +1,62 @@
+package ctc.traccar.data.implementations;
+
+import java.util.Set;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.PersistenceException;
+import javax.persistence.Query;
+
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
+
+import ctc.traccar.data.entities.Picture;
+import ctc.traccar.data.entities.User;
+import ctc.traccar.data.interfaces.PictureRepositoryInt;
+
+@Repository
+public class PictureRepository implements PictureRepositoryInt {
+
+	private static Logger logger = Logger.getLogger(UserRepository.class);
+	private EntityManager entityManager;
+
+  	public PictureRepository(){	
+  		EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence");
+  		entityManager = emf.createEntityManager();
+	}
+  	
+	@SuppressWarnings("unchecked")
+	@Override
+	public Set<Picture> getAllPicture() {
+		try{
+			StringBuilder sql = new StringBuilder("SELECT p FROM Picture p");
+			Query q = entityManager.createQuery(sql.toString());
+			Set<Picture> result = (Set<Picture>)q.getResultList();
+			return result;
+		}catch(PersistenceException e){
+			logger.error("[ERROR] PersistenceException - the following error ocurred at PictureRepository in getAll() method \n "+ e);
+			return null;
+		}catch(Exception e){
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at PictureRepository in getAll() method \n "+ e);
+			return null;
+		}
+	}
+
+	@Override
+	public Picture getPictureById(Picture pi) {
+		try{
+			StringBuilder sql = new StringBuilder("SELECT p FROM Picture p WHERE p.id =: id");
+			Query q = entityManager.createQuery(sql.toString());
+			Picture result = (Picture)q.getResultList();
+			return result;
+		}catch(PersistenceException e){
+			logger.error("[ERROR] PersistenceException - the following error ocurred at PictureRepository in getAll() method \n "+ e);
+			return null;
+		}catch(Exception e){
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at PictureRepository in getAll() method \n "+ e);
+			return null;
+		}
+	}
+
+}

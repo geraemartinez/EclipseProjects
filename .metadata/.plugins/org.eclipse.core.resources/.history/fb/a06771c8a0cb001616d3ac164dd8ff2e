@@ -1,0 +1,34 @@
+package ctc.traccar.data.implementations;
+
+import java.util.Set;
+
+import ctc.traccar.data.entities.Device;
+import ctc.traccar.data.interfaces.PositionRepositoryInt;
+
+public class Position implements PositionRepositoryInt {
+
+	@Override
+	public Set<ctc.traccar.data.entities.Position> getAllPosition() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ctc.traccar.data.entities.Position getPosition(ctc.traccar.data.entities.Position position) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<ctc.traccar.data.entities.Position> getPositionsByDevice(Device device) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Device getDeviceByPosition(ctc.traccar.data.entities.Position position) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,15 @@
+package ctc.traccar.business.helpers;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+public class CollectionUtilsHelper {
+
+	public static  List<Object> cast(Set<Object> collection){
+		
+		List <Object> objects = new ArrayList<Object>();
+		objects.addAll(collection);
+		return objects;
+	}
+}

@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.apache.commons.beanutils.BeanUtils;
 
+import ctc.traccar.api.vos.UsersNotificationVo;
 import ctc.traccar.data.entities.UsersNotification;
-import ctc.traccar.models.vo.UsersNotificationVo;
 
 public class UsersNotificationHelper {
 	public static List<UsersNotificationVo> converToVo(List<UsersNotification> users){

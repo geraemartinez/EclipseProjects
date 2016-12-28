@@ -3,8 +3,8 @@ package ctc.traccar.business.helpers;
 import java.util.ArrayList;
 import java.util.List;
 
+import ctc.traccar.api.vos.DeviceVo;
 import ctc.traccar.data.entities.Device;
-import ctc.traccar.models.vo.DeviceVo;
 
 import org.apache.commons.beanutils.*;
 
