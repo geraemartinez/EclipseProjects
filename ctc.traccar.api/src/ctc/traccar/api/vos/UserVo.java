@@ -66,6 +66,11 @@ public class UserVo implements Serializable {
 		super();
 		this.email = email;
 	}
+	public UserVo(String login,String password) {
+		super();
+		this.login = login;
+		this.password = password;
+	}
 		
 	
 	public BigInteger getId() {

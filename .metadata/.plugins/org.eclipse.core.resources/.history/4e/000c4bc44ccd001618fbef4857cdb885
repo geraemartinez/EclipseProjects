@@ -1,0 +1,5 @@
+package ctc.traccar.web.rest.controllers;
+
+public class BaseController {
+
+}
