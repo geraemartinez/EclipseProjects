@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import ctc.traccar.business.interfaces.UsersNotificationServiceInt;
 
 @Controller
-@RequestMapping("/UsersNotification")
+@RequestMapping("/api/UsersNotification")
 public class UsersNotificationController {
 
 	@SuppressWarnings("unused")

@@ -151,7 +151,7 @@ public class DeviceRepository implements DeviceRepositoryInt {
 		try{
 			StringBuilder sql = new StringBuilder("SELECT d FROM Device d WHERE d.uniqueId = :uniqueId");
 			Query q = entityManager.createQuery(sql.toString());
-			q.setParameter("uniqueId", device.getId());
+			q.setParameter("uniqueId", device.getUniqueId());
 			Device result = (Device)q.getSingleResult();
 			return result;
 		}catch(PersistenceException e){

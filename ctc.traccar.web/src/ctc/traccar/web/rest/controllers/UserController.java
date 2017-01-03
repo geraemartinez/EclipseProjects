@@ -25,7 +25,7 @@ import ctc.traccar.business.helpers.JsonParserHelper;
 import ctc.traccar.business.interfaces.UserServiceInt;
 
 @RestController
-@RequestMapping("/User")
+@RequestMapping("/api/User")
 public class UserController {
 
 		private static Logger logger = Logger.getLogger(UserController.class);

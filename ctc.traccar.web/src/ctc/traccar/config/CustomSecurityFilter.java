@@ -35,6 +35,8 @@ public class CustomSecurityFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 			try {
 				SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
+				String URL = ((HttpServletRequest)request).getRequestURL().toString();
+				
 				String auth = ((HttpServletRequest) request).getHeader("Authorization");
 				
 				if(auth!=null && auth.length()>0){

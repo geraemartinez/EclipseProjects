@@ -79,6 +79,11 @@ public class DeviceVo implements Serializable {
 
 	public DeviceVo() {
 	}
+	
+	public DeviceVo(BigInteger id) {
+		super();
+		this.id = id;
+	}
 
 	public BigInteger getId() {
 		return this.id;
@@ -208,11 +213,11 @@ public class DeviceVo implements Serializable {
 		this.latestPosition_id = latestPosition_id;
 	}
 
-	public int getMinIdleTime() {
+	public Integer getMinIdleTime() {
 		return this.minIdleTime;
 	}
 
-	public void setMinIdleTime(int minIdleTime) {
+	public void setMinIdleTime(Integer minIdleTime) {
 		this.minIdleTime = minIdleTime;
 	}
 
@@ -304,11 +309,11 @@ public class DeviceVo implements Serializable {
 		this.status = status;
 	}
 
-	public int getTimeout() {
+	public Integer getTimeout() {
 		return this.timeout;
 	}
 
-	public void setTimeout(int timeout) {
+	public void setTimeout(Integer timeout) {
 		this.timeout = timeout;
 	}
 

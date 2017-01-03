@@ -1,0 +1,216 @@
+package ctc.traccar.web.rest.controllers;
+
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import ctc.traccar.api.vos.DeviceIconVo;
+import ctc.traccar.api.vos.DeviceVo;
+import ctc.traccar.api.vos.GroupVo;
+import ctc.traccar.api.vos.PictureVo;
+import ctc.traccar.api.vos.PositionVo;
+import ctc.traccar.api.vos.UserVo;
+import ctc.traccar.business.helpers.DeviceHelper;
+import ctc.traccar.business.helpers.DeviceIconHelper;
+import ctc.traccar.business.helpers.GroupHelper;
+import ctc.traccar.business.helpers.JsonParserHelper;
+import ctc.traccar.business.helpers.PictureHelper;
+import ctc.traccar.business.helpers.PositionHelper;
+import ctc.traccar.business.helpers.UserHelper;
+import ctc.traccar.business.interfaces.DeviceServiceInt;
+import ctc.traccar.data.entities.Device;
+import ctc.traccar.data.entities.DeviceIcon;
+import ctc.traccar.data.entities.Group;
+import ctc.traccar.data.entities.Picture;
+import ctc.traccar.data.entities.Position;
+import ctc.traccar.data.entities.User;
+
+@RestController
+@RequestMapping("/Device")
+public class DeviceController {
+
+		@SuppressWarnings("unused")
+		private static Logger logger = Logger.getLogger(DeviceController.class);
+		
+		@Autowired
+		private DeviceServiceInt deviceService;
+		
+		@ModelAttribute("DeviceVo")
+	    public DeviceVo getDeviceVo(){
+	        return new DeviceVo();
+	    }
+		
+		@RequestMapping(method=RequestMethod.GET,produces={"application/json"})
+		@ResponseBody
+		public String DeviceAll() {
+			return null;
+		} 
+		
+		
+		@RequestMapping(method=RequestMethod.GET)
+		public ResponseEntity<?> getAllDevices() {
+			HttpHeaders responseHeaders = new HttpHeaders();
+			responseHeaders.add("Content-Type", "application/json; charset=utf-8");
+			
+			try {
+				
+				List<DeviceVo> result =  deviceService.getAllDevices();
+				return new ResponseEntity<>(JsonParserHelper.toJson(result),responseHeaders,HttpStatus.OK);
+			
+			}catch(Exception e){
+
+				String error="[ERROR] Uncaught Exception - Internal server error at GetAllUsers: " + e.getMessage();
+				String JsonError = "{ \"error\": \"" + error +"\"";
+				logger.error(error);
+				return new ResponseEntity<>(JsonError,responseHeaders,HttpStatus.INTERNAL_SERVER_ERROR);
+			}
+		}
+
+		@RequestMapping(value="/{IdNumber}",method=RequestMethod.GET)
+		public ResponseEntity<?> getDeviceById(@PathVariable(value="IdNumber") String id) {
+			
+			HttpHeaders responseHeaders = new HttpHeaders();
+			responseHeaders.add("Content-Type", "application/json; charset=utf-8");
+			
+			try {
+
+				BigInteger Id = new BigInteger(id);
+				DeviceVo vo = new DeviceVo(Id);				
+				vo =  userService.getById(vo);
+				
+				return new ResponseEntity<>(JsonParserHelper.toJson(vo),responseHeaders,HttpStatus.OK);
+				
+			}catch(Exception e){
+				String error = "[ERROR] Uncaught Exception - Internal server error at GetUserById: " + e.getMessage();
+				String JsonError = "{ \"error\": \"" + error +"\"";
+				logger.error(error);
+				return new ResponseEntity<>(JsonError,HttpStatus.INTERNAL_SERVER_ERROR);			
+			}
+		}
+
+		
+		public DeviceVo getDeviceByUniqueId(DeviceVo device) {
+			
+			try {
+				
+				Device toSearch =  DeviceHelper.converToObj(device);
+				
+				if (toSearch!=null && toSearch.getUniqueId()!=null){
+				
+					Device result =  deviceRepo.getDeviceByUniqueId(toSearch);
+					return DeviceHelper.converToVO(result);
+				}
+							
+			}catch(Exception e){ 
+				logger.error("[ERROR] Uncaught Exception - the following error ocurred at DeviceService getDeviceByUniqueId() method : " + e.getMessage());
+			}
+			return null;
+		}
+
+		
+		public UserVo getOwnerDevice(DeviceVo device) {
+			
+			try {
+				
+				Device toSearch =  DeviceHelper.converToObj(device);
+				
+				if (toSearch!=null && toSearch.getId()!=null){
+				
+					User result =  deviceRepo.getOwnerDevice(toSearch);
+					return UserHelper.converToVO(result);
+				}
+							
+			}catch(Exception e){ 
+				logger.error("[ERROR] Uncaught Exception - the following error ocurred at DeviceService getOwnerDevice() method : " + e.getMessage());
+			}
+			return null;
+		}
+
+		@Override
+		public DeviceIconVo getDeviceIcon(DeviceVo device) {
+			
+			try {
+				
+				Device toSearch =  DeviceHelper.converToObj(device);
+				
+				if (toSearch!=null && toSearch.getId()!=null){
+				
+					DeviceIcon result =  deviceRepo.getDeviceIcon(toSearch);
+					return DeviceIconHelper.converToVO(result);
+				}
+							
+			}catch(Exception e){ 
+				logger.error("[ERROR] Uncaught Exception - the following error ocurred at DeviceService getDeviceIcon() method : " + e.getMessage());
+			}
+			return null;
+			
+		}
+
+		
+		public PictureVo getPictureDevice(DeviceVo device) {
+			try {
+				
+				Device toSearch =  DeviceHelper.converToObj(device);
+				
+				if (toSearch!=null && toSearch.getId()!=null){
+				
+					Picture result =  deviceRepo.getPictureDevice(toSearch);
+					return PictureHelper.converToVO(result);
+				}
+							
+			}catch(Exception e){ 
+				logger.error("[ERROR] Uncaught Exception - the following error ocurred at DeviceService getPictureDevice() method : " + e.getMessage());
+			}
+			return null;
+		}
+
+		
+		public PositionVo getLastPositionDevice(DeviceVo device) {
+			
+			try {
+				
+				Device toSearch =  DeviceHelper.converToObj(device);
+				
+				if (toSearch!=null && toSearch.getId()!=null){
+				
+					Position result =  deviceRepo.getLastPositionDevice(toSearch);
+					return  PositionHelper.converToVO(result);
+				}
+							
+			}catch(Exception e){ 
+				logger.error("[ERROR] Uncaught Exception - the following error ocurred at DeviceService getLastPositionDevice() method : " + e.getMessage());
+			}
+			return null;
+		}
+
+		
+		public GroupVo getGroupDevice(DeviceVo device) {
+			
+			try {
+				
+				Device toSearch =  DeviceHelper.converToObj(device);
+				
+				if (toSearch!=null && toSearch.getId()!=null){
+				
+					Group result =  deviceRepo.getGroupDevice(toSearch);
+					return  GroupHelper.converToVO(result);
+				}
+							
+			}catch(Exception e){ 
+				logger.error("[ERROR] Uncaught Exception - the following error ocurred at DeviceService getGroupDevice() method : " + e.getMessage());
+			}
+			return null;
+		}
+}

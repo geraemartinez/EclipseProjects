@@ -9,23 +9,23 @@
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
 			<item value="int"/>
-			<item value="byte"/>
-			<item value="short"/>
-			<item value="double"/>
-			<item value="doubl"/>
-			<item value="@ResponseBody"/>
-			<item value="doHash"/>
 			<item value="Set"/>
+			<item value="password"/>
+			<item value="pass"/>
+			<item value="float"/>
+			<item value="byte"/>
+			<item value="double"/>
+			<item value="short"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Integer"/>
-			<item value="Byte"/>
-			<item value="Short"/>
-			<item value="Double"/>
-			<item value=""/>
 			<item value="List"/>
+			<item value="Float"/>
+			<item value="Byte"/>
+			<item value="Double"/>
+			<item value="Short"/>
+			<item value=""/>
 			<item value="HashSet"/>
-			<item value="Set"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

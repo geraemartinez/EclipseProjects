@@ -2,8 +2,6 @@ package ctc.traccar.api.vos;
 
 import java.io.Serializable;
 import java.math.BigInteger;
-import java.util.List;
-;
 
 
 /**
@@ -27,14 +25,7 @@ public class PictureVo implements Serializable {
 
 	private Integer width;
 
-	private List<DeviceIconVo> defaultIconsDevices;
 
-	private List<DeviceIconVo> oflineIconsDevices;
-		
-	private List<DeviceIconVo> selectedIconsdevices;
-
-	private List<DeviceVo> devices;
-	
 	public PictureVo() {
 	}
 
@@ -85,37 +76,6 @@ public class PictureVo implements Serializable {
 	public void setWidth(Integer width) {
 		this.width = width;
 	}
-	
-	public List<DeviceIconVo> getDefaultIconsDevices() {
-		return defaultIconsDevices;
-	}
 
-	public void setDefaultIconsDevices(List<DeviceIconVo> defaultIconsDevices) {
-		this.defaultIconsDevices = defaultIconsDevices;
-	}
-
-	public List<DeviceIconVo> getOflineIconsDevices() {
-		return oflineIconsDevices;
-	}
-
-	public void setOflineIconsDevices(List<DeviceIconVo> oflineIconsDevices) {
-		this.oflineIconsDevices = oflineIconsDevices;
-	}
-
-	public List<DeviceIconVo> getSelectedIconsdevices() {
-		return selectedIconsdevices;
-	}
-
-	public void setSelectedIconsdevices(List<DeviceIconVo> selectedIconsdevices) {
-		this.selectedIconsdevices = selectedIconsdevices;
-	}
-
-	public List<DeviceVo> getDevices() {
-		return devices;
-	}
-
-	public void setDevices(List<DeviceVo> devices) {
-		this.devices = devices;
-	}
 
 }

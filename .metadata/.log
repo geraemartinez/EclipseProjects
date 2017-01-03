@@ -4114,3 +4114,23 @@ org.eclipse.debug.core.DebugException: Breakpoint does not have an associated ma
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 !SUBENTRY 1 org.eclipse.debug.core 4 5012 2016-12-29 09:34:49.341
 !MESSAGE Breakpoint does not have an associated marker.
+!SESSION 2017-01-02 11:56:39.229 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=es_XL
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/gerardo/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/gerardo/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2017-01-02 11:57:22.505
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2017-01-03 09:42:46.784 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=es_XL
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/gerardo/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/gerardo/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2017-01-03 09:43:04.670
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences

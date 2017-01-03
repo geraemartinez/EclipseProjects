@@ -1,13 +1,13 @@
 package ctc.traccar.business.interfaces;
 
-import java.util.Set;
+import java.util.List;
 
 import ctc.traccar.api.vos.*;
 
 
 public interface DeviceServiceInt {
 	
-	public Set<DeviceVo> getAllDevices();
+	public List<DeviceVo> getAllDevices();
 	public DeviceVo getDeviceById(DeviceVo device);
 	public DeviceVo getDeviceByUniqueId(DeviceVo device);
 	

@@ -2,7 +2,6 @@ package ctc.traccar.api.vos;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import java.math.BigInteger;
 
 
@@ -42,11 +41,6 @@ public class PositionVo implements Serializable {
 
 	private Byte valid;
 
-	private DeviceVo device;
-
-	private List<DeviceVo> devices;
-	
-	private List<EventVo> events;
 	
 	public PositionVo() {
 	}
@@ -163,29 +157,6 @@ public class PositionVo implements Serializable {
 		this.valid = valid;
 	}
 
-	public DeviceVo getDevice() {
-		return device;
-	}
-
-	public void setDevice(DeviceVo device) {
-		this.device = device;
-	}
-
-	public List<DeviceVo> getDevices() {
-		return devices;
-	}
-
-	public void setDevices(List<DeviceVo> devices) {
-		this.devices = devices;
-	}
-
-	public List<EventVo> getEvents() {
-		return events;
-	}
-
-	public void setEvents(List<EventVo> events) {
-		this.events = events;
-	}
 
 	
 }
