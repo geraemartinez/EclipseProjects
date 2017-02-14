@@ -1,0 +1,12 @@
+package ctc.traccar.web.rest.controllers;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import ctc.traccar.business.interfaces.PictureServiceInt;
+
+public class PositionController {
+	private static Logger logger = Logger.getLogger(PositionController.class);
+
+	@Autowired  PositionServiceInt service;
+}

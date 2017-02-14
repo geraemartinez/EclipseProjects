@@ -1,0 +1,27 @@
+package ctc.traccar.web.rest.controllers;
+
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import ctc.traccar.api.vos.DeviceVo;
+import ctc.traccar.api.vos.MaintenanceVo;
+import ctc.traccar.business.interfaces.MaintenanceServiceInt;
+
+@RestController
+@RequestMapping("/api/Group")
+public class MaintenanceController {
+	
+	private static Logger logger = Logger.getLogger(MaintenanceController.class);
+
+	@Autowired MaintenanceServiceInt service;
+	
+	public List<MaintenanceVo> getAllMaintenance(){}
+	public MaintenanceVo getMaintenanceById(MaintenanceVo m){}
+	public DeviceVo getDeviceOfMaintenance(MaintenanceVo m){}
+	
+
+}

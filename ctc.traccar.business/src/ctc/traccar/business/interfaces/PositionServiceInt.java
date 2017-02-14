@@ -1,12 +1,12 @@
 package ctc.traccar.business.interfaces;
 
-import java.util.Set;
+import java.util.List;
 
 import ctc.traccar.api.vos.*;
 
 public interface PositionServiceInt {
-	public Set<PositionVo> getAllPosition();
+	public List<PositionVo> getAllPosition();
 	public PositionVo getPosition(PositionVo position);
-	public Set<PositionVo> getPositionsByDevice(DeviceVo device);
+	public List<PositionVo> getPositionsByDevice(DeviceVo device);
 	public DeviceVo getDeviceByPosition(PositionVo position);
 }

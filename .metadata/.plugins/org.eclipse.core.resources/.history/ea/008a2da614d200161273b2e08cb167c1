@@ -1,0 +1,59 @@
+package ctc.traccar.business.implementations;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ctc.traccar.api.vos.NotificationSettingVo;
+import ctc.traccar.api.vos.UserVo;
+import ctc.traccar.api.vos.UsersNotificationVo;
+import ctc.traccar.business.helpers.NotificationSettingHelper;
+import ctc.traccar.business.interfaces.UsersNotificationServiceInt;
+import ctc.traccar.data.entities.NotificationSetting;
+import ctc.traccar.data.interfaces.UsersNotificationRepositoryInt;
+
+@Service
+public class UsersNotificationService implements UsersNotificationServiceInt {
+	
+	@SuppressWarnings("unused")
+	private static Logger logger = Logger.getLogger(UsersNotificationService.class);
+	
+	@Autowired
+	UsersNotificationRepositoryInt repo;
+	
+	
+	@Override
+	public List<UsersNotificationVo> getAll() {
+		try {
+			List<NotificationSettingVo> result = new ArrayList<NotificationSettingVo>();
+			List<NotificationSetting> notifications =  repo.getAll();
+			
+			if (notifications!=null && !notifications.isEmpty()){
+				
+				result =  NotificationSettingHelper.converToVo(notifications);
+				return result;
+				
+			}
+						
+		}catch(Exception e){ 
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at NotificationSettingService getAllNotificationSetting() method : " + e.getMessage());
+		}
+		return null;
+	}
+
+	@Override
+	public UsersNotificationVo getByUserId(UsersNotificationVo notification) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserVo getUserByUsersNotificationId(UsersNotificationVo notification) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

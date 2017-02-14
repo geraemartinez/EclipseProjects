@@ -20,6 +20,14 @@ public class UiStateVo implements Serializable {
 	private BigInteger userId;
 
 	private String value;
+	
+	public UiStateVo(BigInteger id){
+		this.id = id;
+	}
+	
+	public UiStateVo() {
+		
+	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;

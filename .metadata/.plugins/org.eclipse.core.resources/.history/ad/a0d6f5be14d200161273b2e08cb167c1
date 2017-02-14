@@ -1,0 +1,47 @@
+package ctc.traccar.business.implementations;
+
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ctc.traccar.api.vos.NotificationSettingVo;
+import ctc.traccar.api.vos.NotificationTemplateVo;
+import ctc.traccar.business.interfaces.NotificationTemplateServiceInt;
+import ctc.traccar.data.interfaces.NotificationSettingRepositoryInt;
+import ctc.traccar.data.interfaces.NotificationTemplateRepositoryInt;
+
+@Service
+public class NotificationTemplateService implements NotificationTemplateServiceInt {
+
+private static Logger logger = Logger.getLogger(NotificationTemplateService.class);
+	
+	@Autowired
+	NotificationTemplateRepositoryInt repo;
+	
+	@Override
+	public List<NotificationTemplateVo> getAllNotificationTemplate() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public NotificationTemplateVo getNotificationTemplateById(NotificationTemplateVo nt) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public NotificationTemplateVo getNotificationTemplateByNotificationSetting(NotificationSettingVo ns) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public NotificationSettingVo getNotificationSettingByNotificationTemplate(NotificationTemplateVo nt) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -25,7 +25,10 @@ public class PictureVo implements Serializable {
 
 	private Integer width;
 
-
+	public PictureVo(BigInteger id) {
+		super();
+		this.id = id;
+	}
 	public PictureVo() {
 	}
 

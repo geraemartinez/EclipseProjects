@@ -1,5 +1,0 @@
-package ctc.traccar.data.exception;
-
-public class DataException extends Exception {
-
-}

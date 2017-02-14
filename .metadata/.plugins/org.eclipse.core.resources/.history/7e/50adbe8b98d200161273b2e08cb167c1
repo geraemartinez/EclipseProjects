@@ -1,0 +1,11 @@
+package ctc.traccar.business.implementations;
+
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Service;
+
+import ctc.traccar.business.interfaces.SensorServiceInt;
+
+@Service
+public class SensorService implements SensorServiceInt {
+	private static Logger logger = Logger.getLogger(SensorService.class);
+}

@@ -20,6 +20,10 @@ public class GroupVo implements Serializable {
 	
 	private BigInteger parentId;
 
+	public GroupVo(BigInteger id) {
+		super();
+		this.id =id;
+	}
 
 	public GroupVo() {
 	}

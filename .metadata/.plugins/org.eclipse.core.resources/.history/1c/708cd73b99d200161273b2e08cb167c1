@@ -1,0 +1,47 @@
+package ctc.traccar.business.implementations;
+
+import java.util.Set;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ctc.traccar.api.vos.DeviceVo;
+import ctc.traccar.api.vos.PositionVo;
+import ctc.traccar.business.interfaces.PositionServiceInt;
+import ctc.traccar.data.interfaces.PictureRepositoryInt;
+import ctc.traccar.data.interfaces.PositionRepositoryInt;
+
+@Service
+public class PositionService implements PositionServiceInt {
+	
+	private static Logger logger = Logger.getLogger(PositionService.class);
+	
+	@Autowired
+	PositionRepositoryInt repo;
+	
+	@Override
+	public Set<PositionVo> getAllPosition() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public PositionVo getPosition(PositionVo position) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<PositionVo> getPositionsByDevice(DeviceVo device) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DeviceVo getDeviceByPosition(PositionVo position) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

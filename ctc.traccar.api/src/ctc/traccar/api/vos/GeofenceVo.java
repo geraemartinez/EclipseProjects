@@ -29,6 +29,10 @@ public class GeofenceVo implements Serializable {
 	
 	private String type;
 
+	public GeofenceVo(BigInteger id) {
+		super();
+		this.id=id;
+	}
 
 	public GeofenceVo() {
 	}

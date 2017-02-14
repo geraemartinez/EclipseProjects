@@ -1,0 +1,71 @@
+package ctc.traccar.business.implementations;
+
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ctc.traccar.api.vos.ReportVo;
+import ctc.traccar.api.vos.UiStateVo;
+import ctc.traccar.api.vos.UserVo;
+import ctc.traccar.business.helpers.ReportHelper;
+import ctc.traccar.business.helpers.UiStateHelper;
+import ctc.traccar.business.interfaces.UiStateServiceInt;
+import ctc.traccar.data.entities.Report;
+import ctc.traccar.data.entities.UiState;
+import ctc.traccar.data.interfaces.UiStateRepositoryInt;
+
+@Service
+public class UiStateService implements UiStateServiceInt {
+
+	private static Logger logger = Logger.getLogger(UiStateService.class);
+
+	@Autowired UiStateRepositoryInt repo;
+	
+	@Override
+	public List<UiStateVo> getAllUiState() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UiStateVo getUiStateById(UiStateVo ui) {
+		try {
+			
+			UiStateVo result = new UiStateVo();
+			
+			if(ui!=null && ui.getId()!=null){
+				
+				UiState ToSearch = UiStateHelper.converToObj(ui);
+				result = UiStateHelper.converToVO(repo.getUiStateById(ToSearch));
+				return result;
+				
+			}
+			
+		}catch(Exception e){ 
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UiStateService getUiStateById() method : " + e.getMessage());
+		}
+		return null;
+	}
+
+	@Override
+	public UserVo getUserByUiState(UiStateVo ui) {
+		try {
+			
+			UiStateVo result = new UiStateVo();
+			
+			if(ui!=null && ui.getId()!=null){
+				
+				UiState ToSearch = UiStateHelper.converToObj(ui);
+				result = UiStateHelper.converToVO(repo.getUiStateById(ToSearch));
+				return result;
+				
+			}
+			
+		}catch(Exception e){ 
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UiStateService getUserByUiState() method : " + e.getMessage());
+		}
+		return null;
+	}
+}

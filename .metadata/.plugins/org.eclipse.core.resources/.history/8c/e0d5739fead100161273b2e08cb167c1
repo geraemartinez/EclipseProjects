@@ -1,0 +1,7 @@
+package ctc.traccar.business.implementations;
+
+@RestController
+@RequestMapping("/api/DeviceIcon")
+public class DeviceIconController {
+
+}

@@ -29,9 +29,9 @@
 	        <property name="c3p0.min_size" value="5" />
 	        <property name="c3p0.timeout" value="1800" />
 			
-			<!-- Show and print nice SQL on stdout -->
+			<!-- Show and print nice SQL on stdout
 			<property name="show_sql" value="true"/>
-			<property name="format_sql" value="true"/>
+			<property name="format_sql" value="true"/> --> 
 					
 		</properties>
 	</persistence-unit>

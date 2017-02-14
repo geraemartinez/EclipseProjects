@@ -1,0 +1,12 @@
+package ctc.traccar.business.implementations;
+
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Service;
+
+import ctc.traccar.business.interfaces.ReportServiceInt;
+
+@Service
+public class ReportService implements ReportServiceInt {
+
+	private static Logger logger = Logger.getLogger(PositionService.class);
+}

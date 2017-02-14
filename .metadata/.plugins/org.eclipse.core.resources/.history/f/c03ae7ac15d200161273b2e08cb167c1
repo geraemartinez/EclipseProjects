@@ -1,0 +1,22 @@
+package ctc.traccar.business.implementations;
+
+import java.util.Set;
+
+import ctc.traccar.api.vos.PictureVo;
+import ctc.traccar.business.interfaces.PictureServiceInt;
+
+public class PictureService implements PictureServiceInt{
+
+	@Override
+	public Set<PictureVo> getAllPicture() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public PictureVo getPictureById(PictureVo pi) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

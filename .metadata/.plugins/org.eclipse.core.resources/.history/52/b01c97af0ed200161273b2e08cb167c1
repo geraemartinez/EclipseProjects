@@ -1,0 +1,42 @@
+package ctc.traccar.business.implementations;
+
+import java.util.Set;
+
+import ctc.traccar.api.vos.GroupVo;
+import ctc.traccar.api.vos.UserVo;
+import ctc.traccar.business.interfaces.GroupServiceInt;
+
+@Service
+public class GroupService implements GroupServiceInt {
+
+	@Override
+	public Set<GroupVo> getAllGroups() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<GroupVo> getChildGroups(GroupVo group) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<UserVo> getUsers(GroupVo group) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public GroupVo getGroupById(GroupVo group) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public GroupVo getParentGroup(GroupVo group) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

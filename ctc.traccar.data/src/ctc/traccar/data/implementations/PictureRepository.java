@@ -9,6 +9,7 @@ import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 
 import org.apache.log4j.Logger;
+import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
 import ctc.traccar.data.entities.Picture;
@@ -23,6 +24,7 @@ public class PictureRepository implements PictureRepositoryInt {
   	public PictureRepository(){	
   		EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence");
   		entityManager = emf.createEntityManager();
+  	
 	}
   	
 	@SuppressWarnings("unchecked")
@@ -45,8 +47,9 @@ public class PictureRepository implements PictureRepositoryInt {
 	@Override
 	public Picture getPictureById(Picture pi) {
 		try{
-			StringBuilder sql = new StringBuilder("SELECT p FROM Picture p WHERE p.id =: id");
+			StringBuilder sql = new StringBuilder("SELECT p FROM Picture p WHERE p.id = :id");
 			Query q = entityManager.createQuery(sql.toString());
+			q.setParameter("id", pi.getId());
 			Picture result = (Picture)q.getSingleResult();
 			return result;
 		}catch(PersistenceException e){

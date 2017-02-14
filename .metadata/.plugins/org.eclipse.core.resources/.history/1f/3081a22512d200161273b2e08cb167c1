@@ -1,0 +1,89 @@
+package ctc.traccar.business.implementations;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ctc.traccar.api.vos.DeviceVo;
+import ctc.traccar.api.vos.GroupVo;
+import ctc.traccar.api.vos.MaintenanceVo;
+import ctc.traccar.business.helpers.DeviceHelper;
+import ctc.traccar.business.helpers.GroupHelper;
+import ctc.traccar.business.helpers.MaintenanceHelper;
+import ctc.traccar.business.interfaces.MaintenanceServiceInt;
+import ctc.traccar.data.entities.Group;
+import ctc.traccar.data.entities.Maintenance;
+import ctc.traccar.data.interfaces.MaintenanceRepositoryInt;
+
+@Service
+public class MaintenanceService implements MaintenanceServiceInt {
+	
+	private static Logger logger = Logger.getLogger(MaintenanceService.class);
+	
+	@Autowired
+	MaintenanceRepositoryInt repo;
+	
+	@Override
+	public List<MaintenanceVo> getAllMaintenance() {
+		try {
+			List<MaintenanceVo> result = new ArrayList<MaintenanceVo>();
+			List<Maintenance> maintenances =  repo.getAllMaintenance();
+			
+			if (maintenances!=null && !maintenances.isEmpty()){
+				
+				result =  MaintenanceHelper.converToVo(maintenances);
+				return result;
+				
+			}
+						
+		}catch(Exception e){ 
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at GroupService getAllGroups() method : " + e.getMessage());
+		}
+		return null;
+	}
+
+	@Override
+	public MaintenanceVo getMaintenanceById(MaintenanceVo ma) {
+		try {
+			
+			MaintenanceVo result = new MaintenanceVo();
+			
+			if(ma!=null && ma.getId()!=null){
+				
+				Maintenance ToSearch = MaintenanceHelper.converToObj(ma);
+				result =  MaintenanceHelper.converToVO(repo.getMaintenanceById(ToSearch));
+				return result;
+				
+			}
+			
+		}catch(Exception e){ 
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at GroupService getChildGroups() method : " + e.getMessage());
+		}
+		return null;
+	}
+
+	@Override
+	public DeviceVo getDeviceOfMaintenance(MaintenanceVo ma) {
+		try {
+			
+			DeviceVo result = new DeviceVo();
+			
+			if(ma!=null && ma.getId()!=null){
+				
+				Maintenance ToSearch = MaintenanceHelper.converToObj(ma);
+				result =  DeviceHelper.converToVO(repo.getDeviceOfMaintenance(ToSearch));
+				return result;
+				
+			}
+			
+		}catch(Exception e){ 
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at GroupService getChildGroups() method : " + e.getMessage());
+		}
+		return null;
+	}
+
+}

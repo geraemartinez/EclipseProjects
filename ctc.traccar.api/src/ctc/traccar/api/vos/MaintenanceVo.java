@@ -25,8 +25,11 @@ public class MaintenanceVo implements Serializable {
 
 	private Double serviceInterval;
 
-
-
+	
+	public MaintenanceVo(BigInteger id) {
+		super();
+		this.id=id;
+	}
 	public MaintenanceVo() {
 	}
 

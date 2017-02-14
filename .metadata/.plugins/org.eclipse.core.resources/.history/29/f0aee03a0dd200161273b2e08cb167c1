@@ -1,0 +1,60 @@
+package ctc.traccar.business.implementations;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ctc.traccar.api.vos.DeviceVo;
+import ctc.traccar.api.vos.GeofenceVo;
+import ctc.traccar.business.helpers.GeofenceHelper;
+import ctc.traccar.business.interfaces.GeofenceServiceInt;
+import ctc.traccar.data.entities.ApplicationSetting;
+import ctc.traccar.data.entities.Device;
+import ctc.traccar.data.entities.Geofence;
+import ctc.traccar.data.interfaces.GeofenceRepositoryInt;
+
+@Service
+public class GeofenceService implements GeofenceServiceInt {
+
+	private static Logger logger = Logger.getLogger(GeofenceService.class);
+	
+	@Autowired
+	GeofenceRepositoryInt repo;
+	
+	@Override
+	public List<GeofenceVo> getAllGeofences() {
+		
+		try {
+			List<GeofenceVo> result = new ArrayList<GeofenceVo>();
+			List<Geofence> geofence =  repo.getAllGeofences();
+			
+			if (geofence!=null && !geofence.isEmpty()){
+				
+				result =  GeofenceHelper.converToVos(geofence);
+				return result;
+				
+			}
+						
+		}catch(Exception e){ 
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at ApplicationSettingsService getAllApplicationSettings() method : " + e.getMessage());
+		}
+		return null;
+		
+	}
+
+	@Override
+	public GeofenceVo getGeofenceById(GeofenceVo id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<DeviceVo> getDevicesGeofence(GeofenceVo id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

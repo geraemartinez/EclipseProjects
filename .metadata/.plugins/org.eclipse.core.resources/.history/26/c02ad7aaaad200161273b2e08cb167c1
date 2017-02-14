@@ -1,0 +1,30 @@
+package ctc.traccar.web.rest.controllers;
+
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import ctc.traccar.api.vos.DeviceVo;
+import ctc.traccar.api.vos.GeofenceVo;
+import ctc.traccar.api.vos.ReportVo;
+import ctc.traccar.business.interfaces.PositionServiceInt;
+
+@RestController
+@RequestMapping("/api/Report")
+public class ReportController {
+	
+	private static Logger logger = Logger.getLogger(ReportController.class);
+
+	@Autowired  ReportServiceInt service;
+	
+	@RequestMapping(method=RequestMethod.GET)
+	public ResponseEntity<?> getAllReports(){}
+	public ResponseEntity<?> getReportById(ReportVo report){}
+	public ResponseEntity<?> getDevicesByReport(ReportVo report){}
+	public ResponseEntity<?> getGeofenceByReport(ReportVo report){}
+
+}

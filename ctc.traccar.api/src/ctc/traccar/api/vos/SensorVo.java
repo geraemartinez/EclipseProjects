@@ -26,6 +26,12 @@ public class SensorVo implements Serializable {
 
 	private Byte visible;
 	
+	public SensorVo(BigInteger id) {
+	
+		super();
+		this.id = id;
+	}
+	
 	public SensorVo() {
 	}
 

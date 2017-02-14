@@ -1,0 +1,35 @@
+package ctc.traccar.business.implementations;
+
+import java.util.Set;
+
+import ctc.traccar.api.vos.DeviceVo;
+import ctc.traccar.api.vos.PositionVo;
+import ctc.traccar.business.interfaces.PositionServiceInt;
+
+public class PositionService implements PositionServiceInt {
+
+	@Override
+	public Set<PositionVo> getAllPosition() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public PositionVo getPosition(PositionVo position) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<PositionVo> getPositionsByDevice(DeviceVo device) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DeviceVo getDeviceByPosition(PositionVo position) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

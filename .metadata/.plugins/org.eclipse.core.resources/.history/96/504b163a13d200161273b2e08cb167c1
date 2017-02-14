@@ -1,0 +1,7 @@
+package ctc.traccar.business.implementations;
+
+import ctc.traccar.business.interfaces.PictureServiceInt;
+
+public class PictureService implements PictureServiceInt{
+
+}

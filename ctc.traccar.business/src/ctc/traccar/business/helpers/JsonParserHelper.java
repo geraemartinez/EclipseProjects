@@ -22,8 +22,7 @@ public class JsonParserHelper {
 		    final ObjectMapper mapper = new ObjectMapper();
 			mapper.writeValue(out, object);
 			final byte[] data = ((ByteArrayOutputStream) out).toByteArray();
-			String json =new String(data);
-		    System.out.println(json);
+			String json = new String(data);
 			return json;
 		} catch (JsonGenerationException e) {
 			

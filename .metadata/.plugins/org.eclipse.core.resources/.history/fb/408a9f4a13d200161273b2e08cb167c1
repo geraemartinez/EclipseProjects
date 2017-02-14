@@ -1,0 +1,35 @@
+package ctc.traccar.business.implementations;
+
+import java.util.Set;
+
+import ctc.traccar.api.vos.NotificationSettingVo;
+import ctc.traccar.api.vos.UserVo;
+import ctc.traccar.business.interfaces.NotificationSettingServiceInt;
+
+public class NotificationSettingService implements NotificationSettingServiceInt {
+
+	@Override
+	public Set<NotificationSettingVo> getAllNotificationSetting() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public NotificationSettingVo getNotificationSettingById(NotificationSettingVo notificationSetting) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public NotificationSettingVo getNotificationSettingByUser(UserVo user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserVo getNotificationSettingUser(NotificationSettingVo notificationSetting) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

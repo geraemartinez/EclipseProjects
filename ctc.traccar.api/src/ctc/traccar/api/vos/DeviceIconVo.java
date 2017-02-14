@@ -21,7 +21,10 @@ public class DeviceIconVo implements Serializable {
 	private BigInteger selectedIcon_id;
 	
 
-
+	public DeviceIconVo(BigInteger id) {
+		super();
+		this.id=id;
+	}
 	public DeviceIconVo() {
 	}
 

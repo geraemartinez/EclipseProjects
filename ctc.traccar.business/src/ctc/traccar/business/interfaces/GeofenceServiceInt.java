@@ -1,12 +1,12 @@
 package ctc.traccar.business.interfaces;
 
-import java.util.Set;
+import java.util.List;
 
 import ctc.traccar.api.vos.*;
 
 public interface GeofenceServiceInt {
 
-	public Set<GeofenceVo> getAllGeofences();
+	public List<GeofenceVo> getAllGeofences();
 	public GeofenceVo getGeofenceById(GeofenceVo id);
-	public Set<DeviceVo> getDevicesGeofence(GeofenceVo id);
+	public List<DeviceVo> getDevicesGeofence(GeofenceVo id);
 }

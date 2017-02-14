@@ -1,0 +1,64 @@
+package ctc.traccar.business.implementations;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import ctc.traccar.api.vos.MaintenanceVo;
+import ctc.traccar.api.vos.NotificationSettingVo;
+import ctc.traccar.api.vos.UserVo;
+import ctc.traccar.business.helpers.MaintenanceHelper;
+import ctc.traccar.business.helpers.NotificationSettingHelper;
+import ctc.traccar.business.interfaces.NotificationSettingServiceInt;
+import ctc.traccar.data.entities.Maintenance;
+import ctc.traccar.data.entities.NotificationSetting;
+import ctc.traccar.data.interfaces.NotificationSettingRepositoryInt;
+
+public class NotificationSettingService implements NotificationSettingServiceInt {
+
+private static Logger logger = Logger.getLogger(NotificationSettingService.class);
+	
+	@Autowired
+	NotificationSettingRepositoryInt repo;
+	
+	@Override
+	public List<NotificationSettingVo> getAllNotificationSetting() {
+		try {
+			List<NotificationSettingVo> result = new ArrayList<NotificationSettingVo>();
+			List<NotificationSetting> notifications =  repo.getAllNotificationSetting();
+			
+			if (notifications!=null && !notifications.isEmpty()){
+				
+				result =  NotificationSettingHelper.converToVo(notifications);
+				return result;
+				
+			}
+						
+		}catch(Exception e){ 
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at MaintenanceService getAllMaintenance() method : " + e.getMessage());
+		}
+		return null;
+	}
+
+	@Override
+	public NotificationSettingVo getNotificationSettingById(NotificationSettingVo notificationSetting) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public NotificationSettingVo getNotificationSettingByUser(UserVo user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserVo getNotificationSettingUser(NotificationSettingVo notificationSetting) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,27 @@
+package ctc.traccar.web.rest.controllers;
+
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import ctc.traccar.api.vos.NotificationSettingVo;
+import ctc.traccar.api.vos.NotificationTemplateVo;
+import ctc.traccar.business.interfaces.NotificationTemplateServiceInt;
+
+@RestController
+@RequestMapping("/api/Group")
+public class NotificationTemplateController {
+
+	private static Logger logger = Logger.getLogger(NotificationTemplateController.class);
+
+	@Autowired NotificationTemplateServiceInt service;
+	
+	public ResponseEntity<?> getAllNotificationTemplate();
+	public ResponseEntity<?> getNotificationTemplateById(NotificationTemplateVo nt );
+	public ResponseEntity<?> getNotificationTemplateByNotificationSetting(NotificationSettingVo ns );
+	public ResponseEntity<?> getNotificationSettingByNotificationTemplate(NotificationTemplateVo nt);
+}

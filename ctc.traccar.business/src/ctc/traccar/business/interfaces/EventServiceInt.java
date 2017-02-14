@@ -1,11 +1,11 @@
 package ctc.traccar.business.interfaces;
 
-import java.util.Set;
+import java.util.List;
 
 import ctc.traccar.api.vos.*;
 
 public interface EventServiceInt {
-	public Set<EventVo> getAllEvents();
+	public List<EventVo> getAllEvents();
 	public EventVo getEventById(EventVo event);
 	
 	public DeviceVo getDeviceEvent(EventVo event);

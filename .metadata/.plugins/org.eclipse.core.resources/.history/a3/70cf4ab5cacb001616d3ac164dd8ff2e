@@ -1,5 +1,0 @@
-package ctc.traccar.business.implementations;
-
-public class BaseService {
-
-}

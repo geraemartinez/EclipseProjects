@@ -26,6 +26,10 @@ public class NotificationTemplateVo implements Serializable {
 	private String type;
 	
 
+	public NotificationTemplateVo(BigInteger id) {
+		super();
+		this.id = id;
+	}
 	public NotificationTemplateVo() {
 	}
 

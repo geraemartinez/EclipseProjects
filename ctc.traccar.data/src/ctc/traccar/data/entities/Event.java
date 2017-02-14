@@ -45,24 +45,22 @@ public class Event implements Serializable {
 	@Column(name="type")
 	private String type;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="device_id",insertable=false, updatable = false)
 	private Device device;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="geoFence_id",insertable=false, updatable = false)
 	private Geofence geofence;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="maintenance_id",insertable=false, updatable = false)
 	private Maintenance maintenance;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="position_id",insertable=false, updatable = false)
 	private Position position;
 	
-	
-
 	public Event() {
 	}
 

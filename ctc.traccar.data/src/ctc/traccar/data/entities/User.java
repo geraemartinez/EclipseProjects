@@ -89,7 +89,7 @@ public class User implements Serializable {
 	private List<Geofence> geofences;
 	
 	
-	@ManyToMany(fetch=FetchType.EAGER)
+	@ManyToMany(fetch=FetchType.LAZY)
 	  @JoinTable(
 	      name="users_devices",
 	      joinColumns= 
@@ -98,7 +98,7 @@ public class User implements Serializable {
 	      	@JoinColumn(name="devices_id"))
 	private List<Device> sharedDevices;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="userSettings_id", insertable = false, updatable = false)
 	private UserSetting userSettings;
 	

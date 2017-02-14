@@ -1,0 +1,26 @@
+package ctc.traccar.web.rest.controllers;
+
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import ctc.traccar.api.vos.DeviceVo;
+import ctc.traccar.api.vos.PositionVo;
+import ctc.traccar.business.interfaces.PositionServiceInt;
+
+@RestController
+@RequestMapping("/api/Position")
+public class PositionController {
+	private static Logger logger = Logger.getLogger(PositionController.class);
+
+	@Autowired  PositionServiceInt service;
+	
+	public ResponseEntity<?> getAllPosition();
+	public ResponseEntity<?> getPosition(PositionVo position);
+	public ResponseEntity<?> getPositionsByDevice(DeviceVo device);
+	public ResponseEntity<?> getDeviceByPosition(PositionVo position);
+}

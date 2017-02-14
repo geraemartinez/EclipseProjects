@@ -1,0 +1,9 @@
+package ctc.traccar.business.implementations;
+
+import org.apache.log4j.Logger;
+
+@Service
+public class ReportService implements ReportServiceInt {
+
+	private static Logger logger = Logger.getLogger(PositionService.class);
+}

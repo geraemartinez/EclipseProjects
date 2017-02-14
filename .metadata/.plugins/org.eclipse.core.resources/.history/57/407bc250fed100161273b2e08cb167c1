@@ -1,0 +1,73 @@
+package ctc.traccar.web.rest.controllers;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import ctc.traccar.api.vos.DeviceVo;
+import ctc.traccar.api.vos.EventVo;
+import ctc.traccar.api.vos.GeofenceVo;
+import ctc.traccar.api.vos.MaintenanceVo;
+import ctc.traccar.api.vos.PositionVo;
+import ctc.traccar.business.helpers.DeviceHelper;
+import ctc.traccar.business.helpers.EventHelper;
+import ctc.traccar.business.helpers.GeofenceHelper;
+import ctc.traccar.business.helpers.MaintenanceHelper;
+import ctc.traccar.business.helpers.PositionHelper;
+import ctc.traccar.business.interfaces.EventServiceInt;
+import ctc.traccar.data.entities.Device;
+import ctc.traccar.data.entities.Event;
+import ctc.traccar.data.entities.Geofence;
+import ctc.traccar.data.entities.Maintenance;
+import ctc.traccar.data.entities.Position;
+
+@RestController
+@RequestMapping("/api/Event")
+public class EventController {
+
+	private static Logger logger = Logger.getLogger(EventController.class);
+	
+	@Autowired
+	private EventServiceInt eventService;
+	
+	@ModelAttribute("DeviceVo")
+    public EventVo getEventVo(){
+        return new EventVo();
+    }
+	
+	public List<EventVo> getAllEvents() {
+		
+	}
+
+	
+	public EventVo getEventById(EventVo event) {
+		
+	}
+
+	
+	public DeviceVo getDeviceEvent(EventVo event) {
+		
+	}
+
+	
+	public GeofenceVo getGeofenceEvent(EventVo event) {
+		
+		
+	}
+
+	
+	public MaintenanceVo getMaintenanceEvent(EventVo event) {
+		
+	}
+
+	
+	public PositionVo getPositionEvent(EventVo event) {
+		
+	}
+
+}

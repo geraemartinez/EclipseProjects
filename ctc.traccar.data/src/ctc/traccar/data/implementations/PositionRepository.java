@@ -9,6 +9,7 @@ import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 
 import org.apache.log4j.Logger;
+
 import org.springframework.stereotype.Repository;
 
 import ctc.traccar.data.entities.Device;
@@ -20,6 +21,7 @@ public class PositionRepository implements PositionRepositoryInt {
 
 	private static Logger logger = Logger.getLogger(PositionRepository.class);
 	private EntityManager entityManager;
+	private static final int LIMIT = 2000;
 
   	public PositionRepository(){	
   		EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence");
@@ -30,8 +32,10 @@ public class PositionRepository implements PositionRepositoryInt {
 	@Override
 	public List<Position> getAllPosition() {
 		try{
+			
 			StringBuilder sql = new StringBuilder("SELECT p FROM Position p");
 			Query q = entityManager.createQuery(sql.toString());
+			q.setMaxResults(LIMIT);
 			List<Position> result = (List<Position>)q.getResultList();
 			return result;
 		}catch(PersistenceException e){
@@ -67,6 +71,7 @@ public class PositionRepository implements PositionRepositoryInt {
 			StringBuilder sql = new StringBuilder("SELECT p FROM Position p WHERE p.deviceId = :id");
 			Query q = entityManager.createQuery(sql.toString());
 			q.setParameter("id", device.getId());
+			q.setMaxResults(LIMIT);
 			List<Position> result = (List<Position>)q.getResultList();
 			return result;
 		}catch(PersistenceException e){

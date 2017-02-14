@@ -1,0 +1,37 @@
+package ctc.traccar.business.implementations;
+
+import java.util.Set;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ctc.traccar.api.vos.DeviceVo;
+import ctc.traccar.api.vos.SensorVo;
+import ctc.traccar.business.interfaces.SensorServiceInt;
+
+@Service
+public class SensorService implements SensorServiceInt {
+	
+	private static Logger logger = Logger.getLogger(SensorService.class);
+
+	@Autowired SensorRepositoryInt repo;
+	
+	@Override
+	public Set<SensorVo> getAllSensors() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public SensorVo getAllSensor(SensorVo sensor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DeviceVo getDeviceBySensor(SensorVo sensor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

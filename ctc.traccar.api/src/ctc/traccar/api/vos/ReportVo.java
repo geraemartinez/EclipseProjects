@@ -33,6 +33,10 @@ public class ReportVo implements Serializable {
 	private String type;
 
 
+	public ReportVo(BigInteger id) {
+		super();
+		this.id = id;
+	}
 	public ReportVo() {
 	}
 

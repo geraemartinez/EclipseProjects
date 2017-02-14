@@ -1,0 +1,5 @@
+package ctc.traccar.business.implementations;
+
+public class PositionService implements PositionServiceInt {
+
+}

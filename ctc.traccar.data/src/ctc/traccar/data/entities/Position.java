@@ -62,7 +62,7 @@ public class Position implements Serializable {
 	@Column(name="valid")
 	private Byte valid;
 
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="device_id",insertable=false, updatable = false)
 	@JsonManagedReference
 	private Device device;

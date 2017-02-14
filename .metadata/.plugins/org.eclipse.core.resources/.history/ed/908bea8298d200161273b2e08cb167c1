@@ -1,0 +1,6 @@
+package ctc.traccar.business.implementations;
+
+@Service
+public class SensorService implements SensorServiceInt {
+
+}

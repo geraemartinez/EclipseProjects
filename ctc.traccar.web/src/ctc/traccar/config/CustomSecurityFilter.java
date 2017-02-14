@@ -35,7 +35,6 @@ public class CustomSecurityFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 			try {
 				SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
-				String URL = ((HttpServletRequest)request).getRequestURL().toString();
 				
 				String auth = ((HttpServletRequest) request).getHeader("Authorization");
 				
@@ -54,6 +53,7 @@ public class CustomSecurityFilter implements Filter {
 				logger.error("[ERROR] Athorization error, bad credentials detected");
 			}
 			((HttpServletResponse) response).setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+			
 			
 	}
 

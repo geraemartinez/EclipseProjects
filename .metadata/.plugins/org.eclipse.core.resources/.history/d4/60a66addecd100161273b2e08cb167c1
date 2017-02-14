@@ -1,0 +1,6 @@
+package ctc.traccar.business.implementations;
+
+
+public class DeviceIconController {
+
+}

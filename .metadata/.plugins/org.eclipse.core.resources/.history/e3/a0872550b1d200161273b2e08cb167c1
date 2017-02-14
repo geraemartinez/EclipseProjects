@@ -1,0 +1,27 @@
+package ctc.traccar.web.rest.controllers;
+
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import ctc.traccar.api.vos.UserSettingVo;
+import ctc.traccar.business.interfaces.UserSettingServiceInt;
+
+@Controller
+@RequestMapping("/api/UserSettingController")
+public class UserSettingController {
+	
+
+	private static Logger logger = Logger.getLogger(UserSettingController.class);
+	
+	@Autowired
+	private UserSettingServiceInt service;
+	
+	public ResponseEntity<?> getAllUserSetting(){}
+	public ResponseEntity<?> getUserSettingById(UserSettingVo userSetting){}
+
+}

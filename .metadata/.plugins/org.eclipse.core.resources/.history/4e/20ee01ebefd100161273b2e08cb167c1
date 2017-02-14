@@ -1,0 +1,50 @@
+package ctc.traccar.business.implementations;
+
+import java.util.Set;
+
+import ctc.traccar.api.vos.DeviceVo;
+import ctc.traccar.api.vos.EventVo;
+import ctc.traccar.api.vos.GeofenceVo;
+import ctc.traccar.api.vos.MaintenanceVo;
+import ctc.traccar.api.vos.PositionVo;
+import ctc.traccar.business.interfaces.EventServiceInt;
+
+public class EventService implements EventServiceInt {
+
+	@Override
+	public Set<EventVo> getAllEvents() {
+		
+		return null;
+	}
+
+	@Override
+	public EventVo getEventById(EventVo event) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DeviceVo getDeviceEvent(EventVo event) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public GeofenceVo getGeofenceEvent(EventVo event) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public MaintenanceVo getMaintenanceEvent(EventVo event) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public PositionVo getPositionEvent(EventVo event) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

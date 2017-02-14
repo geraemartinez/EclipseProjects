@@ -1,0 +1,41 @@
+package ctc.traccar.business.implementations;
+
+import java.util.Set;
+
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Service;
+
+import ctc.traccar.api.vos.DeviceVo;
+import ctc.traccar.api.vos.GeofenceVo;
+import ctc.traccar.api.vos.ReportVo;
+import ctc.traccar.business.interfaces.ReportServiceInt;
+
+@Service
+public class ReportService implements ReportServiceInt {
+
+	private static Logger logger = Logger.getLogger(ReportService.class);
+
+	@Override
+	public Set<ReportVo> getAllReports() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ReportVo getReportById(ReportVo report) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<DeviceVo> getDevicesByReport(ReportVo report) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<GeofenceVo> getGeofenceByReport(ReportVo report) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

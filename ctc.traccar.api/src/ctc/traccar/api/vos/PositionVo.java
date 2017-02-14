@@ -41,7 +41,10 @@ public class PositionVo implements Serializable {
 
 	private Byte valid;
 
-	
+	public PositionVo(BigInteger id) {
+		super();
+		this.id = id;
+	}
 	public PositionVo() {
 	}
 

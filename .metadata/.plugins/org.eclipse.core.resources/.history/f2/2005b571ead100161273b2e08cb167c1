@@ -1,0 +1,46 @@
+package ctc.traccar.business.implementations;
+
+import java.util.Set;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import ctc.traccar.api.vos.DeviceIconVo;
+import ctc.traccar.api.vos.PictureVo;
+import ctc.traccar.business.interfaces.DeviceIconServiceInt;
+
+@RestController
+@RequestMapping("/api/ApplicationSetting")
+public class DeviceIconService implements DeviceIconServiceInt {
+
+	@Override
+	public Set<DeviceIconVo> getAllDeviceIcon() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DeviceIconVo getDeviceIconById(DeviceIconVo devIcon) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public PictureVo getDefaultIconByDeviceIcon(DeviceIconVo devIcon) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public PictureVo getofflineIconByDeviceIcon(DeviceIconVo devIcon) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public PictureVo getselectedIconByDeviceIcon(DeviceIconVo devIcon) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

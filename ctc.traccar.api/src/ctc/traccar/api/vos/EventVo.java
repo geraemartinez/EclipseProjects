@@ -31,6 +31,10 @@ public class EventVo implements Serializable {
 
 	private String type;
 	
+	public EventVo(BigInteger id) {
+		super();
+		this.id = id;
+	}
 
 	public EventVo() {
 	}
@@ -51,11 +55,11 @@ public class EventVo implements Serializable {
 		this.deviceId = deviceId;
 	}
 
-	public byte getExpired() {
+	public Byte getExpired() {
 		return this.expired;
 	}
 
-	public void setExpired(byte expired) {
+	public void setExpired(Byte expired) {
 		this.expired = expired;
 	}
 
@@ -75,11 +79,11 @@ public class EventVo implements Serializable {
 		this.maintenanceId = maintenanceId;
 	}
 
-	public byte getNotificationSent() {
+	public Byte getNotificationSent() {
 		return this.notificationSent;
 	}
 
-	public void setNotificationSent(byte notificationSent) {
+	public void setNotificationSent(Byte notificationSent) {
 		this.notificationSent = notificationSent;
 	}
 

@@ -29,7 +29,7 @@ public class SensorRepository implements SensorRepositoryInt {
 	@Override
 	public List<Sensor> getAllSensors() {
 		try{
-			StringBuilder sql = new StringBuilder("SELECT s FROM Sensor s ");
+			StringBuilder sql = new StringBuilder("SELECT s FROM Sensor s");
 			Query q = entityManager.createQuery(sql.toString());
 			List<Sensor> result = (List<Sensor>)q.getResultList();
 			return result;
@@ -43,9 +43,9 @@ public class SensorRepository implements SensorRepositoryInt {
 	}
 
 	@Override
-	public Sensor getAllSensor(Sensor sensor) {
+	public Sensor getSensorById(Sensor sensor) {
 		try{
-			StringBuilder sql = new StringBuilder("SELECT s FROM Sensor s WHERE s.id =: id ");
+			StringBuilder sql = new StringBuilder("SELECT s FROM Sensor s WHERE s.id = :id");
 			Query q = entityManager.createQuery(sql.toString());
 			q.setParameter("id", sensor.getId());
 			Sensor result = (Sensor)q.getSingleResult();
@@ -62,7 +62,7 @@ public class SensorRepository implements SensorRepositoryInt {
 	@Override
 	public Device getDeviceBySensor(Sensor sensor) {
 		try{
-			StringBuilder sql = new StringBuilder("SELECT s FROM Sensor s WHERE s.id =: id ");
+			StringBuilder sql = new StringBuilder("SELECT s FROM Sensor s WHERE s.id = :id");
 			Query q = entityManager.createQuery(sql.toString());
 			q.setParameter("id", sensor.getId());
 			Sensor result = (Sensor)q.getSingleResult();

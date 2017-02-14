@@ -1,0 +1,8 @@
+package ctc.traccar.business.implementations;
+
+import org.apache.log4j.Logger;
+
+@Service
+public class SensorService implements SensorServiceInt {
+	private static Logger logger = Logger.getLogger(SensorService.class);
+}

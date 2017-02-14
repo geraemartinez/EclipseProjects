@@ -1,0 +1,33 @@
+package ctc.traccar.business.implementations;
+
+import java.util.Set;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ctc.traccar.api.vos.UserSettingVo;
+import ctc.traccar.business.interfaces.UserSettingServiceInt;
+import ctc.traccar.data.interfaces.UserRepositoryInt;
+import ctc.traccar.data.interfaces.UserSettingRepositoryInt;
+
+@Service
+public class UserSettingService implements UserSettingServiceInt {
+
+	private static Logger logger = Logger.getLogger(UserSettingService.class);
+
+	@Autowired
+	UserSettingRepositoryInt repo;
+	
+	@Override
+	public Set<UserSettingVo> getAllUserSetting() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserSettingVo getUserSettingById(UserSettingVo userSetting) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

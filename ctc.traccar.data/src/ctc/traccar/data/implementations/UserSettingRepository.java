@@ -47,6 +47,7 @@ public class UserSettingRepository implements UserSettingRepositoryInt {
 		try{
 			StringBuilder sql = new StringBuilder("SELECT u FROM UserSetting u WHERE u.id = :id");
 			Query q = entityManager.createQuery(sql.toString());
+			q.setParameter("id", userSetting.getId());
 			UserSetting result = (UserSetting)q.getSingleResult();
 			return result;
 		}catch(PersistenceException e){

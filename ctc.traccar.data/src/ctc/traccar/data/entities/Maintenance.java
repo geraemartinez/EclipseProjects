@@ -36,7 +36,7 @@ public class Maintenance implements Serializable {
 	@Column(name="serviceInterval")
 	private Double serviceInterval;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="device_id",insertable=false, updatable = false)
 	@JsonBackReference
 	private Device device;

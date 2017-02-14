@@ -1,7 +1,0 @@
-package ctc.traccar.business.enums;
-
-public enum TypeException {
-	
-	UNKNOWN_ERROR,
-	ACCESS_DENIED
-}

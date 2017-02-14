@@ -1,0 +1,44 @@
+package ctc.traccar.business.implementations;
+
+import java.util.Set;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import ctc.traccar.api.vos.NotificationSettingVo;
+import ctc.traccar.api.vos.UserVo;
+import ctc.traccar.business.interfaces.NotificationSettingServiceInt;
+import ctc.traccar.data.interfaces.NotificationSettingRepositoryInt;
+
+public class NotificationSettingService implements NotificationSettingServiceInt {
+
+private static Logger logger = Logger.getLogger(NotificationSettingService.class);
+	
+	@Autowired
+	NotificationSettingRepositoryInt repo;
+	
+	@Override
+	public Set<NotificationSettingVo> getAllNotificationSetting() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public NotificationSettingVo getNotificationSettingById(NotificationSettingVo notificationSetting) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public NotificationSettingVo getNotificationSettingByUser(UserVo user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserVo getNotificationSettingUser(NotificationSettingVo notificationSetting) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

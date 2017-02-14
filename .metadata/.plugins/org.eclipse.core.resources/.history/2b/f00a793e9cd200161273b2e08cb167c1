@@ -1,0 +1,13 @@
+package ctc.traccar.business.interfaces;
+
+import java.util.List;
+
+import ctc.traccar.api.vos.*;
+
+
+public interface SensorServiceInt {
+
+	public List<SensorVo> getAllSensors();
+	public SensorVo getAllSensor(SensorVo sensor);
+	public DeviceVo getDeviceBySensor(SensorVo sensor);
+}

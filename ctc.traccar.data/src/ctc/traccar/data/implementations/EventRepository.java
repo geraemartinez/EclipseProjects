@@ -51,6 +51,7 @@ public class EventRepository implements EventRepositoryInt {
 		try{
 			StringBuilder sql = new StringBuilder("SELECT e FROM Event e WHERE e.id = :id");
 			Query q = entityManager.createQuery(sql.toString());
+			q.setParameter("id", event.getId());
 			Event result = (Event)q.getSingleResult();
 			return result;
 		}catch(PersistenceException e){
@@ -67,6 +68,7 @@ public class EventRepository implements EventRepositoryInt {
 		try{
 			StringBuilder sql = new StringBuilder("SELECT e FROM Event e WHERE e.id = :id");
 			Query q = entityManager.createQuery(sql.toString());
+			q.setParameter("id", event.getId());
 			Event result = (Event)q.getSingleResult();
 			return result.getDevice();
 		}catch(PersistenceException e){
@@ -83,6 +85,7 @@ public class EventRepository implements EventRepositoryInt {
 		try{
 			StringBuilder sql = new StringBuilder("SELECT e FROM Event e WHERE e.id = :id");
 			Query q = entityManager.createQuery(sql.toString());
+			q.setParameter("id", event.getId());
 			Event result = (Event)q.getSingleResult();
 			return result.getGeofence();
 		}catch(PersistenceException e){
@@ -99,6 +102,7 @@ public class EventRepository implements EventRepositoryInt {
 		try{
 			StringBuilder sql = new StringBuilder("SELECT e FROM Event e WHERE e.id = :id");
 			Query q = entityManager.createQuery(sql.toString());
+			q.setParameter("id", event.getId());
 			Event result = (Event)q.getSingleResult();
 			return result.getMaintenance();
 		}catch(PersistenceException e){
@@ -115,6 +119,7 @@ public class EventRepository implements EventRepositoryInt {
 		try{
 			StringBuilder sql = new StringBuilder("SELECT e FROM Event e WHERE e.id = :id");
 			Query q = entityManager.createQuery(sql.toString());
+			q.setParameter("id", event.getId());
 			Event result = (Event)q.getSingleResult();
 			return result.getPosition();
 		}catch(PersistenceException e){

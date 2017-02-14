@@ -1,0 +1,11 @@
+package ctc.traccar.data.interfaces;
+
+import java.util.List;
+
+
+public interface GeofenceRepositoryInt {
+
+	public List<GeofenceVo> getAllGeofences();
+	public GeofenceVo getGeofenceById(GeofenceVo id);
+	public List<DeviceVo> getDevicesGeofence(GeofenceVo id);
+}

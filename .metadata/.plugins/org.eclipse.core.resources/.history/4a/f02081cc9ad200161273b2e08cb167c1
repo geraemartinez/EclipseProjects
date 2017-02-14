@@ -1,0 +1,63 @@
+package ctc.traccar.business.implementations;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ctc.traccar.api.vos.DeviceVo;
+import ctc.traccar.api.vos.GeofenceVo;
+import ctc.traccar.api.vos.PictureVo;
+import ctc.traccar.api.vos.ReportVo;
+import ctc.traccar.business.helpers.PictureHelper;
+import ctc.traccar.business.interfaces.ReportServiceInt;
+import ctc.traccar.data.entities.Picture;
+import ctc.traccar.data.entities.Report;
+import ctc.traccar.data.interfaces.ReportRepositoryInt;
+
+@Service
+public class ReportService implements ReportServiceInt {
+
+	private static Logger logger = Logger.getLogger(ReportService.class);
+
+	@Autowired ReportRepositoryInt repo;
+	
+	@Override
+	public List<ReportVo> getAllReports() {
+		try {
+			List<ReportVo> result = new ArrayList<ReportVo>();
+			List<Report> reports =  repo.getAllReports();
+			
+			if (reports!=null && !reports.isEmpty()){
+				
+				result =  ReportHelper.converToVo(reports);
+				return result;
+				
+			}
+						
+		}catch(Exception e){ 
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at ReportService getAllReports() method : " + e.getMessage());
+		}
+		return null;
+	}
+
+	@Override
+	public ReportVo getReportById(ReportVo report) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<DeviceVo> getDevicesByReport(ReportVo report) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<GeofenceVo> getGeofenceByReport(ReportVo report) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

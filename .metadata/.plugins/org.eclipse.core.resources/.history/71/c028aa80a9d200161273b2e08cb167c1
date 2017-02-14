@@ -1,0 +1,30 @@
+package ctc.traccar.web.rest.controllers;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import ctc.traccar.business.interfaces.PositionServiceInt;
+
+@RestController
+@RequestMapping("/api/Position")
+public class PositionController {
+	private static Logger logger = Logger.getLogger(PositionController.class);
+
+	@Autowired  PositionServiceInt service;
+	
+	public ResponseEntity<?> getAllPosition(){}
+	
+	@RequestMapping(value="/{IdNumber}",method=RequestMethod.GET)
+	public ResponseEntity<?> getPosition(@PathVariable(value="IdNumber") String id){}
+	
+	@RequestMapping(value="/Device/{IdNumber}",method=RequestMethod.GET)
+	public ResponseEntity<?> getPositionsByDevice(@PathVariable(value="IdNumber") String id){}
+	
+	@RequestMapping(value="/{IdNumber}/Device",method=RequestMethod.GET)
+	public ResponseEntity<?> getDeviceByPosition(@PathVariable(value="IdNumber") String id){}
+}

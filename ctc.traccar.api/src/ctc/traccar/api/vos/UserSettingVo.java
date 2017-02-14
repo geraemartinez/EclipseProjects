@@ -51,6 +51,11 @@ public class UserSettingVo implements Serializable {
 	
 	private Integer zoomLevel;
 
+	public UserSettingVo(BigInteger id) {
+		super();
+		this.id =id;
+	}
+	
 	public UserSettingVo() {
 	}
 

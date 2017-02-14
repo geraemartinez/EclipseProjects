@@ -36,7 +36,11 @@ public class NotificationSettingVo implements Serializable {
 
 	
 
-	
+	public NotificationSettingVo(BigInteger id) {
+		super();
+		this.id = id;
+		
+	}
 	public NotificationSettingVo() {
 	}
 

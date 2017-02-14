@@ -89,7 +89,7 @@ public class UserService implements UserServiceInt{
 			}
 						
 		}catch(Exception e){ 
-			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UserService getByEmail() method : " + e.getMessage());
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UserService getAll() method : " + e.getMessage());
 		}
 		return null;
 	}
@@ -109,7 +109,7 @@ public class UserService implements UserServiceInt{
 			}
 						
 		}catch(Exception e){ 
-			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UserService getByEmail() method : " + e.getMessage());
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UserService getReports() method : " + e.getMessage());
 			
 		}
 		return null;
@@ -129,7 +129,7 @@ public class UserService implements UserServiceInt{
 				
 			}
 		}catch(Exception e){ 
-			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UserService getByEmail() method : " + e.getMessage());
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UserService getGeofences() method : " + e.getMessage());
 		}
 		return null;
 	}
@@ -148,7 +148,7 @@ public class UserService implements UserServiceInt{
 				
 			}			
 		}catch(Exception e){ 
-			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UserService getByEmail() method : " + e.getMessage());	
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UserService getUserSetting() method : " + e.getMessage());	
 		}
 		return null;
 	}
@@ -170,7 +170,7 @@ public class UserService implements UserServiceInt{
 			}
 			
 		}catch(Exception e){ 
-			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UserService getById: " + e.getMessage());	
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UserService getByLogin: " + e.getMessage());	
 		}
 		return null;
 	}
@@ -201,7 +201,7 @@ public class UserService implements UserServiceInt{
 			}
 			
 		}catch(Exception e){ 
-			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UserService getById: " + e.getMessage());	
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UserService login: " + e.getMessage());	
 		}
 		return null;
 	}

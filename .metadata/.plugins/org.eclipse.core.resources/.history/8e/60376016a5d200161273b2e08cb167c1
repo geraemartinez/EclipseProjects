@@ -1,0 +1,17 @@
+package ctc.traccar.web.rest.controllers;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import ctc.traccar.business.interfaces.NotificationSettingServiceInt;
+
+@RestController
+@RequestMapping("/api/Group")
+public class NotificationSettingController {
+
+	private static Logger logger = Logger.getLogger(NotificationSettingController.class);
+
+	@Autowired NotificationSettingServiceInt service;
+}

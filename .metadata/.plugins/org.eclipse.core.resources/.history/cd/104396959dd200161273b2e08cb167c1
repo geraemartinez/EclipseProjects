@@ -1,0 +1,66 @@
+package ctc.traccar.business.implementations;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ctc.traccar.api.vos.UiStateVo;
+import ctc.traccar.api.vos.UserSettingVo;
+import ctc.traccar.api.vos.UserVo;
+import ctc.traccar.business.helpers.UiStateHelper;
+import ctc.traccar.business.helpers.UserHelper;
+import ctc.traccar.business.helpers.UserSettingHelper;
+import ctc.traccar.business.interfaces.UserSettingServiceInt;
+import ctc.traccar.data.entities.UiState;
+import ctc.traccar.data.entities.User;
+import ctc.traccar.data.entities.UserSetting;
+import ctc.traccar.data.interfaces.UserSettingRepositoryInt;
+
+@Service
+public class UserSettingService implements UserSettingServiceInt {
+
+	private static Logger logger = Logger.getLogger(UserSettingService.class);
+
+	@Autowired
+	UserSettingRepositoryInt repo;
+	
+	@Override
+	public List<UserSettingVo> getAllUserSetting() {
+		try {
+			List<UserSettingVo> result = new ArrayList<UserSettingVo>();
+			List<UserSetting> states =  repo.getAllUserSetting();
+			
+			if (states!=null && !states.isEmpty()){
+				
+				result =  UiStateHelper.converToVo(states);
+				return result;
+				
+			}
+						
+		}catch(Exception e){ 
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UiStateService getAllUiState() method : " + e.getMessage());
+		}
+		return null;
+	}
+
+	@Override
+	public UserSettingVo getUserSettingById(UserSettingVo userSetting) {
+		try {
+			UserSettingVo result = new UserSettingVo();
+			
+			if(userSetting!=null && userSetting.getId()!=null){
+				
+				UserSetting userToSearch = UserSettingHelper.converToObj(userSetting);
+				userToSearch = repo.getUserSettingById(userToSearch);
+				result =  UserSettingHelper.converToVO(userToSearch);
+				return result;
+			}
+		}catch(Exception e){ 
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at UserSettingService getUserSettingById: " + e.getMessage());
+		}
+		return null;
+	}
+}

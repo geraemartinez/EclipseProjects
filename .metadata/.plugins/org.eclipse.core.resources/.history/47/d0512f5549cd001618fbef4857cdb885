@@ -1,5 +1,0 @@
-package ctc.traccar.config;
-
-public class CustomSecurityFilter {
-
-}

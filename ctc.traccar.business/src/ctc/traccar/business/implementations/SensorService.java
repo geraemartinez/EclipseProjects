@@ -1,0 +1,83 @@
+package ctc.traccar.business.implementations;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ctc.traccar.api.vos.DeviceVo;
+import ctc.traccar.api.vos.SensorVo;
+import ctc.traccar.business.helpers.DeviceHelper;
+import ctc.traccar.business.helpers.SensorHelper;
+import ctc.traccar.business.interfaces.SensorServiceInt;
+import ctc.traccar.data.entities.Sensor;
+import ctc.traccar.data.interfaces.SensorRepositoryInt;
+
+@Service
+public class SensorService implements SensorServiceInt {
+	
+	private static Logger logger = Logger.getLogger(SensorService.class);
+
+	@Autowired SensorRepositoryInt repo;
+	
+	@Override
+	public List<SensorVo> getAllSensors() {
+		try {
+			List<SensorVo> result = new ArrayList<SensorVo>();
+			List<Sensor> sensors =  repo.getAllSensors();
+			
+			if (sensors!=null && !sensors.isEmpty()){
+				
+				result =  SensorHelper.converToVo(sensors);
+				return result;
+				
+			}
+						
+		}catch(Exception e){ 
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at SensorService getAllSensors() method : " + e.getMessage());
+		}
+		return null;
+	}
+
+	@Override
+	public SensorVo getSensorById(SensorVo sensor) {
+		try {
+			
+			SensorVo result = new SensorVo();
+			
+			if(sensor!=null && sensor.getId()!=null){
+				
+				Sensor ToSearch = SensorHelper.converToObj(sensor);
+				result =  SensorHelper.converToVO(repo.getSensorById(ToSearch));
+				return result;
+				
+			}
+			
+		}catch(Exception e){ 
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at SensorService getSensorById() method : " + e.getMessage());
+		}
+		return null;
+	}
+
+	@Override
+	public DeviceVo getDeviceBySensor(SensorVo sensor) {
+		try {
+			
+			DeviceVo result = new DeviceVo();
+			
+			if(sensor!=null && sensor.getId()!=null){
+				
+				Sensor ToSearch = SensorHelper.converToObj(sensor);
+				result =  DeviceHelper.converToVO(repo.getDeviceBySensor(ToSearch));
+				return result;
+				
+			}
+			
+		}catch(Exception e){ 
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at SensorService getDeviceBySensor() method : " + e.getMessage());
+		}
+		return null;
+	}
+}

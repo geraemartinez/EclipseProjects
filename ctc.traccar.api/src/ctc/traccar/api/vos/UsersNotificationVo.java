@@ -17,6 +17,15 @@ public class UsersNotificationVo implements Serializable {
 
 	private String type;
 		
+	public UsersNotificationVo(BigInteger userId){
+		super();
+		this.userId = userId;
+	}
+	
+	public UsersNotificationVo() {
+		
+	}
+
 	public BigInteger getUserId() {
 		return this.userId;
 	}

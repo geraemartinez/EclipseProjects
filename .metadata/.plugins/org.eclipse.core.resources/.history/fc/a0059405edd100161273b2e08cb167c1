@@ -1,0 +1,10 @@
+package ctc.traccar.web.rest.controllers;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/DeviceIcon")
+public class DeviceIconController {
+
+}

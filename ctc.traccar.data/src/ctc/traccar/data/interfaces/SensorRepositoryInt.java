@@ -8,6 +8,6 @@ import ctc.traccar.data.entities.Sensor;
 public interface SensorRepositoryInt {
 
 	public List<Sensor> getAllSensors();
-	public Sensor getAllSensor(Sensor sensor);
+	public Sensor getSensorById(Sensor sensor);
 	public Device getDeviceBySensor(Sensor sensor);
 }

@@ -1,8 +1,8 @@
 package ctc.traccar.business.helpers;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.commons.beanutils.BeanUtils;
 
@@ -13,8 +13,8 @@ public class ApplicationSettingHelper {
 	
 	
 	
-	public static Set<ApplicationSettingVo> converToVo(Set<ApplicationSetting> ApplicationSettings){
-		Set<ApplicationSettingVo> result = new HashSet<ApplicationSettingVo>();
+	public static List<ApplicationSettingVo> converToVo(List<ApplicationSetting> ApplicationSettings){
+		List<ApplicationSettingVo> result = new ArrayList<ApplicationSettingVo>();
 		
 		if(ApplicationSettings!=null){
 			for (ApplicationSetting usr:ApplicationSettings){
@@ -26,9 +26,9 @@ public class ApplicationSettingHelper {
 		
 	}
 	
-	public static Set<ApplicationSetting> converToObjs(Set<ApplicationSettingVo> ApplicationSettings){
+	public static List<ApplicationSetting> converToObjs(List<ApplicationSettingVo> ApplicationSettings){
 		
-		Set<ApplicationSetting> result = new HashSet<ApplicationSetting>();
+		List<ApplicationSetting> result = new ArrayList<ApplicationSetting>();
 		
 		if(ApplicationSettings!=null){
 			for (ApplicationSettingVo vo:ApplicationSettings){

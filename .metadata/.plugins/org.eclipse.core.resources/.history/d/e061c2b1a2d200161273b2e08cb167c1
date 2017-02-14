@@ -1,0 +1,27 @@
+package ctc.traccar.web.rest.controllers;
+
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import ctc.traccar.api.vos.GroupVo;
+import ctc.traccar.api.vos.UserVo;
+import ctc.traccar.business.interfaces.GroupServiceInt;
+
+@RestController
+@RequestMapping("/api/Group")
+public class GroupController {
+
+	private static Logger logger = Logger.getLogger(GeofenceController.class);
+
+	@Autowired GroupServiceInt group;
+	public List<GroupVo> getAllGroups(){}
+	public List<GroupVo> getChildGroups(@PathVariable(value="IdNumber") String id){}
+	public List<UserVo> getUsers(@PathVariable(value="IdNumber") String id){}
+	public GroupVo getGroupById(@PathVariable(value="IdNumber") String id){}
+	public GroupVo getParentGroup(@PathVariable(value="IdNumber") String id){}
+}

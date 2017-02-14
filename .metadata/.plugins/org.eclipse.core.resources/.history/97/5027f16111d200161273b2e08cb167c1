@@ -1,0 +1,30 @@
+package ctc.traccar.business.implementations;
+
+import java.util.Set;
+
+import ctc.traccar.api.vos.DeviceVo;
+import ctc.traccar.api.vos.MaintenanceVo;
+import ctc.traccar.business.interfaces.MaintenanceServiceInt;
+
+@Service
+public class MaintenanceService implements MaintenanceServiceInt {
+
+	@Override
+	public Set<MaintenanceVo> getAllMaintenance() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public MaintenanceVo getMaintenanceById(MaintenanceVo m) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DeviceVo getDeviceOfMaintenance(MaintenanceVo m) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

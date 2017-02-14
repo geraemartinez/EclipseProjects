@@ -22,7 +22,6 @@
     <context:annotation-config />
     <import resource="classpath:ctc-business.xml" />
     <context:component-scan base-package="ctc.traccar.web.rest.controllers" />
-    <context:component-scan base-package="ctc.traccar.web.app.controllers" />
  	<!-- NOT NEEDED -->
     <!--   <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>

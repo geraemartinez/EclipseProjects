@@ -1,0 +1,30 @@
+package ctc.traccar.web.rest.controllers;
+
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import ctc.traccar.api.vos.UserVo;
+import ctc.traccar.api.vos.UsersNotificationVo;
+import ctc.traccar.business.interfaces.UsersNotificationServiceInt;
+
+@Controller
+@RequestMapping("/api/UsersNotification")
+public class UsersNotificationController {
+
+	
+	private static Logger logger = Logger.getLogger(UsersNotificationController.class);
+	
+	@Autowired
+	UsersNotificationServiceInt service;
+	
+	public List<UsersNotificationVo> getAll(){}
+	public UsersNotificationVo getByUserId(UsersNotificationVo notification){}
+	public UserVo getUserByUsersNotificationId(UsersNotificationVo notification){}
+	
+}

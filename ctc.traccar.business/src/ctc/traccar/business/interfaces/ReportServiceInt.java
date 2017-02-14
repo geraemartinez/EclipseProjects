@@ -1,14 +1,14 @@
 package ctc.traccar.business.interfaces;
 
-import java.util.Set;
+import java.util.List;
 
 import ctc.traccar.api.vos.*;
 
 public interface ReportServiceInt {
 	
-	public Set<ReportVo> getAllReports();
+	public List<ReportVo> getAllReports();
 	public ReportVo getReportById(ReportVo report);
-	public Set<DeviceVo> getDevicesByReport(ReportVo report);
-	public Set<GeofenceVo> getGeofenceByReport(ReportVo report);
+	public List<DeviceVo> getDevicesByReport(ReportVo report);
+	public List<GeofenceVo> getGeofenceByReport(ReportVo report);
 	
 }

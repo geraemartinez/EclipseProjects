@@ -1,0 +1,92 @@
+package ctc.traccar.business.implementations;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ctc.traccar.api.vos.DeviceVo;
+import ctc.traccar.api.vos.EventVo;
+import ctc.traccar.api.vos.GeofenceVo;
+import ctc.traccar.api.vos.MaintenanceVo;
+import ctc.traccar.api.vos.PositionVo;
+import ctc.traccar.business.helpers.DeviceHelper;
+import ctc.traccar.business.helpers.EventHelper;
+import ctc.traccar.business.interfaces.EventServiceInt;
+import ctc.traccar.data.entities.Device;
+import ctc.traccar.data.entities.Event;
+import ctc.traccar.data.interfaces.EventRepositoryInt;
+
+@Service
+public class EventService implements EventServiceInt {
+
+private static Logger logger = Logger.getLogger(DeviceService.class);
+	
+	@Autowired
+	EventRepositoryInt deviceRepo;
+
+	@Override
+	public List<EventVo> getAllEvents() {
+		try {
+			List<EventVo> result = new ArrayList<EventVo>();
+			List<Event> devs =  deviceRepo.getAllEvents();
+			
+			if (devs!=null && !devs.isEmpty()){
+				
+				result =  EventHelper.converToVo(devs);
+				return result;				
+			}
+						
+		}catch(Exception e){ 
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at DeviceService getAllDevices() method : " + e.getMessage());
+		}
+		return null;
+
+	}
+
+	@Override
+	public EventVo getEventById(EventVo event) {
+		try {
+			
+			Device toSearch =  DeviceHelper.converToObj(device);
+			
+			if (toSearch!=null && toSearch.getId()!=null){
+			
+				Device result =  deviceRepo.getDeviceById(toSearch);
+				return DeviceHelper.converToVO(result);
+			}
+						
+		}catch(Exception e){ 
+			logger.error("[ERROR] Uncaught Exception - the following error ocurred at DeviceService getDeviceById() method : " + e.getMessage());
+		}
+		return null;
+	}
+
+	@Override
+	public DeviceVo getDeviceEvent(EventVo event) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public GeofenceVo getGeofenceEvent(EventVo event) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public MaintenanceVo getMaintenanceEvent(EventVo event) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public PositionVo getPositionEvent(EventVo event) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

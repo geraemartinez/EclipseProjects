@@ -106,23 +106,23 @@ public class Device implements Serializable {
 	@Column(name="vehicleInfo")
 	private String vehicleInfo;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="owner_id",insertable=false, updatable = false)
 	private User owner;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="icon_id",insertable=false, updatable = false)
 	private DeviceIcon deviceIcon;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="photo_id",insertable=false, updatable = false)
 	private Picture picture;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="latestPosition_id",insertable=false, updatable = false)
 	private Position lastPosition;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="group_id",insertable=false, updatable = false)
 	private Group group;
 	

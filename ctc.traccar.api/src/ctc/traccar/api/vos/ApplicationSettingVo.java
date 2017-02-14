@@ -39,6 +39,11 @@ public class ApplicationSettingVo implements Serializable {
 	private BigInteger userSettings_id;
 	
 
+	public ApplicationSettingVo(BigInteger id) {
+		super();
+		this.id = id;
+	}
+
 	public ApplicationSettingVo() {
 	}
 
